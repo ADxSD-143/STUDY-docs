@@ -1,21 +1,28 @@
 # Docker Documentation
 
-A structured, hands-on collection of Docker notes, from first commands to practical container workflows.
+A structured, hands-on collection of Docker notes. We will maintain the learning notes **part by part**, and move to the next part only after you answer the checkpoint.
 
-## Learning path
+## Guided lessons
 
-1. [Docker Fundamentals](fundamentals.md) — core concepts and commands.
-2. [Installation and Setup](installation.md) — verify Docker Desktop/Engine and diagnose setup issues.
-3. [Images and Containers](images-and-containers.md) — image layers, container lifecycle, logs and inspection.
-4. [Dockerfile](dockerfile.md) — build and run a small application.
-5. [Ports, Networks and Volumes](ports-networks-volumes.md) — connectivity and persistent data.
-6. [Docker Compose](compose.md) — define and run multi-container applications.
-7. [Troubleshooting and Learning Log](troubleshooting.md) — errors, fixes, experiments and revision checklist.
+1. [Part 1 — What Is Docker, and Why Do We Need It?](part-01-what-is-docker.md)
 
-## How to use these notes
+## Reference guides
 
-Watch the lesson, run the related command yourself, then record what happened. These notes are references; commands not yet tested should not be marked complete.
+- [Docker Fundamentals](fundamentals.md)
+- [Installation and Setup](installation.md)
+- [Images and Containers](images-and-containers.md)
+- [Dockerfile](dockerfile.md)
+- [Ports, Networks and Volumes](ports-networks-volumes.md)
+- [Docker Compose](compose.md)
+- [Troubleshooting and Learning Log](troubleshooting.md)
+- [Docker Learning Roadmap and Resources](learning-roadmap.md)
 
-## Two-hour beginner sprint
+## How we will study
 
-Focus on installation verification, `hello-world`, basic container commands, a tiny Dockerfile, port mapping, and introductory volumes/Compose. Leave advanced networking, production security, multi-stage builds and orchestration for later.
+1. Learn one concept in simple language.
+2. Use a small example.
+3. Answer a short checkpoint.
+4. Add the lesson to these Markdown notes.
+5. Move forward only after the concept is clear.
+
+The reference guides are for later use; the guided lessons are the step-by-step path.
