@@ -1,28 +1,44 @@
 # Docker Documentation
 
-A structured, hands-on collection of Docker notes. We will maintain the learning notes **part by part**, and move to the next part only after you answer the checkpoint.
+A structured, hands-on collection of Docker notes. This folder is arranged by **learning order**, not alphabetically. Follow the sequence below and move to the next part only after completing the checkpoint.
 
-## Guided lessons
+## Learning sequence
 
-1. [Part 1 — What Is Docker, and Why Do We Need It?](part-01-what-is-docker.md)
+### Part 1 — Understand Docker
+1. [What Is Docker, and Why Do We Need It?](part-01-what-is-docker.md)
+2. [Docker Fundamentals: the main building blocks](fundamentals.md)
 
-## Reference guides
+### Part 2 — Set up Docker
+3. [Installation and Setup](installation.md)
 
-- [Docker Fundamentals](fundamentals.md)
-- [Installation and Setup](installation.md)
-- [Images and Containers](images-and-containers.md)
-- [Dockerfile](dockerfile.md)
-- [Ports, Networks and Volumes](ports-networks-volumes.md)
-- [Docker Compose](compose.md)
-- [Troubleshooting and Learning Log](troubleshooting.md)
-- [Docker Learning Roadmap and Resources](learning-roadmap.md)
+### Part 3 — Images and containers
+4. [Images and Containers](images-and-containers.md)
+
+### Part 4 — Build your own image
+5. [Dockerfile: Build and Run an Application](dockerfile.md)
+
+### Part 5 — Connect and persist
+6. [Ports, Networks and Volumes](ports-networks-volumes.md)
+
+### Part 6 — Manage multi-container applications
+7. [Docker Compose](compose.md)
+
+### Part 7 — Apply Docker to a real ML project
+8. [Learning Roadmap and CampusX Laptop Price Predictor practice](learning-roadmap.md)
+
+### Part 8 — Debug and track progress
+9. [Troubleshooting and Learning Log](troubleshooting.md)
 
 ## How we will study
 
 1. Learn one concept in simple language.
-2. Use a small example.
-3. Answer a short checkpoint.
-4. Add the lesson to these Markdown notes.
+2. Use a small example or run a command.
+3. Answer the checkpoint.
+4. Update the notes with what was actually learned and tested.
 5. Move forward only after the concept is clear.
 
-The reference guides are for later use; the guided lessons are the step-by-step path.
+## Recommended path
+
+**Concepts → Setup → Images/containers → Dockerfile → Ports/networks/volumes → Compose → ML project → Troubleshooting/revision**
+
+The pages above are arranged as a learning path. Some pages are reference guides and may overlap with beginner lessons; use the part-by-part lesson as the primary learning source and consult reference pages when needed.
