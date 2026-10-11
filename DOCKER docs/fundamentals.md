@@ -1,92 +1,187 @@
 # Docker — Learning Notes
 
-A concise, practical reference for learning Docker step by step.
+A practical, step-by-step Docker learning guide. Use this file as a quick reference while studying; topic-specific notes will live in separate files linked from [README.md](README.md).
 
 ## 1. What is Docker?
 
-Docker packages an application and its dependencies into a **container**, helping it run consistently across development and deployment environments.
+Docker packages an application and its required dependencies into a container so it can run consistently across environments.
 
-- **Image:** A template used to create containers.
-- **Container:** A running (or stopped) instance of an image.
+- **Image:** A read-only template used to create containers.
+- **Container:** An isolated process created from an image.
 - **Dockerfile:** Instructions used to build an image.
-- **Registry:** A place to store and download images, such as Docker Hub.
+- **Registry:** A service for storing and downloading images (for example, Docker Hub).
 - **Volume:** Persistent storage managed by Docker.
-- **Port mapping:** Makes a container service reachable through a host port.
+- **Port mapping:** Forwards a host port to a port inside a container.
+- **Docker Compose:** A tool for defining and running multi-container applications.
 
-## 2. Basic commands
+## 2. Check installation
+
+Run in PowerShell or a terminal:
 
 ```bash
 docker --version
-docker pull hello-world
+docker compose version
+docker info
+```
+
+If `docker info` fails, make sure Docker Desktop is installed and running. On Windows, Docker Desktop may require WSL 2 setup. Resolve setup problems before moving on.
+
+## 3. Run your first container
+
+```bash
 docker run hello-world
+```
+
+Docker downloads the image if necessary, creates a container, runs it, and prints a success message.
+
+Useful inspection commands:
+
+```bash
 docker images
 docker ps
 docker ps -a
-docker stop <container_id>
-docker rm <container_id>
-docker rmi <image_name>
 ```
 
-## 3. Build and run an image
+- `docker images`: locally stored images.
+- `docker ps`: currently running containers.
+- `docker ps -a`: running and stopped containers.
 
-Create a file named `Dockerfile` in your project directory:
+## 4. Container lifecycle
+
+```bash
+docker run -d --name web nginx
+docker ps
+docker logs web
+docker stop web
+docker start web
+docker rm -f web
+```
+
+Here `-d` runs in the background and `--name` gives the container a readable name. `docker rm -f` forcibly removes the container; use it only when you intend to stop and delete it.
+
+Remove an image only when it is no longer needed:
+
+```bash
+docker rmi nginx
+```
+
+Docker may refuse to remove an image that is still referenced by a container.
+
+## 5. Images versus containers
+
+Think of an image as a class/template and a container as an instance created from it. One image can be used to create multiple containers. A container's writable layer is not a substitute for persistent storage.
+
+## 6. Build a simple Python image
+
+Create a folder containing these two files.
+
+**app.py**
+
+```python
+print("Hello from inside Docker!")
+```
+
+**Dockerfile** (no extension)
 
 ```dockerfile
 FROM python:3.12-slim
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
+COPY app.py .
 CMD ["python", "app.py"]
 ```
 
-Build and run it:
+Build and run:
 
 ```bash
-docker build -t my-python-app .
-docker run --rm my-python-app
+docker build -t hello-python .
+docker run --rm hello-python
 ```
 
-This example assumes the project contains `requirements.txt` and `app.py`. Adjust the base image and command to match your application.
+- `FROM` chooses a base image.
+- `WORKDIR` sets the working directory inside the image.
+- `COPY` copies a file into the image.
+- `CMD` specifies the default command.
+- `-t` assigns an image name/tag; the final `.` is the build context.
+- `--rm` automatically removes the stopped container.
 
-## 4. Port mapping
+## 7. Port mapping
 
-For a web app that listens on port 8000 inside the container:
+For a web application listening on port 8000 inside the container:
 
 ```bash
-docker run --rm -p 8000:8000 my-python-app
+docker run --rm -p 8000:8000 my-web-app
 ```
 
-The application must listen on `0.0.0.0` inside the container; listening only on `127.0.0.1` can prevent access through the mapped port.
+The syntax is `HOST_PORT:CONTAINER_PORT`. The application must listen on `0.0.0.0` inside the container; binding only to `127.0.0.1` can prevent access through the mapped port.
 
-## 5. Docker Compose
+## 8. Volumes and persistence
 
-Docker Compose defines and runs multi-container applications from a YAML configuration, commonly named `compose.yaml`.
+A container's writable layer can disappear when the container is removed. A volume stores data outside that layer.
+
+```bash
+docker volume create app-data
+docker volume ls
+docker volume inspect app-data
+```
+
+Volumes are useful for state that must survive container replacement, such as database files. Learn the exact mount syntax and permissions when practising a real service.
+
+## 9. Docker Compose
+
+Compose defines services in a YAML file, commonly named `compose.yaml`, and manages them together.
+
+Common commands:
 
 ```bash
 docker compose up --build
+docker compose up -d
+docker compose ps
+docker compose logs
 docker compose down
 ```
 
-## 6. Useful workflow
+Use `docker compose down` to stop and remove the resources created for the Compose project. Named volumes are normally retained unless you explicitly request volume removal.
 
-1. Write or update the `Dockerfile`.
-2. Build the image.
-3. Run the container and test the application.
-4. Inspect logs with `docker logs <container_id>`.
-5. Check running containers with `docker ps`.
-6. Use volumes when data must persist beyond a container's lifecycle.
+## 10. Debugging checklist
 
-## 7. Key distinction
+```bash
+docker ps -a
+docker logs <container_name>
+docker inspect <container_name>
+docker image ls
+docker volume ls
+```
 
-Containers are isolated processes that share the host operating system's kernel; they are not the same as full virtual machines.
+Common causes:
+- Docker daemon/Desktop is not running.
+- The image build failed.
+- The container exited because its main command finished or crashed.
+- The host port is already in use.
+- The application is listening on the wrong interface or port.
+- Required files are missing from the build context.
 
-## Learning progress
+## 11. Two-hour sprint checklist
 
-- [ ] Install Docker and verify `docker --version`
-- [ ] Run `hello-world`
-- [ ] Build a simple Python image
-- [ ] Run a web app with port mapping
-- [ ] Practise volumes and Docker Compose
+- [ ] Verify Docker installation.
+- [ ] Run `hello-world`.
+- [ ] Explain image vs container.
+- [ ] Inspect images and containers.
+- [ ] Start, stop, view logs and remove a container.
+- [ ] Build and run `hello-python`.
+- [ ] Explain host-to-container port mapping.
+- [ ] Understand when to use volumes.
+- [ ] Run the basic Compose commands.
+- [ ] Record any errors and fixes in [troubleshooting.md](troubleshooting.md).
 
-*Add commands, errors, fixes, and small experiments here as you practise.*
+## Key distinction
+
+Containers isolate processes while sharing the host operating system's kernel. A virtual machine normally runs its own guest operating system.
+
+## Learning log
+
+After each study session, add the date, commands actually tested, outcomes, errors, fixes, and topics to revisit. Do not mark a task complete until you have tried it yourself.
+
+## Reference
+
+- [Docker Get Started](https://docs.docker.com/get-started/)
+- [Docker CLI reference](https://docs.docker.com/reference/cli/docker/)
