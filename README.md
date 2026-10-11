@@ -6,4 +6,4 @@ Personal learning notes and technical references.
 - [Logistic Regression](ML%20notes%20doc/logistic_reg.md)
 
 ## DevOps
-- [Docker](docker.md)
+- [Docker Documentation](DOCKER%20docs/README.md)
