@@ -8,8 +8,10 @@ Personal learning notes and technical references.
 
 ## NLP
 - [NLP Course Home](NLP/README.md)
-- [NLP Roadmap: Basics to Production](NLP/00-roadmap.md)
-- [Lesson 1 — What Is NLP?](NLP/01-what-is-nlp.md)
+- [NLP Roadmap + Progress](NLP/00-roadmap.md)
+- [Module 01 — Text preprocessing](NLP/01-text-preprocessing.md)
+- [Module 02 — Text representation](NLP/02-text-representation.md)
+- [Next: Module 03 — Classical ML for text](NLP/03-classical-ml-for-text.md)
 
 ## DevOps
 - [Docker Documentation](DOCKER%20docs/README.md)
