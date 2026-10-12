@@ -1,93 +1,70 @@
-# NLP Roadmap: Basics to Production
+# NLP: Basics to Advanced — Roadmap + Progress
 
-**Goal:** Build a clear foundation in NLP, then use it to build 2–3 portfolio projects. This is a practical course, not a list of libraries to memorize.
+**Goal:** AI/ML Engineer-level NLP skills + 3 resume-ready projects.  
+**Style:** theory → formula → code → real-world example → interview questions → mini exercise.  
+**Pacing:** One module targets 60–90 minutes. Split it into smaller lessons if needed; understanding matters more than speed.
 
-## Phase 1 — Text and language fundamentals
-1. What NLP is; task types and end-to-end pipeline
-2. Text normalization, Unicode, regular expressions, tokenization
-3. Stop words, stemming, lemmatization; when *not* to clean text
-4. N-grams, Bag of Words, TF-IDF, sparse vectors
-5. Train/validation/test splits, leakage, class imbalance, evaluation metrics
+## Roadmap
 
-**Outcome:** Understand and build a reliable classical text-classification baseline.
-
-## Phase 2 — Classical NLP in practice
-6. Naive Bayes and Logistic Regression for text
-7. Precision, recall, F1, confusion matrix, threshold selection
-8. Error analysis, cross-validation, pipelines, reproducibility
-9. POS tagging, named entity recognition (NER), phrase extraction
-10. Similarity, duplicate detection, keyword and information extraction
-
-**Project 1:** NLP Classifier API — compare a simple baseline with a stronger model; report metrics and failure cases; serve predictions with FastAPI.
-
-## Phase 3 — Neural NLP and embeddings
-11. Neural-network essentials for language tasks
-12. Word embeddings: Word2Vec, GloVe, FastText (concepts and practical relevance)
-13. Sequence models: RNN, LSTM, GRU (why they mattered; limitations)
-14. Attention and the Transformer architecture
-15. Subword tokenization (BPE/WordPiece), contextual embeddings, encoder vs decoder models
-
-**Outcome:** Explain how modern language models represent and process text.
-
-## Phase 4 — Transformers and LLM application engineering
-16. Use pretrained models with Hugging Face
-17. Fine-tuning vs prompting vs retrieval: choosing the right approach
-18. Text classification, NER, summarization, question answering
-19. Embeddings, cosine similarity, semantic search
-20. Efficient adaptation: transfer learning, PEFT/LoRA concepts, quantization basics
-
-## Phase 5 — RAG systems
-21. RAG architecture and when RAG is useful
-22. Document ingestion, parsing, chunking, metadata
-23. Embedding models and vector search
-24. Retrieval quality: top-k, similarity, hybrid search, reranking
-25. Context construction, grounded answers, citations, abstention
-26. RAG evaluation: retrieval metrics, answer correctness, faithfulness, latency and cost
-27. Advanced patterns: query rewriting, multi-step retrieval, corrective/adaptive RAG; agentic RAG where justified
-
-**Project 2:** A document-grounded RAG assistant with citations and an evaluation set. Compare retrieval approaches rather than merely making a chatbot.
-
-## Phase 6 — Agents and production
-28. LLM tool/function calling and structured outputs
-29. Workflows vs agents; state, planning, memory, retries and human approval
-30. MCP: how models/clients connect to tools and data sources
-31. Guardrails: prompt injection, untrusted documents, permissions and data privacy
-32. Evaluation and observability: traces, regression tests, failure analysis
-33. Deployment with FastAPI, Docker, logging, configuration and monitoring
-
-**Project 3:** A bounded agentic knowledge assistant that retrieves evidence, calls approved tools, returns structured results, and records evaluation traces.
-
-## Phase 7 — Advanced topics (select based on project needs)
-- Multilingual NLP and code-mixed text
-- Long-context processing and document intelligence
-- Information extraction and knowledge graphs
-- Rerankers and late-interaction retrieval
-- Small language models, local inference and quantization
-- Fine-tuning data quality, preference/alignment concepts
-- Multimodal systems: text with images, audio or documents
-- Agent reliability, benchmark design and cost/latency optimization
-
-## Default tools
-- Python, scikit-learn, pandas, spaCy or NLTK
-- Hugging Face Transformers and Datasets
-- PyTorch when neural-network internals become relevant
-- Sentence Transformers for embeddings
-- FAISS or a lightweight vector store for local retrieval
-- FastAPI and Docker for serving/deployment
-
-We will choose tools when needed, not install everything on day one. Prefer free/local models and datasets where feasible.
-
-## Lesson format
-Every lesson should contain: **intuition → key concepts/formulas → short runnable code → real-world use → common mistake → checkpoint**. Keep the pace small and focused. Update this roadmap if tools or industry practices materially change.
+| # | Module | Core ideas | Industry use |
+|---|---|---|---|
+| 01 | Text preprocessing | Tokenization, normalization, stemming, lemmatization, stopwords, regex | Search, chatbots, text analytics |
+| 02 | Text representation | Bag of Words, TF-IDF, n-grams, sparse vectors | Search relevance, keyword extraction, baseline ML |
+| 03 | Classical ML for text | Naive Bayes, Logistic Regression, precision, recall, F1, confusion matrix | Spam filtering, ticket routing, sentiment analysis |
+| P1 | **Project 1: Text classifier** | Support-ticket/review classifier, baseline comparison, error analysis, API | Customer-support automation |
+| 04 | Word embeddings | Word2Vec, GloVe, vector similarity, cosine similarity | Semantic search, recommendations |
+| 05 | Sequence models | RNN, LSTM, seq2seq, attention | Understand the evolution toward Transformers |
+| 06 | Transformers | Tokenization, self-attention, positional information, BERT vs GPT | Foundation of modern NLP and LLMs |
+| 07 | Hugging Face + fine-tuning | Pretrained models, NER, QA, summarization, fine-tuning, LoRA/PEFT concepts | Document intelligence and information extraction |
+| P2 | **Project 2: Transformer** | Fine-tuned transformer for NER or classification, metrics and error analysis | Resume/document intelligence |
+| 08 | LLMs, RAG + agentic integration | Prompting, embeddings, chunking, vector search, hybrid retrieval, reranking, RAG evaluation, tool calling, MCP | Grounded enterprise assistants and controlled workflows |
+| P3 | **Project 3: RAG assistant** | Document Q&A, citations, retrieval/generation evaluation, optional bounded tool use | Chat with documents |
+| 09 | Deployment + evaluation | FastAPI, Docker, tests, monitoring, cost/latency, reproducibility | Production-ready ML/AI services |
 
 ## Progress tracker
-- [ ] Phase 1 — Foundations
-- [ ] Phase 2 — Classical NLP
-- [ ] Project 1 — Classifier API
-- [ ] Phase 3 — Neural NLP and Transformers
-- [ ] Phase 4 — Pretrained models and fine-tuning
-- [ ] Phase 5 — RAG
-- [ ] Project 2 — RAG assistant
-- [ ] Phase 6 — Agents, MCP and production
-- [ ] Project 3 — Agentic assistant
-- [ ] Phase 7 — Advanced electives
+
+- [x] 01 Text preprocessing
+- [x] 02 Text representation
+- [ ] 03 Classical ML for text
+- [ ] P1 — Text classifier
+- [ ] 04 Word embeddings
+- [ ] 05 Sequence models
+- [ ] 06 Transformers
+- [ ] 07 Hugging Face + fine-tuning
+- [ ] P2 — Fine-tuned transformer
+- [ ] 08 LLMs, RAG, vector DBs + agentic integration
+- [ ] P3 — RAG document Q&A app
+- [ ] 09 Deployment + evaluation
+
+## Module note checklist
+
+Each completed module note should contain:
+1. **Theory** — intuition and key concepts.
+2. **Formulas** — notation explained, with a worked example when useful.
+3. **Code** — short, runnable Python examples.
+4. **Real-world example** — where and why the technique is used.
+5. **Interview questions** — focused questions with clear answers.
+6. **Mini exercise** — a checkpoint to verify understanding.
+
+Notes are committed as we finish modules. The progress tracker must reflect actual learning progress; do not mark a module complete merely because its file exists.
+
+## Project standards
+
+Each project gets a separate folder containing a README, reproducible setup/run instructions, dataset/source notes, a results table, known limitations, and resume bullet points. Results must come from actual experiments, not invented metrics.
+
+- **Project 1:** Compare a simple baseline with a stronger classical text classifier. Include class-wise metrics and error analysis.
+- **Project 2:** Fine-tune or adapt a pretrained Transformer for a defined NER/classification task. Record the data split, baseline, metrics and failure cases.
+- **Project 3:** Build a document Q&A RAG system with citations. Evaluate retrieval separately from answer quality; include hallucination/abstention cases.
+
+## Modern topics included without bloating the course
+
+- RAG: chunking, embedding models, vector search, hybrid retrieval, reranking and evaluation.
+- Agentic integration: structured outputs, approved tool calling, workflows and MCP basics.
+- Production concerns: prompt injection and untrusted retrieved content, testing, observability, latency and cost.
+- Advanced electives only when useful: multilingual/code-mixed NLP, quantization, multimodal document processing and advanced retrieval.
+
+We will learn older methods such as RNNs and LSTMs to understand the progression of NLP, but spend more implementation time on Transformers, retrieval systems and reliable LLM applications.
+
+## Next lesson
+
+**Module 03 — Classical ML for text:** begin with the end-to-end text-classification pipeline, then learn Naive Bayes and Logistic Regression for text, followed by evaluation metrics.
