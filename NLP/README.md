@@ -12,8 +12,9 @@
 - Every project gets its own folder with a README, results table, and resume bullet points.
 - Measure results and document limitations; do not claim performance without evidence.
 
-## Roadmap
-See [NLP Roadmap + Progress](00-roadmap.md).
+## Start here
+- [Updated NLP Pipeline — Traditional NLP to Modern AI Systems](00-nlp-pipeline.md)
+- [NLP Roadmap + Progress](00-roadmap.md)
 
 ## Progress
 - [x] Module 01 — Text preprocessing
