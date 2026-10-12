@@ -1,24 +1,40 @@
 # Natural Language Processing (NLP)
 
-A compact, step-by-step NLP course from fundamentals to production-grade LLM applications. Notes are updated lesson by lesson.
+**Goal:** Build AI/ML Engineer-level NLP skills and complete three resume-ready projects.  
+**Learning format:** theory → formulas → code → real-world example → interview questions → mini exercise.  
+**Pace:** Target one module per 60–90 minute sitting; split a module into shorter steps whenever needed for understanding.
 
-## Learning rules
-- Learn one small step at a time: intuition → theory/formula → code → real-world use → checkpoint.
-- Keep notes concise but complete enough for revision and interviews.
-- Use free/open-source tools where practical; avoid paid API dependency.
-- Build and evaluate working systems, not just demos.
-- Mark lessons complete only after the checkpoint is understood.
+## Course rules
+- Teach one step at a time and check understanding before moving on.
+- Keep explanations focused: no unnecessary length, but do not skip concepts needed to understand the code.
+- Add or update Markdown notes as each module is completed.
+- Prefer free and open-source tools; paid APIs are not required.
+- Every project gets its own folder with a README, results table, and resume bullet points.
+- Measure results and document limitations; do not claim performance without evidence.
 
-## Course map
-See [NLP Roadmap](00-roadmap.md).
+## Roadmap
+See [NLP Roadmap + Progress](00-roadmap.md).
 
-## Lessons
-1. [What is NLP? — the end-to-end text pipeline](01-what-is-nlp.md)
+## Progress
+- [x] Module 01 — Text preprocessing
+- [x] Module 02 — Text representation
+- [ ] Module 03 — Classical ML for text
+- [ ] Project 1 — Support-ticket/review classifier
+- [ ] Module 04 — Word embeddings
+- [ ] Module 05 — Sequence models
+- [ ] Module 06 — Transformers
+- [ ] Module 07 — Hugging Face + fine-tuning
+- [ ] Project 2 — Fine-tuned transformer
+- [ ] Module 08 — LLMs, RAG, vector databases + agentic integration
+- [ ] Project 3 — RAG document Q&A application
+- [ ] Module 09 — Deployment + evaluation
+
+## Module notes
+- [Module 01 — Text preprocessing](01-text-preprocessing.md)
+- [Module 02 — Text representation](02-text-representation.md)
+- [Module 03 — Classical ML for text](03-classical-ml-for-text.md) *(next)*
 
 ## Projects
-Projects will be added as the relevant skills are learned:
-- **Project 1 — NLP Classifier API:** text classification with a strong TF-IDF baseline, error analysis, and FastAPI.
-- **Project 2 — Semantic Search + RAG Assistant:** document ingestion, chunking, embeddings, retrieval, citations, and retrieval/generation evaluation.
-- **Project 3 — Agentic Knowledge Assistant:** tool calling, controlled workflows, structured outputs, observability, and safety checks.
-
-Project scope may be refined as we learn and evaluate what is genuinely useful.
+- [Project 1 — Text classifier](projects/project-1-text-classifier/README.md)
+- [Project 2 — Transformer document intelligence](projects/project-2-transformer-document-intelligence/README.md)
+- [Project 3 — RAG + agentic knowledge assistant](projects/project-3-rag-knowledge-assistant/README.md)
