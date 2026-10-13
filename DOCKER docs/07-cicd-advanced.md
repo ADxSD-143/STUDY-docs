@@ -32,6 +32,17 @@ docker buildx ls
 docker buildx inspect
 ```
 
+**Command-by-command explanation and expected output**
+
+| Command | What it does | What you should see |
+|---|---|---|
+| `docker buildx version` | Prints Buildx plugin version. | A version line. |
+| `docker buildx ls` | Lists available builders and supported platforms. | A table with builder names, drivers, status and platform info. |
+| `docker buildx inspect` | Shows selected builder configuration. | Builder name, driver, status and platform details. |
+
+Exact builder names and supported platforms depend on your setup.
+
+
 **What it does / expected result:** This is an example/configuration block, not necessarily an executable command. Saving it alone does not run it; use the adjacent lesson instructions and verify the result there.
 
 
