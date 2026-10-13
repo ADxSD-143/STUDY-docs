@@ -16,4 +16,4 @@ Personal learning notes and technical references, maintained part by part with p
 ## DevOps
 - [Docker — Complete Learning Path (Beginner to Advanced)](DOCKER%20docs/README.md)
 - [Docker Learning Roadmap and Resources](DOCKER%20docs/10-learning-roadmap.md)
-- [Docker Commands — Purpose, Expected Output and Debugging](DOCKER%20docs/16-command-by-command-output-guide.md)
+
