@@ -1,6 +1,6 @@
 # Study Docs
 
-Personal learning notes and technical references.
+Personal learning notes and technical references, maintained part by part with practical examples and checkpoints.
 
 ## Machine Learning
 - [Logistic Regression](ML%20notes%20doc/logistic_reg.md)
@@ -14,5 +14,5 @@ Personal learning notes and technical references.
 - [Next: Module 03 — Classical ML for text](NLP/03-classical-ml-for-text.md)
 
 ## DevOps
-- [Docker Documentation](DOCKER%20docs/README.md)
-- [Docker Learning Roadmap and Resource Notes](DOCKER%20docs/learning-roadmap.md)
+- [Docker — Complete Learning Path (Beginner to Advanced)](DOCKER%20docs/README.md)
+- [Docker Learning Roadmap and Resources](DOCKER%20docs/learning-roadmap.md)
