@@ -14,6 +14,17 @@ docker compose version
 docker info
 ```
 
+**Command-by-command: what happens and what you should see**
+
+| Command | What it does | Expected output / verification |
+|---|---|---|
+| `docker --version` | Prints the installed CLI/plugin version; it does not start the Engine. | A version line, e.g. Docker version ... or Docker Compose version v2.... |
+| `docker compose version` | Prints the installed CLI/plugin version; it does not start the Engine. | A version line, e.g. Docker version ... or Docker Compose version v2.... |
+| `docker info` | Queries the Engine for configuration and resource information. | A long report with server, storage, container and image details; exact fields vary. |
+
+Output note: these are expected behaviours, not fixed transcripts. IDs, image sizes, versions, download progress and timestamps vary by machine and cache state.
+
+
 Version commands verify that the CLI exists. `docker info` also tries to contact the engine/daemon.
 
 ## Windows with Docker Desktop
@@ -27,6 +38,15 @@ Version commands verify that the CLI exists. `docker info` also tries to contact
 ```bash
 docker run hello-world
 ```
+
+**Command-by-command: what happens and what you should see**
+
+| Command | What it does | Expected output / verification |
+|---|---|---|
+| `docker run hello-world` | Pulls the image if needed, runs a short test container and exits. | A message beginning Hello from Docker!; pull progress may appear on first run. |
+
+Output note: these are expected behaviours, not fixed transcripts. IDs, image sizes, versions, download progress and timestamps vary by machine and cache state.
+
 
 Official guide: https://docs.docker.com/desktop/setup/install/windows-install/
 

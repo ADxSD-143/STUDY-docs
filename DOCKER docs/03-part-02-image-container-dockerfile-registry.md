@@ -29,6 +29,15 @@ COPY app.py .
 CMD ["python", "app.py"]
 ```
 
+**What this code does:**
+- `FROM python:3.12-slim`: chooses the base image/runtime; it may be downloaded during the build.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `COPY app.py .`: copies matching files from the build context into the image.
+- `CMD ["python", "app.py"]`: default command when a container starts.
+
+**Expected result:** These instructions usually produce build progress, not application output. The app's output appears when a container starts. If build fails, read the first meaningful error and check files, paths, base image and dependencies.
+
+
 This file describes how to build an image for a small Python app, assuming `app.py` exists in the build context.
 
 ## 4. Registry
@@ -45,6 +54,9 @@ Dockerfile --build--> Image --run--> Container
                          |
                  Registry stores/shares images
 ```
+
+**How to read this example:** This is illustrative output/configuration, not a command to run. Your actual IDs, timestamps, paths and version details can differ.
+
 
 - Write a Dockerfile to describe how to package the application.
 - Build an image from the Dockerfile.
