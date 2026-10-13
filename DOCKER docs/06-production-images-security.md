@@ -5,24 +5,42 @@ A useful production image should be reproducible, focused, reasonably small, mai
 
 Create a .dockerignore file suited to your project. Typical exclusions include:
 
-    .git
-    .venv
-    __pycache__
-    *.pyc
-    .env
-    .env.*
+```text
+.git
+.venv
+__pycache__
+*.pyc
+.env
+.env.*
+```
+
+**What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
+
 
 Never exclude files the app needs, and never include credentials or unnecessary datasets.
 
 ## 2. Build cache
 For Python applications, copy dependency manifests before frequently changing source files:
 
-    FROM python:3.12-slim
-    WORKDIR /app
-    COPY requirements.txt .
-    RUN pip install --no-cache-dir -r requirements.txt
-    COPY . .
-    CMD ["python", "app.py"]
+```text
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python", "app.py"]
+```
+
+**Line-by-line meaning:**
+- `FROM python:3.12-slim`: chooses the base image/runtime; it may be downloaded during build.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `COPY requirements.txt .`: copies matching files from the build context into the image.
+- `RUN pip install --no-cache-dir -r requirements.txt`: executes during image build; failure stops the build.
+- `COPY . .`: copies matching files from the build context into the image.
+- `CMD ["python", "app.py"]`: default command when a container starts.
+
+**Expected result:** Build progress rather than application output. App output appears when a container starts. If the build fails, inspect the first meaningful error.
+
 
 This is a teaching template, not a universal production Dockerfile. Verify the app's real dependencies, runtime command and OS requirements. Copying the requirements file first can allow the dependency layer to be reused when only source code changes.
 
@@ -45,12 +63,25 @@ Pin tested dependencies and choose a deliberate base-image version policy. Pinni
 
 Example non-root pattern (test the base image and file permissions first):
 
-    FROM python:3.12-slim
-    WORKDIR /app
-    RUN useradd --create-home appuser
-    COPY --chown=appuser:appuser app.py .
-    USER appuser
-    CMD ["python", "app.py"]
+```text
+FROM python:3.12-slim
+WORKDIR /app
+RUN useradd --create-home appuser
+COPY --chown=appuser:appuser app.py .
+USER appuser
+CMD ["python", "app.py"]
+```
+
+**Line-by-line meaning:**
+- `FROM python:3.12-slim`: chooses the base image/runtime; it may be downloaded during build.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `RUN useradd --create-home appuser`: executes during image build; failure stops the build.
+- `COPY --chown=appuser:appuser app.py .`: copies matching files from the build context into the image.
+- `USER appuser`: selects the user for following instructions/runtime.
+- `CMD ["python", "app.py"]`: default command when a container starts.
+
+**Expected result:** Build progress rather than application output. App output appears when a container starts. If the build fails, inspect the first meaningful error.
+
 
 ## 6. Reliability
 A running process is not necessarily ready to serve traffic. Health checks should test a real, cheap health endpoint or command. Do not copy a health check that assumes a port or tool your image does not have.

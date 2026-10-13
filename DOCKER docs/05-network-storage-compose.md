@@ -3,7 +3,12 @@
 ## 1. Port mapping
 A container can listen on a port internally without automatically making it reachable from your host. Publish a port:
 
-    docker run -d --name web-demo -p 8080:80 nginx
+```text
+docker run -d --name web-demo -p 8080:80 nginx
+```
+
+**What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
+
 
 Open http://localhost:8080. The syntax is HOST_PORT:CONTAINER_PORT. If port 8080 is already occupied, map 8081:80 instead.
 
@@ -12,9 +17,14 @@ A web server inside a container generally needs to bind to 0.0.0.0, not only 127
 ## 2. Networking
 Containers on a user-defined Docker network can discover each other by name. Avoid hardcoding container IP addresses because they can change.
 
-    docker network create demo-net
-    docker network ls
-    docker network inspect demo-net
+```text
+docker network create demo-net
+docker network ls
+docker network inspect demo-net
+```
+
+**What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
+
 
 Compose normally creates a project network for its services.
 
@@ -25,9 +35,14 @@ Compose normally creates a project network for its services.
 
 Create and inspect a volume:
 
-    docker volume create demo-data
-    docker volume ls
-    docker volume inspect demo-data
+```text
+docker volume create demo-data
+docker volume ls
+docker volume inspect demo-data
+```
+
+**What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
+
 
 Removing a container does not necessarily remove volumes. A volume is also not a backup; production data needs a backup and restore plan.
 
@@ -40,20 +55,30 @@ Use environment variables for non-secret configuration such as log level or a se
 ## 6. Compose
 Compose describes a set of services in a YAML file so a local stack can be started consistently. Create compose.yaml:
 
-    services:
-      web:
-        image: nginx:alpine
-        ports:
-          - "8080:80"
-      cache:
-        image: redis:alpine
+```text
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+  cache:
+    image: redis:alpine
+```
+
+**What this configuration does:** Defines services and their settings; saving YAML alone does not start containers. **Expected result:** no terminal output until you run the matching Compose command. Verify service state with `docker compose ps`, read logs with `docker compose logs`, and test the configured browser URL.
+
 
 Run:
 
-    docker compose up -d
-    docker compose ps
-    docker compose logs
-    docker compose down
+```text
+docker compose up -d
+docker compose ps
+docker compose logs
+docker compose down
+```
+
+**What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
+
 
 Visit http://localhost:8080 while the stack is running. This example starts two services; Nginx does not automatically use Redis just because both exist.
 
