@@ -2,7 +2,7 @@
 
 A practical, beginner-friendly record of my first contribution using the **First Contributions** repository. This guide documents the full workflow from forking a repository to getting a Pull Request merged.
 
-- **Contributor:** Aditya Narayan Laha
+- **Contributor:** Aditya Narayan 
 - **GitHub:** https://github.com/ADxSD-143
 - **Practice repository:** https://github.com/firstcontributions/first-contributions
 - **My fork:** https://github.com/ADxSD-143/first-contributions
