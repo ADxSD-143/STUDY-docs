@@ -17,8 +17,7 @@ This is a guided, practical Docker course for a beginner. Each lesson uses plain
 
 1. [Part 1 — What Is Docker and Why Do We Need It?](part-01-what-is-docker.md)
 2. [Part 2 — Image, Container, Dockerfile and Registry](part-02-image-container-dockerfile-registry.md)
-3. [Part 3 — Docker Engine, CLI and Daemon](03-core-commands-and-dockerfile.md#docker-engine-cli-and-daemon) *(covered in the next lessons as we progress)*
-4. [Part 3–5 — First Commands and Your First Dockerfile](03-core-commands-and-dockerfile.md)
+3. [Part 3–5 — Docker Engine concepts, First Commands and Your First Dockerfile](03-core-commands-and-dockerfile.md)
 
 ## Stage 1 — Practical application basics
 
