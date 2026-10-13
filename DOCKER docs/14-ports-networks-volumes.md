@@ -10,11 +10,25 @@ Example:
 docker run --rm -d --name web -p 8080:80 nginx
 ```
 
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | What you should see |
+|---|---|---|
+| `docker run --rm -d --name web -p 8080:80 nginx` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+
+
 Open `http://localhost:8080` in a browser. Here host port 8080 maps to container port 80. Stop it when finished:
 
 ```bash
 docker stop web
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | What you should see |
+|---|---|---|
+| `docker stop web` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+
 
 Format: `-p HOST_PORT:CONTAINER_PORT`.
 
@@ -31,6 +45,16 @@ docker network inspect app-network
 docker network rm app-network
 ```
 
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | What you should see |
+|---|---|---|
+| `docker network ls` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+| `docker network create app-network` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+| `docker network inspect app-network` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+| `docker network rm app-network` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+
+
 Do not remove a network while containers still depend on it.
 
 ## Volumes
@@ -42,6 +66,15 @@ docker volume create app-data
 docker volume ls
 docker volume inspect app-data
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | What you should see |
+|---|---|---|
+| `docker volume create app-data` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+| `docker volume ls` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+| `docker volume inspect app-data` | Runs the Docker network/volume operation named by the command. | Expect a table, ID, resource name or JSON-like metadata; exact values vary. Verify using the corresponding list/inspect command. |
+
 
 A volume is not the same as the container's writable layer. Avoid deleting volumes during practice if they might contain needed data.
 
