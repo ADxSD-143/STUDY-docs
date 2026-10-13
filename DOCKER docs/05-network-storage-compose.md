@@ -7,6 +7,15 @@ A container can listen on a port internally without automatically making it reac
 docker run -d --name web-demo -p 8080:80 nginx
 ```
 
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker run -d --name web-demo -p 8080:80 nginx` | Creates and starts a container; -d detaches, --name sets its name, -p publishes ports. | Usually a container ID; open the mapped localhost URL for web apps. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
+
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
 
@@ -22,6 +31,17 @@ docker network create demo-net
 docker network ls
 docker network inspect demo-net
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker network create demo-net` | Creates/lists/inspects a Docker network. | Network ID, table or JSON-like details. |
+| `docker network ls` | Creates/lists/inspects a Docker network. | Network ID, table or JSON-like details. |
+| `docker network inspect demo-net` | Creates/lists/inspects a Docker network. | Network ID, table or JSON-like details. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
 
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
@@ -40,6 +60,17 @@ docker volume create demo-data
 docker volume ls
 docker volume inspect demo-data
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker volume create demo-data` | Creates/lists/inspects Docker-managed storage. | Volume name, table or metadata details. |
+| `docker volume ls` | Creates/lists/inspects Docker-managed storage. | Volume name, table or metadata details. |
+| `docker volume inspect demo-data` | Creates/lists/inspects Docker-managed storage. | Volume name, table or metadata details. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
 
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
@@ -76,6 +107,18 @@ docker compose ps
 docker compose logs
 docker compose down
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker compose up -d` | Operates on the Compose project in the current folder. | Service progress/status, logs or removal messages. |
+| `docker compose ps` | Operates on the Compose project in the current folder. | Service progress/status, logs or removal messages. |
+| `docker compose logs` | Operates on the Compose project in the current folder. | Service progress/status, logs or removal messages. |
+| `docker compose down` | Operates on the Compose project in the current folder. | Service progress/status, logs or removal messages. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
 
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 

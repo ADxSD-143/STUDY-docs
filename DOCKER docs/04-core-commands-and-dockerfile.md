@@ -12,6 +12,17 @@ docker info
 docker run hello-world
 ```
 
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker version` | Shows client and server versions and checks Engine connectivity. | Client and Server sections if Engine is reachable. |
+| `docker info` | Shows Engine configuration and resource information. | Long report with server, storage, container and image details. |
+| `docker run hello-world` | Runs a short test container, pulling the image if needed. | Success message beginning Hello from Docker!; download progress may appear. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
+
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
 
@@ -26,6 +37,17 @@ docker ps
 docker ps -a
 ```
 
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker image ls` | Lists local images. | Image table with repository, tag, ID and size. |
+| `docker ps` | Lists only running containers. | Container table; empty is normal if none run. |
+| `docker ps -a` | Lists all containers including stopped ones. | Container table with status values. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
+
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
 
@@ -36,6 +58,15 @@ Try a web server:
 ```text
 docker run -d --name demo-nginx -p 8080:80 nginx
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker run -d --name demo-nginx -p 8080:80 nginx` | Creates and starts a container; -d detaches, --name sets its name, -p publishes ports. | Usually a container ID; open the mapped localhost URL for web apps. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
 
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
@@ -52,6 +83,20 @@ docker start demo-nginx
 docker stop demo-nginx
 docker rm demo-nginx
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker logs demo-nginx` | Runs this Docker operation. | Expect a table, status, logs, resource name or ID depending on the command. |
+| `docker stop demo-nginx` | Changes container or image lifecycle; check the command verb. | Usually resource name/ID; verify with the relevant list command. |
+| `docker ps -a` | Lists all containers including stopped ones. | Container table with status values. |
+| `docker start demo-nginx` | Changes container or image lifecycle; check the command verb. | Usually resource name/ID; verify with the relevant list command. |
+| `docker stop demo-nginx` | Changes container or image lifecycle; check the command verb. | Usually resource name/ID; verify with the relevant list command. |
+| `docker rm demo-nginx` | Changes container or image lifecycle; check the command verb. | Usually resource name/ID; verify with the relevant list command. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
 
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
@@ -83,6 +128,15 @@ CMD ["python", "app.py"]
 ```
 
 **Line-by-line meaning:**
+- `FROM python:3.12-slim`: selects the base image/runtime; it may download during build.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `COPY app.py .`: copies files from the build context into the image.
+- `CMD ["python", "app.py"]`: default command when the container starts.
+
+**Expected result:** These lines produce build progress when used in a Dockerfile; app output appears when a container starts. If a build fails, inspect the first meaningful error.
+
+
+**Line-by-line meaning:**
 - `FROM python:3.12-slim`: chooses the base image/runtime; it may be downloaded during build.
 - `WORKDIR /app`: sets the working directory inside the image.
 - `COPY app.py .`: copies matching files from the build context into the image.
@@ -103,6 +157,16 @@ From that folder run:
 docker build -t hello-python .
 docker run --rm hello-python
 ```
+
+**Command-by-command: what it does and expected output**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker build -t hello-python .` | Builds an image from the Dockerfile and current context; -t sets its tag. | Build progress and a tagged image on success. |
+| `docker run --rm hello-python` | Creates and starts a container; -d detaches, --name sets its name, -p publishes ports. | Usually a container ID; open the mapped localhost URL for web apps. |
+
+Output details such as IDs, sizes, versions and progress vary by machine and cache state.
+
 
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
