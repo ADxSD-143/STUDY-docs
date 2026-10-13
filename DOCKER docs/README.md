@@ -1,6 +1,6 @@
 # Docker — Complete Learning Path (Beginner → Intermediate → Advanced)
 
-This is a guided, practical Docker course for a beginner. Each lesson uses plain-language explanations, commands, real-world examples, common mistakes, checkpoints and hands-on tasks. Follow the learning order and move forward after you understand each checkpoint.
+This is a guided, practical Docker course for a beginner. Each lesson uses plain-language explanations, commands, real-world examples, common mistakes, checkpoints and hands-on tasks. Follow the learning order and move forward only after you understand each checkpoint.
 
 ## How we will study
 
@@ -8,42 +8,34 @@ This is a guided, practical Docker course for a beginner. Each lesson uses plain
 2. Run commands in Docker Desktop Terminal or PowerShell when asked.
 3. Understand what each command changes and where data is stored.
 4. Answer the checkpoint in your own words.
-5. Record actual outcomes and errors in [Troubleshooting & Lab Log](troubleshooting.md).
+5. Record actual outcomes and errors in [Troubleshooting & Lab Log](09-troubleshooting.md).
 6. Do not mark a topic complete just because you read it.
 
-**Your environment:** Windows + Docker Desktop + WSL 2. Your screenshot showed the Docker disk image location as `D:\DockerData\DockerDesktopWSL`. Avoid destructive cleanup and manual WSL disk moves.
+**Your environment:** Windows + Docker Desktop + WSL 2. Your configured Docker disk image location is on the D: drive. Avoid destructive cleanup and manual WSL disk moves.
 
-## Stage 0 — Beginner foundations
+## Course sequence
 
-1. [Part 1 — What Is Docker and Why Do We Need It?](part-01-what-is-docker.md)
-2. [Part 2 — Image, Container, Dockerfile and Registry](part-02-image-container-dockerfile-registry.md)
-3. [Part 3–5 — Docker Engine concepts, First Commands and Your First Dockerfile](03-core-commands-and-dockerfile.md)
+| Order | Topic | What you will learn |
+|---|---|---|
+| 00 | [Start here](00-START-HERE.md) | How to use this folder and follow the sequence |
+| 01 | [Installation and setup](01-installation.md) | Docker Desktop, WSL 2, verification |
+| 02 | [Part 1 — What is Docker?](02-part-01-what-is-docker.md) | The problem Docker solves; portability and isolation |
+| 03 | [Part 2 — Image, container, Dockerfile and registry](03-part-02-image-container-dockerfile-registry.md) | The core mental model |
+| 04 | [Core commands and first Dockerfile](04-core-commands-and-dockerfile.md) | Run, inspect, build and troubleshoot basic containers |
+| 05 | [Networking, storage and Compose](05-network-storage-compose.md) | Ports, networks, environment, volumes and multi-service apps |
+| 06 | [Production images and security](06-production-images-security.md) | Image optimization, non-root users, secrets and reliability |
+| 07 | [CI/CD and advanced concepts](07-cicd-advanced.md) | Registries, image promotion, build systems and operations |
+| 08 | [CampusX ML capstone](08-ml-capstone-campusx.md) | Containerize a Streamlit ML app |
+| 09 | [Troubleshooting and lab log](09-troubleshooting.md) | Diagnose failures and record real results |
+| 10 | [Learning roadmap and resources](10-learning-roadmap.md) | Course map and maintained references |
 
-## Stage 1 — Practical application basics
+## Reference sheets
 
-5. [Ports, Networking, Environment, Storage and Compose](04-network-storage-compose.md)
-6. [Debugging and Common Failures](troubleshooting.md)
-
-## Stage 2 — Intermediate / production habits
-
-7. [Production Images, Build Optimization, Security and Reliability](05-production-images-security.md)
-8. [CI/CD, Registries, Advanced Concepts and Operations](06-cicd-advanced.md)
-
-## Stage 3 — Advanced concepts and real-world use
-
-9. [Capstone — Containerize the CampusX Laptop Price Predictor](07-ml-capstone-campusx.md)
-10. [Industry Scenarios and Future-relevant Skills](06-cicd-advanced.md#future-relevant-skills)
-
-## Reference pages
-
-- [Fundamentals cheat sheet](fundamentals.md)
-- [Installation and Setup](installation.md)
-- [Images and Containers reference](images-and-containers.md)
-- [Dockerfile reference lab](dockerfile.md)
-- [Ports, Networks and Volumes reference](ports-networks-volumes.md)
-- [Docker Compose reference](compose.md)
-- [Learning roadmap and resources](learning-roadmap.md)
-- [Troubleshooting and learning log](troubleshooting.md)
+- [Fundamentals cheat sheet](11-fundamentals.md)
+- [Images and containers reference](12-images-and-containers.md)
+- [Dockerfile reference lab](13-dockerfile.md)
+- [Ports, networks and volumes reference](14-ports-networks-volumes.md)
+- [Docker Compose reference](15-compose.md)
 
 ## Industry learning outcomes
 
