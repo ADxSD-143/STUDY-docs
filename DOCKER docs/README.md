@@ -1,6 +1,6 @@
 # Docker — Complete Learning Path (Beginner → Intermediate → Advanced)
 
-This is a guided, practical Docker course for a beginner. Each lesson uses plain-language explanations, commands, real-world examples, common mistakes, checkpoints and hands-on tasks. Follow the learning order and move forward only after you understand each checkpoint.
+This is a guided, practical Docker course for a beginner. Each lesson explains commands and code immediately where they appear, including purpose, important flags/lines, expected output or behaviour, and troubleshooting. Each lesson uses plain-language explanations, commands, real-world examples, common mistakes, checkpoints and hands-on tasks. Follow the learning order and move forward only after you understand each checkpoint.
 
 ## How we will study
 
@@ -29,11 +29,9 @@ This is a guided, practical Docker course for a beginner. Each lesson uses plain
 | 09 | [Troubleshooting and lab log](09-troubleshooting.md) | Diagnose failures and record real results |
 | 10 | [Learning roadmap and resources](10-learning-roadmap.md) | Course map and maintained references |
 
-## Command explanations and expected output
-
-- [Command-by-command guide: what commands/code do, expected output, and troubleshooting](16-command-by-command-output-guide.md)
-
 ## Reference sheets
+
+Every main lesson contains its own inline command/code explanations and expected results. Use the reference files below when you need a quick recap.
 
 - [Fundamentals cheat sheet](11-fundamentals.md)
 - [Images and containers reference](12-images-and-containers.md)

@@ -1,5 +1,8 @@
 # Docker — Learning Roadmap and Resource Notes
 
+> Course rule: command explanations, expected output, examples and troubleshooting belong directly beneath each command/code block in the relevant lesson—not only in a separate reference guide.
+
+
 This page connects the resources you are following to the complete guided Docker course. Study one lesson at a time and complete its checkpoint before moving forward.
 
 ## Main course
