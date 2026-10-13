@@ -96,6 +96,18 @@ services:
     image: redis:alpine
 ```
 
+**Line-by-line meaning:**
+- `services:` begins the list of services.
+- `web:` names a service.
+- `image: nginx:alpine` chooses the image for that service.
+- `ports:` names a service.
+- `- "8080:80"` is a port mapping list entry.
+- `cache:` names a service.
+- `image: redis:alpine` chooses the image for that service.
+
+**Expected result:** Saving this file alone prints nothing and starts no containers. After `docker compose up -d`, check `docker compose ps`, `docker compose logs`, and open the mapped localhost URL.
+
+
 **What this configuration does:** Defines services and their settings; saving YAML alone does not start containers. **Expected result:** no terminal output until you run the matching Compose command. Verify service state with `docker compose ps`, read logs with `docker compose logs`, and test the configured browser URL.
 
 

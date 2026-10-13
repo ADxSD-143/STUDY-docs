@@ -14,6 +14,9 @@ __pycache__
 .env.*
 ```
 
+**What this file does:** These patterns exclude matching files from the Docker build context. **Expected result:** saving the file prints nothing; the next build omits matching files from the context. Do not exclude files the application needs, and do not rely on this alone to protect secrets.
+
+
 **What this file does:** Each line is a pattern excluded from the Docker build context. **Expected result:** no terminal output from saving the file; later builds send fewer unnecessary files to the builder. Files excluded here cannot be copied into the image, so do not exclude runtime requirements.
 
 

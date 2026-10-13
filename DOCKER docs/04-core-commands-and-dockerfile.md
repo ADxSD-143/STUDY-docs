@@ -110,6 +110,14 @@ Create a folder such as D:\DockerLabs\hello-python. Save app.py:
 print("Hello from inside Docker!")
 ```
 
+**What this code does:** Python's `print()` writes the text inside the quotes to standard output.
+
+**Expected output if you run `python app.py` directly or run the built container:**
+~~~text
+Hello from inside Docker!
+~~~
+
+
 **What it does:** Python executes these statements in order. `print()` writes the following text to standard output.
 
 **Expected output:**
