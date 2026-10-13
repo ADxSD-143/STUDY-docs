@@ -21,12 +21,31 @@ COPY app.py .
 CMD ["python", "app.py"]
 ```
 
+**Line-by-line meaning:**
+- `FROM python:3.12-slim`: chooses the base image.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `COPY app.py .`: copies files from the build context.
+- `CMD ["python", "app.py"]`: default command when the container starts.
+
+**Expected result:** Docker build output appears when you build the image. Application output appears when the container runs. If it fails, check file names, context, dependencies and the first meaningful error.
+
+
 Build and run in that directory:
 
 ```bash
 docker build -t hello-python .
 docker run --rm hello-python
 ```
+
+**Command-by-command: purpose and expected result**
+
+| Command | What it does | What to expect |
+|---|---|---|
+| `docker build -t hello-python .` | Builds an image from the Dockerfile and current directory context. | Build progress and image tag on success. |
+| `docker run --rm hello-python` | Creates and starts a container from the specified image. | Usually a container ID; a browser test may be needed for web services. |
+
+IDs, timestamps, image sizes and progress text vary by machine and Docker version.
+
 
 Expected output: `Hello from inside Docker!`
 
