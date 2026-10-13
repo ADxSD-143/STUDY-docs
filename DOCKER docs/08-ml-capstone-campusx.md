@@ -21,33 +21,59 @@ Do not invent dependencies or retrain the model just to complete the Docker less
 ## Step 3 — Starting Dockerfile
 After confirming the correct Python and package versions, a starting template is:
 
-    FROM python:3.11-slim
-    WORKDIR /app
-    ENV PYTHONDONTWRITEBYTECODE=1
-    ENV PYTHONUNBUFFERED=1
-    COPY requirements.txt .
-    RUN pip install --no-cache-dir -r requirements.txt
-    COPY app.py df.pkl pipe.pkl ./
-    EXPOSE 8501
-    CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+```text
+FROM python:3.11-slim
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY app.py df.pkl pipe.pkl ./
+EXPOSE 8501
+CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+```
+
+**Code walkthrough:**
+- `FROM python:3.11-slim`: selects the base image.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `ENV PYTHONDONTWRITEBYTECODE=1`: sets a runtime/build environment variable.
+- `ENV PYTHONUNBUFFERED=1`: sets a runtime/build environment variable.
+- `COPY requirements.txt .`: copies files from the build context.
+- `RUN pip install --no-cache-dir -r requirements.txt`: runs during build; a failure stops the build.
+- `COPY app.py df.pkl pipe.pkl ./`: copies files from the build context.
+- `EXPOSE 8501`: documents the internal port but does not publish it.
+- `CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]`: default command at container startup.
+
+**Expected result:** Build progress. The application output appears only after starting a container; build failures usually identify a missing file, dependency or incompatible version.
+
 
 This is not guaranteed to build until the environment is verified. Choose a Python version compatible with the saved artifacts and include any other files the app truly requires.
 
 Add .dockerignore:
 
-    .git
-    .venv
-    __pycache__
-    *.pyc
-    .env
+```text
+.git
+.venv
+__pycache__
+*.pyc
+.env
+```
+
+**What it does / expected result:** This is an example/configuration block, not necessarily an executable command. Saving it alone does not run it; use the adjacent lesson instructions and verify the result there.
+
 
 Do not exclude model files required at runtime, and do not include unrelated datasets or secrets.
 
 ## Step 4 — Build and run
 From the project root:
 
-    docker build -t laptop-price-predictor:dev .
-    docker run --rm -p 8501:8501 laptop-price-predictor:dev
+```text
+docker build -t laptop-price-predictor:dev .
+docker run --rm -p 8501:8501 laptop-price-predictor:dev
+```
+
+**What it does / expected result:** This is an example/configuration block, not necessarily an executable command. Saving it alone does not run it; use the adjacent lesson instructions and verify the result there.
+
 
 Open http://localhost:8501 and submit a test configuration. If the host port is busy, use -p 8502:8501 and open http://localhost:8502.
 

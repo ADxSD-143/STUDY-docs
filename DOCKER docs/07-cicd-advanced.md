@@ -3,13 +3,18 @@
 ## 1. CI/CD image flow
 A common pipeline is:
 
-    Commit / Pull Request
-        -> tests and lint
-        -> build image
-        -> security and dependency checks
-        -> tag the image
-        -> push to a registry
-        -> deploy the tested artifact
+```text
+Commit / Pull Request
+    -> tests and lint
+    -> build image
+    -> security and dependency checks
+    -> tag the image
+    -> push to a registry
+    -> deploy the tested artifact
+```
+
+**What it does / expected result:** This is an example/configuration block, not necessarily an executable command. Saving it alone does not run it; use the adjacent lesson instructions and verify the result there.
+
 
 Continuous integration builds and tests changes frequently. Delivery/deployment automates the path from validated source to a releasable or deployed artifact. Never hardcode registry credentials in a workflow. Use repository secrets or a suitable identity mechanism and limit who can publish production images.
 
@@ -21,9 +26,14 @@ Buildx provides advanced build workflows including build cache and multi-platfor
 
 Useful commands:
 
-    docker buildx version
-    docker buildx ls
-    docker buildx inspect
+```text
+docker buildx version
+docker buildx ls
+docker buildx inspect
+```
+
+**What it does / expected result:** This is an example/configuration block, not necessarily an executable command. Saving it alone does not run it; use the adjacent lesson instructions and verify the result there.
+
 
 ## 4. Under the hood
 Linux containers use kernel mechanisms including namespaces (isolation of views such as process IDs and networking) and cgroups (resource accounting and limits). Docker Engine coordinates operations; containerd and an OCI runtime participate in lifecycle and execution. The exact implementation depends on platform and version.
