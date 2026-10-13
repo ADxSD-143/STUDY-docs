@@ -14,6 +14,9 @@ __pycache__
 .env.*
 ```
 
+**What this file does:** Each line is a pattern excluded from the Docker build context. **Expected result:** no terminal output from saving the file; later builds send fewer unnecessary files to the builder. Files excluded here cannot be copied into the image, so do not exclude runtime requirements.
+
+
 **What this example does:** Shows the configuration/data structure discussed above. Saving it alone does not execute it. **Expected result:** run the related command described nearby; success is shown by its status/output or the service behaving as configured.
 
 
@@ -30,6 +33,17 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 CMD ["python", "app.py"]
 ```
+
+**Line-by-line meaning:**
+- `FROM python:3.12-slim`: selects the base image.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `COPY requirements.txt .`: copies files from the build context; --chown sets ownership when specified.
+- `RUN pip install --no-cache-dir -r requirements.txt`: executes during image build; a failure stops the build.
+- `COPY . .`: copies files from the build context; --chown sets ownership when specified.
+- `CMD ["python", "app.py"]`: default command at container startup.
+
+**Expected result:** The image build should complete and tag the image if the base image, file paths and permissions are valid. The app's output appears when a container starts. Test permissions rather than assuming the example is production-ready.
+
 
 **Line-by-line meaning:**
 - `FROM python:3.12-slim`: chooses the base image/runtime; it may be downloaded during build.
@@ -71,6 +85,17 @@ COPY --chown=appuser:appuser app.py .
 USER appuser
 CMD ["python", "app.py"]
 ```
+
+**Line-by-line meaning:**
+- `FROM python:3.12-slim`: selects the base image.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `RUN useradd --create-home appuser`: executes during image build; a failure stops the build.
+- `COPY --chown=appuser:appuser app.py .`: copies files from the build context; --chown sets ownership when specified.
+- `USER appuser`: selects the user for subsequent runtime operations.
+- `CMD ["python", "app.py"]`: default command at container startup.
+
+**Expected result:** The image build should complete and tag the image if the base image, file paths and permissions are valid. The app's output appears when a container starts. Test permissions rather than assuming the example is production-ready.
+
 
 **Line-by-line meaning:**
 - `FROM python:3.12-slim`: chooses the base image/runtime; it may be downloaded during build.
