@@ -33,6 +33,20 @@ EXPOSE 8501
 CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
 ```
 
+**Line-by-line meaning:**
+- `FROM python:3.11-slim`: selects the base image/runtime.
+- `WORKDIR /app`: sets the working directory inside the image.
+- `ENV PYTHONDONTWRITEBYTECODE=1`: sets an environment variable.
+- `ENV PYTHONUNBUFFERED=1`: sets an environment variable.
+- `COPY requirements.txt .`: copies files from the build context.
+- `RUN pip install --no-cache-dir -r requirements.txt`: installs/builds dependencies during image build; failure stops the build.
+- `COPY app.py df.pkl pipe.pkl ./`: copies files from the build context.
+- `EXPOSE 8501`: documents the internal port; it does not publish a host port.
+- `CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]`: starts Streamlit when the container runs.
+
+**Expected result:** The build shows progress and should finish with an image tag if dependencies and saved-model compatibility are correct. The Streamlit URL appears when the container starts; open it in a browser and submit a test configuration.
+
+
 **Code walkthrough:**
 - `FROM python:3.11-slim`: selects the base image.
 - `WORKDIR /app`: sets the working directory inside the image.
@@ -71,6 +85,14 @@ From the project root:
 docker build -t laptop-price-predictor:dev .
 docker run --rm -p 8501:8501 laptop-price-predictor:dev
 ```
+
+**Command-by-command explanation and expected result**
+
+| Command | What it does | Expected result |
+|---|---|---|
+| `docker build -t laptop-price-predictor:dev .` | Runs the indicated build/run or project command. | Build commands show progress and an image tag on success; run commands show Streamlit startup logs. Open the published localhost URL to verify the app. |
+| `docker run --rm -p 8501:8501 laptop-price-predictor:dev` | Runs the indicated build/run or project command. | Build commands show progress and an image tag on success; run commands show Streamlit startup logs. Open the published localhost URL to verify the app. |
+
 
 **What it does / expected result:** This is an example/configuration block, not necessarily an executable command. Saving it alone does not run it; use the adjacent lesson instructions and verify the result there.
 
