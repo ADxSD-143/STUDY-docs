@@ -29,6 +29,10 @@ This is a guided, practical Docker course for a beginner. Each lesson uses plain
 | 09 | [Troubleshooting and lab log](09-troubleshooting.md) | Diagnose failures and record real results |
 | 10 | [Learning roadmap and resources](10-learning-roadmap.md) | Course map and maintained references |
 
+## Command explanations and expected output
+
+- [Command-by-command guide: what commands/code do, expected output, and troubleshooting](16-command-by-command-output-guide.md)
+
 ## Reference sheets
 
 - [Fundamentals cheat sheet](11-fundamentals.md)
