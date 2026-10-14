@@ -60,6 +60,24 @@ flowchart TD
 - [Watch: MCP stdio vs Streamable HTTP transport explained — YouTube search](https://www.youtube.com/results?search_query=MCP%20stdio%20vs%20Streamable%20HTTP%20transport%20explained)
 - **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[Choose how client reaches server] --> B{Where does server run?}
+ B -->|Local child process| C[stdio]
+ B -->|Remote or shared endpoint| D[Streamable HTTP]
+ C --> E[Protocol messages on stdout; logs on stderr]
+ D --> F[TLS, authentication, authorization, network controls]
+```
+
+## Video reference
+
+- [Watch: MCP stdio vs Streamable HTTP transport explained — YouTube search](https://www.youtube.com/results?search_query=MCP%20stdio%20vs%20Streamable%20HTTP%20transport%20explained)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Is stdio or HTTP a type of business logic?
