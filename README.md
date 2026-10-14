@@ -13,6 +13,9 @@ Personal learning notes and technical references, maintained part by part with p
 - [Module 01 — Text preprocessing](NLP/01-text-preprocessing.md)
 - [Module 02 — Text representation](NLP/02-text-representation.md)
 - [Module 03 — Classical ML for text](NLP/03-classical-ml-for-text.md)
+- [Project 1 — Text classifier](NLP/projects/project-1-text-classifier/README.md)
+- [Project 2 — Transformer document intelligence](NLP/projects/project-2-transformer-document-intelligence/README.md)
+- [Project 3 — RAG knowledge assistant](NLP/projects/project-3-rag-knowledge-assistant/README.md)
 
 ## DevOps
 - [Docker — Complete Learning Path (Beginner to Advanced)](DOCKER%20docs/README.md)
