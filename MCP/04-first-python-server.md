@@ -125,6 +125,26 @@ flowchart TD
 - [Watch: Build MCP server Python SDK FastMCP tutorial — YouTube search](https://www.youtube.com/results?search_query=Build%20MCP%20server%20Python%20SDK%20FastMCP%20tutorial)
 - **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[Create project and virtual environment] --> B[Install pinned MCP SDK]
+ B --> C[Create FastMCP server]
+ C --> D[Write typed Python functions]
+ D --> E[Register functions with tool decorator]
+ E --> F[Run server over stdio]
+ F --> G[Test tools with Inspector]
+ G --> H[Check expected outputs]
+```
+
+## Video reference
+
+- [Watch: Build MCP server Python SDK FastMCP tutorial — YouTube search](https://www.youtube.com/results?search_query=Build%20MCP%20server%20Python%20SDK%20FastMCP%20tutorial)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Why does a server need a name?
