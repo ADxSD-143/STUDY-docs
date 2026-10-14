@@ -55,6 +55,26 @@ A useful pull request states the problem, the minimal change, how it was tested,
 - Did I avoid adding secrets, generated files, or unrelated formatting changes?
 - Can a maintainer understand the diff quickly?
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[Read README and contribution guide] --> B[Install exact dependencies]
+ B --> C[Run existing tests]
+ C --> D[Reproduce a bounded issue]
+ D --> E[Make a small focused change]
+ E --> F[Add or update tests and docs]
+ F --> G[Run checks and inspect diff]
+ G --> H[Open focused pull request]
+```
+
+## Video reference
+
+- [Watch: MCP open source contribution GitHub issues tests tutorial — YouTube search](https://www.youtube.com/results?search_query=MCP%20open%20source%20contribution%20GitHub%20issues%20tests%20tutorial)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Why should you read existing tests before editing a tool?
