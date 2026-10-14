@@ -23,6 +23,30 @@
 13. [12 — Mini capstone: ML model helper](12-capstone-ml-helper.md)
 14. [Glossary and quick revision](glossary.md)
 
+## Learning map
+
+```mermaid
+flowchart TD
+    A[01: MCP basics] --> B[02: Host, client, server]
+    B --> C[03: Tools, resources, prompts]
+    C --> D[04: Build first Python server]
+    D --> E[05: Inspect and debug]
+    E --> F[06-08: AI/ML use cases, client, transports]
+    F --> G[09-10: Security and testing]
+    G --> H[11: Open-source workflow]
+    H --> I[12: ML helper capstone]
+```
+
+## Video learning support
+
+Each numbered lesson now includes a **topic-specific YouTube search link** and a Mermaid flowchart. The links open current search results rather than pinning the course to one creator's video that may become outdated.
+
+- [Beginner overview: MCP explained, tools, resources and prompts](https://www.youtube.com/results?search_query=Model+Context+Protocol+MCP+beginner+tools+resources+prompts)
+- [Python MCP server and Inspector walkthrough](https://www.youtube.com/results?search_query=Python+MCP+server+FastMCP+Inspector+tutorial)
+- [MCP security and safe tool design](https://www.youtube.com/results?search_query=MCP+server+security+prompt+injection+tool+permissions)
+
+**Video rule:** use the video to build intuition, then follow the written lesson and official docs for code. Check SDK version compatibility before copying code from a video.
+
 ## The scope: only what you need
 
 ### Core — learn first
