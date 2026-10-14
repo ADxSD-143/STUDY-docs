@@ -95,6 +95,26 @@ flowchart TD
 - [Watch: MCP Inspector test debug server tutorial — YouTube search](https://www.youtube.com/results?search_query=MCP%20Inspector%20test%20debug%20server%20tutorial)
 - **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[Start server in dev workflow] --> B[Inspector connects]
+ B --> C{Tool appears in discovery?}
+ C -- No --> D[Check file, decorator, environment, logs]
+ C -- Yes --> E[Call tool with test input]
+ E --> F{Expected result?}
+ F -- No --> G[Test core Python function and inputs]
+ F -- Yes --> H[Test edge cases and invalid inputs]
+```
+
+## Video reference
+
+- [Watch: MCP Inspector test debug server tutorial — YouTube search](https://www.youtube.com/results?search_query=MCP%20Inspector%20test%20debug%20server%20tutorial)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. What is the difference between listing a tool and calling it?
