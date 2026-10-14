@@ -85,6 +85,27 @@ flowchart TD
 - [Watch: MCP host client server architecture request flow — YouTube search](https://www.youtube.com/results?search_query=MCP%20host%20client%20server%20architecture%20request%20flow)
 - **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[User asks a question] --> B[Host coordinates model and policy]
+ B --> C[MCP client sends request]
+ C <--> D[MCP server]
+ D --> E[Python function, API, or data source]
+ E --> D
+ D --> C
+ C --> B
+ B --> F[Host presents result]
+```
+
+## Video reference
+
+- [Watch: MCP host client server architecture request flow — YouTube search](https://www.youtube.com/results?search_query=MCP%20host%20client%20server%20architecture%20request%20flow)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Which component offers tools and resources?
