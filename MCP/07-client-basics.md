@@ -45,6 +45,25 @@ The official Python SDK has changed across major versions. Some documentation on
 
 Official reference: [Python SDK client docs](https://py.sdk.modelcontextprotocol.io/).
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows from top to bottom; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+    A[Client connects to server] --> B[Initialize and negotiate capabilities]
+    B --> C[List tools, resources, or prompts]
+    C --> D[Choose permitted capability]
+    D --> E[Send request with arguments]
+    E --> F[Inspect result or error]
+    F --> G[Close connection cleanly]
+```
+
+## Video reference
+
+- [Watch: Python MCP client tutorial list tools call tool — YouTube search](https://www.youtube.com/results?search_query=Python%20MCP%20client%20tutorial%20list%20tools%20call%20tool)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Why does a client list tools before it calls one?
