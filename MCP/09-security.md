@@ -61,6 +61,27 @@ def normalize_user_text(text: str) -> str:
 
 Input validation does not by itself make a tool secure. Authorization and least privilege are separate requirements.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows from top to bottom; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+    A[Tool request arrives] --> B[Validate type, size, and allowed values]
+    B --> C{Caller authorized?}
+    C -- No --> D[Reject safely]
+    C -- Yes --> E{High-impact side effect?}
+    E -- Yes --> F[Apply confirmation and stronger controls]
+    E -- No --> G[Run least-privilege operation]
+    F --> H[Return limited result and safe logs]
+    G --> H
+```
+
+## Video reference
+
+- [Watch: MCP server security prompt injection tool permissions tutorial — YouTube search](https://www.youtube.com/results?search_query=MCP%20server%20security%20prompt%20injection%20tool%20permissions%20tutorial)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Why is a read-only tool usually easier to secure than a tool that changes production data?
