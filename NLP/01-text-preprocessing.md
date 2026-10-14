@@ -2,9 +2,24 @@
 
 **Level:** Beginner → practical NLP engineer  
 **Main lesson:** [Text Preprocessing | NLP Course Lecture 3](https://youtu.be/6C0sLtw5ctc)  
-**Goal:** Learn what each preprocessing step does, which Python library to use, how to implement it, how to verify its output, and when NOT to use it.
+**Goal:** Learn what each preprocessing step does, which Python library to use, how to implement it, how to verify its output, and when NOT to use it.  
+**Estimated time:** 90–150 minutes for the core lesson; optional sections can be studied later.
 
 > **Core principle:** preprocessing is task-dependent. The goal is not to make text look clean; the goal is to preserve the information your model needs.
+
+## Minimum path — start here
+
+If you are short on time, focus on these **Core** steps first:
+
+1. **Core:** inspect raw data, preserve the original text, handle missing values.
+2. **Core:** parse HTML only when markup exists; normalize Unicode/whitespace if needed.
+3. **Core:** decide whether URLs/IDs should be removed, replaced or extracted.
+4. **Core:** choose the correct tokenizer for the downstream model.
+5. **Core:** compare preprocessing variants with the same evaluation setup.
+
+Treat lowercasing, punctuation removal, stopword removal, spelling correction, emoji conversion, stemming and lemmatization as **Optional experiments**—not automatic steps. Language detection, PII masking and web/PDF extraction become **Core** when the product's data or compliance requirements need them.
+
+**Industry relevance:** preprocessing is used in support-ticket routing, search and RAG ingestion, moderation, fraud/spam detection, log analytics, multilingual customer feedback and privacy-aware data pipelines. PII masking may be required by policy or regulation, but a simple regex is not a compliance guarantee.
 
 ## 0. Setup: use the right libraries
 
@@ -18,7 +33,7 @@ python -m venv .venv
 # source .venv/bin/activate
 
 python -m pip install --upgrade pip
-python -m pip install pandas beautifulsoup4 nltk spacy emoji contractions ftfy
+python -m pip install pandas scikit-learn beautifulsoup4 nltk spacy emoji contractions ftfy
 ```
 
 **What each package is for**
@@ -768,6 +783,8 @@ Create a dataset containing movie title, overview/description and genre using an
 5. In Module 03, train a TF-IDF baseline classifier.
 6. Report precision, recall, F1 and a confusion matrix; inspect incorrect predictions.
 7. Document the source, licensing/terms, preprocessing choices and limitations.
+
+**Estimated assignment time:** 2–4 hours for a small dataset and initial baseline; more if you need to obtain API access, resolve licensing questions, clean labels or build a multi-label evaluation.
 
 Do not invent labels or claim improvement without measured results.
 
