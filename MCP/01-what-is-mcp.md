@@ -99,6 +99,24 @@ flowchart TD
 - [Watch: MCP explained for beginners — YouTube search](https://www.youtube.com/results?search_query=MCP%20explained%20for%20beginners)
 - **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[AI application needs outside data or an action] --> B{Need a reusable integration?}
+ B -- No --> C[Use a normal function or API]
+ B -- Yes --> D[Expose a capability through an MCP server]
+ D --> E[MCP client discovers and requests it]
+ E --> F[Server returns result to the host]
+```
+
+## Video reference
+
+- [Watch: MCP explained for beginners — YouTube search](https://www.youtube.com/results?search_query=MCP%20explained%20for%20beginners)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint — answer before moving on
 
 1. A model is the same thing as MCP. True or false? Explain.
