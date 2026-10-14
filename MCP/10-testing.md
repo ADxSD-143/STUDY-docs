@@ -59,6 +59,27 @@ python -m pytest -q
 | Wrong type | `None` passed directly to the Python function | Clear type error or explicitly defined behavior |
 | Large input | Above documented limit | Rejected or handled within configured limits |
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows from top to bottom; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+    A[Write core Python function] --> B[Unit tests]
+    B --> C[Register MCP capability]
+    C --> D[Protocol integration test or Inspector]
+    D --> E[System test with intended host and transport]
+    E --> F{All expected behavior verified?}
+    F -- No --> G[Reproduce and isolate failing layer]
+    G --> B
+    F -- Yes --> H[Document results and limitations]
+```
+
+## Video reference
+
+- [Watch: MCP server testing Python Inspector integration tests tutorial — YouTube search](https://www.youtube.com/results?search_query=MCP%20server%20testing%20Python%20Inspector%20integration%20tests%20tutorial)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. What does a unit test verify that a protocol test does not?
