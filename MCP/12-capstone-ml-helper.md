@@ -53,6 +53,27 @@ It contains ordinary Python functions. `server.py` registers those functions wit
 
 A reviewer can clone the project, follow the README, start it, discover each capability, reproduce the example results, and understand what is intentionally out of scope.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[Define capstone scope] --> B[Implement reusable logic.py functions]
+ B --> C[Write unit tests]
+ C --> D[Register MCP tools and resource]
+ D --> E[Run server and test with Inspector]
+ E --> F{Acceptance criteria pass?}
+ F -- No --> G[Fix the smallest failing part]
+ G --> B
+ F -- Yes --> H[Document setup, outputs, limits, and demo]
+```
+
+## Video reference
+
+- [Watch: Build Python MCP server from scratch tools resources Inspector — YouTube search](https://www.youtube.com/results?search_query=Build%20Python%20MCP%20server%20from%20scratch%20tools%20resources%20Inspector)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Reflection questions
 
 1. Which logic belongs in `logic.py`, and which belongs in `server.py`?
