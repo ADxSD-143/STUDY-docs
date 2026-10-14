@@ -112,6 +112,26 @@ flowchart TD
 - [Watch: MCP server Python AI ML integration tutorial — YouTube search](https://www.youtube.com/results?search_query=MCP%20server%20Python%20AI%20ML%20integration%20tutorial)
 - **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+ A[AI/ML project] --> B[Existing tested Python function]
+ B --> C[MCP wrapper validates and describes inputs]
+ C --> D[MCP client calls tool]
+ D --> E[Function runs inference or calculation]
+ E --> F[Structured result returned]
+ F --> G[Host uses result as context]
+ C -. preserves .-> H[Backend authorization and limits]
+```
+
+## Video reference
+
+- [Watch: MCP server Python AI ML integration tutorial — YouTube search](https://www.youtube.com/results?search_query=MCP%20server%20Python%20AI%20ML%20integration%20tutorial)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials matching the SDK major version in the code; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Why should the MCP wrapper call existing application logic rather than contain every business rule itself?
