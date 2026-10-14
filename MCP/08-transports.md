@@ -42,6 +42,24 @@ Older examples may mention HTTP+SSE. Transport support can vary by protocol/SDK 
 
 Do not deploy a local development server publicly just because the tool works on your machine.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows from top to bottom; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+    A[Choose how client reaches server] --> B{Where does server run?}
+    B -->|Local child process| C[stdio]
+    B -->|Remote service or shared endpoint| D[Streamable HTTP]
+    C --> E[Keep protocol messages on stdout; logs on stderr]
+    D --> F[Configure TLS, authentication, authorization, and network controls]
+```
+
+## Video reference
+
+- [Watch: MCP stdio vs Streamable HTTP transport explained — YouTube search](https://www.youtube.com/results?search_query=MCP%20stdio%20vs%20Streamable%20HTTP%20transport%20explained)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 1. Is stdio or HTTP a type of business logic?
