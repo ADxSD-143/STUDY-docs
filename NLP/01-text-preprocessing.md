@@ -221,7 +221,7 @@ print(text.translate(delete_ascii_punctuation))
 This demonstrates why punctuation deletion can damage contractions and tone. A safer alternative for some classical pipelines is to replace punctuation with spaces:
 
 ```python
-text = re.sub(r"[^w\s]", " ", text)
+text = re.sub(r"[^\w\s]", " ", text)
 text = re.sub(r"\s+", " ", text).strip()
 print(text)
 ```
@@ -444,10 +444,10 @@ def clean_for_classical_baseline(text):
     text = BeautifulSoup(text, "html.parser").get_text(" ", strip=True)
 
     # Preserve the fact that a URL existed.
-    text = re.sub(r"(?i)\\b(?:https?://|www\\.)\\S+", " URL ", text)
+    text = re.sub(r"(?i)\b(?:https?://|www\.)\S+", " URL ", text)
 
     # Normalize repeated whitespace.
-    text = re.sub(r"\\s+", " ", text).strip()
+    text = re.sub(r"\s+", " ", text).strip()
     return text
 
 examples = [
@@ -554,8 +554,8 @@ def minimal_clean(text):
 
 def conservative_clean(text):
     text = BeautifulSoup(str(text), "html.parser").get_text(" ", strip=True)
-    text = re.sub(r"(?i)\\b(?:https?://|www\\.)\\S+", " URL ", text)
-    text = re.sub(r"\\s+", " ", text).strip()
+    text = re.sub(r"(?i)\b(?:https?://|www\.)\S+", " URL ", text)
+    text = re.sub(r"\s+", " ", text).strip()
     return text
 
 configs = {
@@ -618,12 +618,12 @@ import re
 
 def mask_basic_pii(text):
     text = re.sub(
-        r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+        r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}",
         "[EMAIL]",
         str(text),
     )
     # Illustrative international/Indian-style phone pattern; validate locally.
-    text = re.sub(r"(?<!\\w)(?:\\+?\\d[\\d ()-]{7,}\\d)(?!\\w)", "[PHONE]", text)
+    text = re.sub(r"(?<!\w)(?:\+?\d[\d ()-]{7,}\d)(?!\w)", "[PHONE]", text)
     return text
 
 print(mask_basic_pii("Contact me at user@example.com or +91 98765 43210"))
@@ -728,7 +728,7 @@ def text_eda(series, label):
     non_empty = texts[texts.str.strip().ne("")]
     vocab = set(" ".join(non_empty).lower().split())
 
-    print(f"\\n--- {label} ---")
+    print(f"\n--- {label} ---")
     print("Rows:", len(texts))
     print("Empty rows:", int(texts.str.strip().eq("").sum()))
     print("Exact duplicate rows:", int(texts.duplicated().sum()))
