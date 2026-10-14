@@ -503,7 +503,7 @@ X = df["clean_review"]
 y = [1, 1, 0, 0]  # Example labels only; real labels must come from your dataset.
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.25, random_state=42, stratify=y
+    X, y, test_size=0.5, random_state=42, stratify=y
 )
 
 model = Pipeline([
@@ -514,7 +514,7 @@ model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 ```
 
-The labels above are only illustrative and the tiny example is not a meaningful evaluation dataset. In a real project, use verified labels, a sufficiently large split, and metrics such as precision, recall and F1. The pipeline learns the vocabulary from training data and reuses it for test data.
+The labels above are only illustrative. The split uses 50% because this toy dataset has only four rows; it is still far too small to evaluate a real model. In a real project, use verified labels, a sufficiently large dataset, and metrics such as precision, recall and F1. The pipeline learns the vocabulary from training data and reuses it for test data.
 
 ## 8. Practical comparison experiment
 
@@ -525,6 +525,222 @@ Do not assume a “cleaner” version is better. Compare at least:
 4. Stopword removal and/or stemming only as separate experiments.
 
 Use the same split and model settings; compare macro-F1 or task-appropriate metrics. Inspect errors and keep a record of the exact transformation configuration.
+
+## 8.1 Runnable preprocessing comparison experiment
+
+This small, self-contained example compares a minimal baseline with a more normalized version using the **same cross-validation folds and classifier**. The text and labels are illustrative only; use a real, representative dataset for conclusions.
+
+```python
+import re
+import pandas as pd
+from bs4 import BeautifulSoup
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.pipeline import Pipeline
+
+texts = [
+    "I love this product", "This is excellent", "Really happy with the quality",
+    "Amazing service and fast delivery", "Works perfectly", "Very good purchase",
+    "I would recommend it", "Fantastic quality", "Loved using this", "Great value",
+    "I hate this product", "This is terrible", "Really unhappy with the quality",
+    "Awful service and late delivery", "It broke immediately", "Very bad purchase",
+    "I would not recommend it", "Horrible quality", "Regret buying this", "Waste of money",
+]
+labels = [1] * 10 + [0] * 10  # 1 = positive, 0 = negative; toy labels
+
+def minimal_clean(text):
+    return str(text)
+
+def conservative_clean(text):
+    text = BeautifulSoup(str(text), "html.parser").get_text(" ", strip=True)
+    text = re.sub(r"(?i)\\b(?:https?://|www\\.)\\S+", " URL ", text)
+    text = re.sub(r"\\s+", " ", text).strip()
+    return text
+
+configs = {
+    "minimal": [minimal_clean(t) for t in texts],
+    "conservative": [conservative_clean(t) for t in texts],
+    "lowercase": [conservative_clean(t).lower() for t in texts],
+}
+
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+for name, cleaned_texts in configs.items():
+    model = Pipeline([
+        ("tfidf", TfidfVectorizer()),
+        ("classifier", LogisticRegression(max_iter=1000)),
+    ])
+    scores = cross_val_score(
+        model, cleaned_texts, labels, cv=cv, scoring="f1_macro"
+    )
+    print(f"{name}: mean macro-F1={scores.mean():.3f}; folds={scores.round(3)}")
+```
+
+**How to read it:** each configuration gets the same five folds; TF-IDF vocabulary is fitted inside the scikit-learn pipeline on each training fold, reducing leakage risk. The tiny, deliberately simple dataset is for learning code structure—not for claiming that one configuration is better. On your real dataset, include enough examples, inspect errors, and record the dataset split and random seed. Add punctuation/stopword variants as separate configurations rather than combining all changes at once.
+
+## 8.2 Language detection and Hinglish / Indic text
+
+Language detection can help route text to the right pipeline, but it is unreliable on very short messages, names, emojis and code-mixed Hinglish. Treat the result as a hint, not ground truth.
+
+```bash
+python -m pip install langdetect
+```
+
+```python
+from langdetect import detect, DetectorFactory
+
+# Make langdetect more repeatable for the same input.
+DetectorFactory.seed = 0
+
+samples = ["This delivery was late", "यह सामान अच्छा है"]
+for text in samples:
+    try:
+        print(text, "->", detect(text))
+    except Exception as error:
+        print("Could not detect:", error)
+```
+
+For very short text or code-mixed text such as “delivery late hai yaar”, language detection may choose only one language or return unstable results. Consider [Lingua](https://github.com/pemistahl/lingua-py) or a validated fastText language-identification model for your use case; evaluate accuracy on your own language mix.
+
+**Hinglish and Indic tooling**
+- [Indic NLP Library](https://github.com/anoopkunchukuttan/indic_nlp_library): Indic-language normalization and other language utilities; check its supported scripts and setup for your task.
+- [indic-transliteration](https://github.com/indic-transliteration/indic_transliteration_py): transliteration between supported Indic scripts/schemes; it is not a universal Hinglish spell corrector.
+- [AI4Bharat IndicXlit](https://github.com/AI4Bharat/IndicXlit): transliteration for supported Indic languages and scripts; validate model/language support and deployment requirements first.
+- Romanized Hindi/Hinglish has no single standard spelling (“hai”, “h”, “he”). Keep original text, use a reviewed mapping only when justified, and test on representative examples.
+- Do not assume NLTK's English stopword list is appropriate for Hindi or Hinglish. Verify language-specific resources and avoid stopword removal until its impact is measured.
+
+## 8.3 Mask sensitive information (PII)
+
+When text may contain personal information, masking can reduce exposure in logs, demos and downstream processing. Regex is only a baseline; it does not reliably identify every person, address, account number or phone format.
+
+```python
+import re
+
+def mask_basic_pii(text):
+    text = re.sub(
+        r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+        "[EMAIL]",
+        str(text),
+    )
+    # Illustrative international/Indian-style phone pattern; validate locally.
+    text = re.sub(r"(?<!\\w)(?:\\+?\\d[\\d ()-]{7,}\\d)(?!\\w)", "[PHONE]", text)
+    return text
+
+print(mask_basic_pii("Contact me at user@example.com or +91 98765 43210"))
+```
+
+For production workflows, assess [Microsoft Presidio](https://github.com/microsoft/presidio), which provides PII detection/anonymization components. Configure recognizers for the countries and data types you handle, evaluate false positives/negatives, restrict access, and follow your organization's retention/security policies. Masking is not a guarantee of anonymization.
+
+## 8.4 Social-media text, hashtags and elongated words
+
+NLTK provides a tokenizer intended for social-media text:
+
+```python
+from nltk.tokenize import TweetTokenizer
+
+tokenizer = TweetTokenizer(
+    preserve_case=False,
+    reduce_len=True,
+    strip_handles=False,
+)
+text = "Soooo good!!! @user #MovieNight"
+print(tokenizer.tokenize(text))
+```
+
+- `reduce_len=True` reduces very long character repetitions (for example, “sooooo”); inspect whether intensity matters for your task.
+- `strip_handles=False` preserves mentions. Set it to `True` only if handles are irrelevant or need removal.
+- Hashtags can carry topic/sentiment information. Preserve them, remove only the `#` symbol, or split compound hashtags using a tested method.
+- Number/date placeholders (for example, `<PHONE>`, `<DATE>`, `<ORDER_ID>`) can generalize patterns, but do not replace all numbers blindly: dates, prices, ratings and quantities can be important.
+- Accent stripping tools such as [Unidecode](https://pypi.org/project/Unidecode/) can help specific matching tasks, but may lose linguistic distinctions. Use only if the target task benefits from it.
+
+## 8.5 Extract clean text from web pages and PDFs
+
+For retrieval-augmented generation (RAG), the extraction stage should preserve headings, sections and page/source metadata—not just flatten everything into one string.
+
+**Web pages:** [Trafilatura](https://trafilatura.readthedocs.io/) is designed to extract main text from web pages while reducing boilerplate.
+
+```bash
+python -m pip install trafilatura
+```
+
+```python
+import trafilatura
+
+downloaded = trafilatura.fetch_url("https://example.com")
+if downloaded:
+    main_text = trafilatura.extract(downloaded)
+    print(main_text[:500] if main_text else "No main text extracted")
+```
+
+Use only pages you are permitted to access; handle fetch failures, robots/terms, timeouts and source attribution in a real ingestion job.
+
+**PDF files:** [PyMuPDF](https://pymupdf.readthedocs.io/) can extract text and page information. [pdfplumber](https://github.com/jsvine/pdfplumber) is another option when layout/table inspection matters.
+
+```bash
+python -m pip install pymupdf
+```
+
+```python
+import fitz  # PyMuPDF
+
+with fitz.open("document.pdf") as pdf:
+    for page_number, page in enumerate(pdf, start=1):
+        page_text = page.get_text("text")
+        print(f"--- page {page_number} ---")
+        print(page_text[:300])
+```
+
+Scanned PDFs may require OCR; ordinary text extraction cannot recover text that exists only as pixels. Keep page number, document ID and source URI as metadata for later citations. Choose chunk boundaries after extraction, preferably using headings/paragraphs before falling back to fixed-size chunks.
+
+## 8.6 spaCy performance for batches
+
+Calling a full spaCy pipeline one text at a time can be slow. For batches, use `nlp.pipe`; disable components you do not need.
+
+```python
+import spacy
+
+nlp = spacy.load("en_core_web_sm", disable=["ner", "parser"])
+texts = [
+    "The cars were running quickly.",
+    "The product arrived yesterday.",
+    "Support answered the question.",
+]
+
+for doc in nlp.pipe(texts, batch_size=64, n_process=1):
+    print([(token.text, token.lemma_) for token in doc])
+```
+
+- Disable only components you truly do not need; parser/NER output will not be available when disabled.
+- Increase `batch_size` after benchmarking.
+- `n_process` can use multiprocessing, but overhead and platform constraints may make it slower on small datasets or Windows. Benchmark on your machine.
+- If you only need tokenization, use a lighter pipeline rather than loading unnecessary components.
+
+## 8.7 Quick text EDA before and after cleaning
+
+Use these checks to understand whether a transformation removes noise or useful information.
+
+```python
+import pandas as pd
+
+def text_eda(series, label):
+    texts = series.fillna("").astype(str)
+    lengths = texts.str.split().str.len()
+    non_empty = texts[texts.str.strip().ne("")]
+    vocab = set(" ".join(non_empty).lower().split())
+
+    print(f"\\n--- {label} ---")
+    print("Rows:", len(texts))
+    print("Empty rows:", int(texts.str.strip().eq("").sum()))
+    print("Exact duplicate rows:", int(texts.duplicated().sum()))
+    print("Token length summary:")
+    print(lengths.describe())
+    print("Unique whitespace-token vocabulary:", len(vocab))
+
+text_eda(df["review"], "raw")
+text_eda(df["clean_review"], "cleaned")
+```
+
+This vocabulary count is a quick whitespace-token approximation, not the vocabulary a TF-IDF or Transformer tokenizer will use. OOV rate is model/tokenizer-specific; calculate it with the actual training vocabulary/tokenizer rather than treating this estimate as universal. Also inspect histograms/quantiles, language distribution, label balance, duplicate leakage across splits and a sample of before/after rows.
 
 ## 9. Common mistakes
 
@@ -543,7 +759,7 @@ Use the same split and model settings; compare macro-F1 or task-appropriate metr
 
 ## 10. Assignment — movie-description dataset
 
-Create a dataset containing movie title, overview/description and genre using an allowed data source (for example, TMDB with its API terms respected).
+Create a dataset containing movie title, overview/description and genre using an allowed data source (for example, TMDB with its API terms respected). **Decide the label format first:** if each movie is assigned exactly one primary genre, this is single-label classification; if a movie can have multiple genres, it is multi-label classification and needs a multi-label strategy (for example, `OneVsRestClassifier` with indicator labels and a multi-label F1 metric). Do not silently treat multiple genres as one ordinary class.
 
 1. Inspect missing descriptions, duplicates, language and label distribution.
 2. Preserve the original overview.
