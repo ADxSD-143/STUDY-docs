@@ -85,6 +85,26 @@ Avoid:
 
 A good description explains what the capability does, required inputs, output, and important limitations. Do not hide permission requirements in an ambiguous description.
 
+## Visual flowchart
+
+This diagram summarizes the lesson. Follow the arrows from top to bottom; diamond nodes represent a decision.
+
+```mermaid
+flowchart TD
+    A[What capability is needed?] --> B{Purpose}
+    B -->|Perform a computation or action| C[Tool]
+    B -->|Provide readable context| D[Resource]
+    B -->|Offer a reusable instruction template| E[Prompt]
+    C --> F[Validate inputs and control side effects]
+    D --> G[Return permitted data]
+    E --> H[Provide template to host or user]
+```
+
+## Video reference
+
+- [Watch: MCP tools resources prompts explained — YouTube search](https://www.youtube.com/results?search_query=MCP%20tools%20resources%20prompts%20explained)
+- **How to use it:** Watch only the parts related to this lesson, then return here and answer the checkpoint. Prefer recent tutorials that match the SDK major version used in the code. Video APIs can age; the written lesson and official docs remain the source of truth.
+
 ## Checkpoint
 
 Classify each as a **tool**, **resource**, or **prompt**:
