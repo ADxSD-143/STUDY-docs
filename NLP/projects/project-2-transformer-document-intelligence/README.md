@@ -1,29 +1,66 @@
 # Project 2 — Transformer Document Intelligence
 
-**Status:** Planned
+**Status:** Planned · **Type:** Pretrained Transformer + task evaluation  
+**Goal:** Adapt or fine-tune a pretrained Transformer for one clearly scoped document task.
 
-## Objective
-Fine-tune or adapt a pretrained Transformer for a clearly scoped NLP task, such as named-entity recognition (NER) or text classification.
+## Choose a narrow task
+Pick **one** initial task:
+- **NER:** extract names, organizations, dates, locations or defined domain entities.
+- **Text classification:** assign a category to each text/document.
 
-## Planned workflow
-1. Choose a task and a documented dataset with suitable usage rights.
-2. Define labels and the train/validation/test split.
+Keep the first version small enough to evaluate and explain.
+
+## System flow
+
+```mermaid
+flowchart TD
+    A[Dataset and label definitions] --> B[Validate / split data]
+    B --> C[Non-transformer baseline]
+    B --> D[Tokenizer + pretrained Transformer]
+    D --> E[Fine-tuning or task head]
+    C --> F[Evaluate on same held-out split]
+    E --> F
+    F --> G[Error analysis and model selection]
+    G --> H[Inference wrapper / optional API]
+```
+
+## Workflow
+1. Choose a licensed, documented dataset and define the labels.
+2. Validate annotations and create leakage-resistant train/validation/test splits.
 3. Establish a simple baseline.
-4. Select an appropriate pretrained model using Hugging Face.
-5. Fine-tune with reproducible settings; consider parameter-efficient methods only if useful.
-6. Evaluate with task-appropriate metrics (for NER, include entity-level precision, recall and F1).
-7. Analyze errors, document compute requirements and provide inference instructions.
+4. Choose a suitable pretrained model and its matching tokenizer.
+5. Fine-tune only when the data, task and compute justify it; consider LoRA/PEFT for suitable models.
+6. Evaluate correctly: entity-level precision/recall/F1 for NER; class-wise metrics for classification.
+7. Compare baseline vs Transformer; inspect false positives, false negatives and ambiguous cases.
+8. Document hardware, time, package versions and inference requirements.
+9. Optional: expose inference via FastAPI and add tests.
 
-## Results
+## Results table
 | Model | Split | Metrics | Compute/settings | Notes |
 |---|---|---|---|---|
 | Baseline | Pending | — | — | Not measured |
 | Pretrained/fine-tuned Transformer | Pending | — | — | Not measured |
 
+## Engineering checklist
+- [ ] Model and tokenizer compatible
+- [ ] Label mapping saved with the model
+- [ ] Correct task-level metrics
+- [ ] Baseline and held-out test comparison
+- [ ] Error examples and limitations
+- [ ] Reproducible settings / seed
+- [ ] License and dataset source documented
+- [ ] Setup and inference command documented
+
 ## Resume bullets
-Draft only; finalize after implementation and measurement:
-- Adapted a pretrained Transformer for a defined document-intelligence task and evaluated it against a baseline.
-- Documented data preparation, reproducible training settings and error analysis.
+Drafts only; finalize after a validated implementation:
+- Adapted a pretrained Transformer to a defined document-intelligence task and compared it with a baseline using task-appropriate metrics.
+- Documented reproducible data preparation, training settings and error analysis.
+
+## Recommended learning resources
+- [Hugging Face course repository](https://github.com/huggingface/course)
+- [Hugging Face Transformers docs](https://huggingface.co/docs/transformers)
+- [Hugging Face Datasets docs](https://huggingface.co/docs/datasets)
+- [PEFT documentation](https://huggingface.co/docs/peft/index)
 
 ## Limitations
-To be documented after experiments.
+To be updated after experiments. Do not claim model performance until test evaluation is complete.
