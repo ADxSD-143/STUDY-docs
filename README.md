@@ -3,7 +3,9 @@
 Personal learning notes and technical references, maintained part by part with practical examples and checkpoints.
 
 ## Open Source & GSoC
-- [Open-Source Journey — Main Learning Log](Open%20Source/README.md)
+- [Open-Source Journey — Main Handbook](Open%20Source/README.md)
+- [Open-Source Start Here — Learning Index](Open%20Source/00-START-HERE.md)
+- [CUGA Issue #940 Case Study](Open%20Source/projects/cuga-search-books-940/README.md)
 - [GSoC Preparation — Separate Track](GSoC/README.md)
 - [GitHub & Git: First Open-Source Contribution](github.md)
 
