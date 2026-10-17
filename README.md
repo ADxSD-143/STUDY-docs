@@ -2,6 +2,11 @@
 
 Personal learning notes and technical references, maintained part by part with practical examples and checkpoints.
 
+## Open Source & GSoC
+- [Open-Source Journey — Main Learning Log](Open%20Source/README.md)
+- [GSoC Preparation — Separate Track](GSoC/README.md)
+- [GitHub & Git: First Open-Source Contribution](github.md)
+
 ## Machine Learning
 - [Logistic Regression](ML%20notes%20doc/logistic_reg.md)
 - [CampusX Laptop Price Predictor — Project Notes](ML%20notes%20doc/campusx-laptop-price-predictor.md)
