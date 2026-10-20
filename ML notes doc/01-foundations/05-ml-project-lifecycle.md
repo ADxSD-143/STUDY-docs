@@ -8,16 +8,15 @@
 
 ```mermaid
 flowchart TD
-    A[Define the problem] --> B[Collect and inspect data]
-    B --> C[Create a simple baseline]
+    A[Define the problem] --> B[Collect and clean data]
+    B --> C[Split the data]
     C --> D[Train a model]
-    D --> E[Evaluate on unseen data]
-    E --> F{Does it meet the goal?}
-    F -- No --> G[Inspect errors and improve]
-    G --> C
-    F -- Yes --> H[Package and test]
-    H --> I[Deploy if appropriate]
-    I --> J[Monitor and maintain]
+    D --> E[Test on unseen data]
+    E --> F{Good enough?}
+    F -- No --> G[Improve data or model]
+    G --> D
+    F -- Yes --> H[Use the model]
+    H --> I[Monitor performance]
 ```
 
 The process is a loop, not a straight line. If the model fails, we may need better data, a clearer target, a simpler approach, or even a different problem definition.
@@ -48,35 +47,6 @@ Suppose a canteen wants to estimate how many lunches to prepare.
 
 We should not claim that the model reduces waste until a real evaluation supports that claim.
 
-
-## Simple ML model workflow
-
-Example: predict how many lunches a canteen will sell tomorrow.
-
-```mermaid
-flowchart TD
-    A[Define the problem] --> B[Collect data]
-    B --> C[Clean and understand data]
-    C --> D[Split into training and testing data]
-    D --> E[Train a simple model]
-    E --> F[Test model predictions]
-    F --> G{Good enough?}
-    G -- No --> H[Improve data or model]
-    H --> E
-    G -- Yes --> I[Use the model]
-    I --> J[Monitor its predictions]
-```
-
-1. **Define the problem:** decide what you want the model to predict.
-2. **Collect data:** gather relevant past examples.
-3. **Clean the data:** check missing values and mistakes.
-4. **Split the data:** keep some examples aside to test the model fairly.
-5. **Train:** let the algorithm learn patterns from the training data.
-6. **Evaluate:** check predictions on data the model has not trained on.
-7. **Improve:** if results are poor, inspect errors and try changes.
-8. **Use and monitor:** use the model only if it is useful, then check its performance over time.
-
-**Remember:** training teaches the model from past examples; prediction uses the trained model on new data. Always compare its performance with a simple baseline.
 
 ## Quick checkpoint
 
