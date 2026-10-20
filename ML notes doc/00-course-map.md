@@ -8,7 +8,7 @@ This is the sequence for the full course. Each topic and important subtopic will
 |---|---|---|
 | 00 | Start here | Know how to use the course |
 | 01 | ML foundations | Explain what ML is and when it is useful |
-| 02 | Python and working environment | Run, organise, and debug experiments |
+| 02 | Python and working environment | Run, organise, and debug experiments ([module lessons](02-python-environment/README.md)) |
 | 03 | Maths for ML | Understand the maths used by models |
 | 04 | Data handling and visualisation | Inspect and prepare datasets |
 | 05 | First ML model | Build and evaluate a simple regression model |
