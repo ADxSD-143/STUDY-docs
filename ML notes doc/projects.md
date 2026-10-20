@@ -1,98 +1,172 @@
-# Machine Learning Projects — Real Problems, Open-Source Practice
+# ML Projects — Learn the Skill, Then Build Something Useful
 
-The goal is not to collect many copied projects. Build a small number of useful systems end-to-end, explain why each design choice was made, test failure cases, and make the work reproducible. The ideas below are starting points: validate the problem with potential users before claiming that a project solves it.
+We will **build a few projects properly**, not copy 15 tutorials. Each project should teach a new skill and show how ML work happens in a real team.
 
-## Project ladder
+```mermaid
+flowchart TD
+    A[Learn one concept] --> B[Small skill drill]
+    B --> C[Build a simple baseline]
+    C --> D[Test on unseen data]
+    D --> E[Inspect mistakes]
+    E --> F[Make it usable]
+    F --> G[Document, test and share]
+```
 
-### 1. Campus Issue Intelligence
-**Problem:** Campus complaints about Wi-Fi, water, lifts, or classroom equipment get scattered across forms and messages, making recurring issues hard to prioritize.
+## Three project tracks
 
-**Build:** A complaint intake tool that classifies issue category, detects near-duplicate reports, groups reports by location, and shows a transparent priority queue. Keep human review in the loop; never let a model silently dismiss a safety-related complaint.
+| Track | Purpose | What belongs here |
+|---|---|---|
+| **A. Skill drills** | Learn one method at a time | EDA, leakage checks, metrics, Model Error Explorer |
+| **B. Industry projects** | Practice common business problems | Churn, fraud/risk, demand/pricing, ranking, search/RAG |
+| **C. Capstones** | Explore an open-ended problem you care about | Campus Intelligence, public-notice helper, disaster triage, claim evidence, air-quality explorer |
 
-**Skills:** pandas, text preprocessing, TF-IDF, logistic regression, precision/recall, clustering, FastAPI, SQL, dashboarding.
+We will use small, well-understood datasets for guided drills. Projects involving sensitive data, unclear labels, or changing public sources stay optional until their risks and evaluation method are clear.
 
-**Open-source path:** Start with a small manually labelled and privacy-safe sample; publish schema, data card, annotation rules, baseline model, tests, and setup instructions. Do not upload private student messages or identifying information.
+---
 
-### 2. Public-Service Form and Notice Explainer
-**Problem:** Long public notices and forms are difficult to navigate, especially for first-time applicants or readers more comfortable in Hindi/Hinglish.
+## Track A — Skill drills
 
-**Build:** A tool that extracts text from public documents, identifies dates/deadlines/eligibility statements, and produces a plain-language summary with page/paragraph references. Show the source excerpt beside every extracted item; do not invent legal or eligibility advice.
+### A1. Model Error Explorer (first project)
 
-**Skills:** preprocessing, information extraction, classification, OCR as an optional extension, evaluation, multilingual testing, API design.
+**Problem:** A model can get a good overall score and still make costly mistakes.
 
-**Open-source path:** Use openly licensed public documents, record the source and license, test extraction failures, and allow corrections through issues or pull requests.
+**Build:** A small tool that takes actual labels and model predictions, shows a confusion matrix, per-class scores, false positives and false negatives, and lets us compare decision thresholds.
 
-### 3. Food-Waste Demand Forecaster
-**Problem:** A canteen or small food provider needs to estimate demand to reduce leftovers without frequently running out.
+**Learn:** pandas, visualisation, classification metrics, testing, and readable Python package design.
 
-**Build:** A forecasting baseline using historical sales, weekday, holidays, weather only if a legitimate data source is available, and special-event indicators. Compare against simple baselines and report uncertainty; recommendations should be advisory.
+**Why first?** It teaches us how to judge a model before we build more complicated ones. No large model or paid API is required.
 
-**Skills:** EDA, time-based split, regression, MAE/RMSE, feature engineering, leakage prevention, monitoring.
+### A2. EDA and data-leakage drill
 
-**Open-source path:** Use a public dataset or obtain explicit permission for anonymized data. Never pretend synthetic demo data proves real-world accuracy.
+**Problem:** A model may appear brilliant because the dataset accidentally gives it clues it would not have in real use.
 
-### 4. Accessibility-Friendly Learning Resource Finder
-**Problem:** Students struggle to find an explanation at the right level, language, length, or format.
+**Build:** Inspect a fixed, documented dataset. Find missing values, duplicates, suspicious columns, and a bad split; compare results before and after fixing the issue.
 
-**Build:** Search and rank openly licensed learning resources using metadata such as topic, prerequisites, language, duration, captions, and resource type. Start with keyword search; add TF-IDF/embeddings only if evaluation shows a benefit.
+**Learn:** pandas, charts, train/test splits, data validation, and how to explain a misleading result.
 
-**Skills:** text representation, ranking, evaluation, metadata quality, API and UI design.
+**Deliverable:** A notebook plus a short visual report: “What fooled us, and how we caught it?”
 
-**Open-source path:** Link to original resources rather than rehosting copyrighted videos or notes. Keep license and attribution metadata.
+---
 
-### 5. Local Air-Quality Pattern Explorer
-**Problem:** Public air-quality measurements are hard to interpret over time and by location.
+## Track B — Industry projects
 
-**Build:** An analysis dashboard that cleans public time-series measurements, flags missing/suspicious values, visualizes trends, and tests simple forecasting or anomaly-detection baselines. It must distinguish measured values from model estimates and avoid medical claims.
+Each project starts with a **provided stakeholder brief** so we can practise without needing to interview a company. We will use public, appropriately licensed data or a clearly labelled teaching dataset.
 
-**Skills:** data quality, visualization, time-series validation, anomaly detection, uncertainty.
+### B1. Customer Churn and Retention
 
-**Open-source path:** Use a documented public data source and publish data provenance, limitations, and reproducible analysis scripts.
+**Business question:** Which customers may leave, and where could the business focus its retention effort?
 
-### 6. Disaster-Report Triage Assistant
-**Problem:** During a crisis, incoming public reports can be repetitive, incomplete, and difficult to sort quickly.
+**Build:** A simple churn baseline, then a model. Estimate the cost of missed churners versus unnecessary retention offers. Discuss the difference between predicting who leaves and proving who will respond to an offer.
 
-**Build:** A human-reviewed prototype that categorizes reports, detects duplicates, extracts reported location/time, and surfaces uncertainty. Do not invent labels, infer a precise location without evidence, or present model output as verified ground truth.
+**Learn:** Tabular data, feature engineering, class imbalance, precision/recall, business cost, and the basics of intervention testing.
 
-**Skills:** NLP, imbalanced classification, recall/precision trade-offs, geospatial data, evaluation, API engineering.
+**Visual to include:** Churn rates by customer group, a confusion matrix, and a cost-vs-threshold chart.
 
-**Open-source path:** Use appropriately licensed crisis datasets, document label limitations, avoid publishing personal data, and make it clear that the prototype is not an emergency-response authority.
+### B2. Fraud / Risk Detection
 
-### 7. Claim Evidence Explorer
-**Problem:** Readers need to inspect the evidence behind a claim rather than receive an unsupported “true/false” answer.
+**Business question:** How can a review team spot suspicious activity without overwhelming itself with false alarms?
 
-**Build:** A system that breaks a claim into checkable statements, retrieves sources, displays supporting/contradicting/unclear evidence, and links each conclusion to source passages. Begin with retrieval and evidence display; only add automated verdicts after evaluating them against human-reviewed examples.
+**Build:** A model that ranks or flags suspicious transactions using a documented dataset. Compare a simple rule with an ML baseline and evaluate it at a realistic review capacity.
 
-**Skills:** text classification, retrieval, ranking, source provenance, evaluation, multilingual handling, backend engineering.
+**Learn:** Rare-event classification, precision-recall curves, threshold choice, changing patterns, and model explanations.
 
-**Open-source path:** Keep source URLs, timestamps, snippets, and retrieval failures visible. Respect website terms, licenses, and rate limits; never fabricate citations.
+**Safety note:** This is a learning prototype, not a real credit decision or fraud-blocking service. Do not use its predictions on real people or financial accounts.
 
-### 8. Model Error Explorer
-**Problem:** A model can look strong on one aggregate score while failing on particular classes or data slices.
+**Visual to include:** Precision-recall curve, missed cases vs false alarms, and the number of cases sent for review.
 
-**Build:** A reusable tool that takes predictions and labels, reports per-class metrics, shows false positives/negatives, compares thresholds, and flags likely data leakage or split mistakes for manual investigation.
+### B3. Demand Forecasting and Pricing Decisions
 
-**Skills:** metrics, calibration, subgroup evaluation, visualization, test design, data validation.
+**Business question:** How much stock might be needed next week, and what happens when the forecast is wrong?
 
-**Open-source path:** Start as a tested Python package with example datasets, then add a lightweight interface. This is a strong early contribution because it can be useful without training a large model.
+**Build:** Forecast demand with a simple baseline first. Add date, weekday, and suitable event features; test on later dates, not random rows. Show uncertainty and discuss the cost of overstocking versus running out.
 
-## Required workflow for every project
+**Learn:** Time-based validation, feature engineering, MAE/RMSE, forecast error, and monitoring.
 
-1. **Problem validation:** Who experiences the problem? What decision will the tool improve? What is the baseline today?
-2. **Data provenance:** Record source, license, collection date, schema, label process, privacy risks, and known gaps.
-3. **Baseline first:** Use a simple rule or statistical baseline before complex ML.
-4. **Leakage-resistant evaluation:** Choose train/validation/test strategy based on the data; for time-dependent problems, split by time.
-5. **Error analysis:** Inspect representative failures and quantify the cost of false positives and false negatives.
-6. **Useful interface:** Provide a CLI, API, or small UI only after the core method works.
-7. **Engineering:** Add setup instructions, dependency file, configuration, tests, logging, reproducible seeds, and CI.
-8. **Documentation:** Include problem statement, architecture, data card, model card, metrics, limitations, screenshots where useful, and a demo.
-9. **Open-source contribution:** Use issues, small PRs, code review, tests, and changelog entries. Credit datasets and upstream projects.
-10. **Honest release:** Separate measured results from goals; never claim real-world impact without a real evaluation.
+**Visual to include:** Actual vs forecast over time, forecast errors, and a stock-shortage/leftover trade-off.
 
-## Definition of done
+### B4. Recommendation and Ranking
 
-A project is ready to share when another person can reproduce the baseline, understand the data and license, run tests, see the evaluation protocol, inspect failures, and understand when not to trust the model. A polished README is not a substitute for evidence.
+**Business question:** Given many possible items, which should appear first for a user?
 
-## Recommended first project
+**Build:** A resource, course, or product recommender. Start with popularity or keyword matching, then try a better ranking method and compare the lists.
 
-Start with **Model Error Explorer** or **Campus Issue Intelligence**. The first builds core evaluation and engineering skills with low data-collection risk. The second is more domain-specific, but should only use consented or public, privacy-safe data and should keep humans responsible for prioritization.
+**Learn:** Search, ranking, implicit feedback, train/test design, and metrics such as Precision@K, MRR, or nDCG (we will explain each when needed).
+
+**Visual to include:** Candidate list → ranking → top results, plus a before/after comparison.
+
+**Important:** Offline metrics are useful clues, but they do not prove that users will behave better. A real product would need a carefully designed online experiment.
+
+### B5. Search + RAG Assistant
+
+**Business question:** How can a user find an answer in a collection of documents and check where it came from?
+
+**Build:** A small document assistant that retrieves relevant passages and answers using only that evidence. Show citations and say when evidence is missing. Evaluate retrieval separately from answer quality.
+
+**Learn:** Search, text embeddings, retrieval, answer grounding, evaluation, and API design.
+
+**Visual to include:** Question → retrieved passages → answer with citations → checks.
+
+**Constraints:** Start with local/open models and free tools where feasible. Record response time and memory use. Do not depend on a paid API for the core exercise.
+
+---
+
+## Track C — Optional capstones
+
+These are good ways to work on a personally meaningful or local problem, but they are not required to prove every core ML skill.
+
+- **Campus Issue Intelligence:** group and classify Wi-Fi, water, lift, or classroom complaints. Keep a human in charge of priorities and protect private student information.
+- **Public Notice Explainer:** extract deadlines and key statements from public documents, with a source reference beside each one. Never invent legal or eligibility advice.
+- **Disaster Report Triage:** group duplicate reports and surface potentially urgent reports for human review. Never present predictions as verified ground truth.
+- **Claim Evidence Explorer:** show evidence for and against claims with working source links. Never fabricate citations or use an automatic verdict without evaluation.
+- **Air-Quality Pattern Explorer:** show trends and missing data from a public measurement source. Clearly separate observed values from predictions and avoid medical claims.
+
+Keep one text-heavy capstone at most until the earlier projects are complete. These projects overlap in some NLP skills, so we should not build all of them just for project count.
+
+---
+
+## Make projects feel like real engineering
+
+We will add a few simple documents to each main project. Think of these as the work a team wants to see before it trusts a model.
+
+```mermaid
+flowchart TD
+    A[Stakeholder brief] --> B[Design before coding]
+    B --> C[Data checks + baseline]
+    C --> D[Evaluation + error review]
+    D --> E{Meets requirements?}
+    E -- No --> F[Explain trade-off and revise]
+    F --> C
+    E -- Yes --> G[API or batch tool]
+    G --> H[Tests + monitoring + rollback plan]
+    H --> I[PR review + release notes]
+```
+
+Every main project should include:
+
+1. **Stakeholder brief:** who uses it, what decision it supports, the main success measure, and the cost of mistakes.
+2. **Small design doc:** data in, prediction out, baseline, model choice, how it will run, and what can fail.
+3. **Realistic limits:** for example, a response-time target, limited memory, a fixed review capacity, or a small compute budget. We will label these as teaching constraints, not claim they came from a real company.
+4. **Data and evaluation notes:** data source and licence, split strategy, baseline, metrics, mistakes, and limitations.
+5. **Monitoring plan:** what could change, what we would measure, when to investigate or retrain, and how we would turn the service off safely.
+6. **Team simulation:** create a focused issue, work on a branch, open a PR, write a review comment, update the changelog, and respond to feedback. Later, practise contributing to an existing open-source project.
+7. **“When not to ship” section:** explain what result or risk would make the model not ready.
+
+### A simple project quality checklist
+
+- [ ] Another person can set it up from the README.
+- [ ] Dependencies and configuration are recorded; random seeds are fixed where useful.
+- [ ] Tests run and CI checks them.
+- [ ] A simple baseline is included.
+- [ ] Evaluation avoids data leakage and explains the chosen metrics.
+- [ ] Latency, memory, or cost is measured when relevant.
+- [ ] Failure cases and limitations are shown honestly.
+- [ ] Dataset source, licence, and privacy choices are documented.
+- [ ] At least one issue/PR/review workflow is demonstrated for a main project.
+
+## What we will build first
+
+**Start with Model Error Explorer → EDA/leakage drill → Churn or Demand Forecasting → Search/RAG.** This order moves from understanding model mistakes, to handling data correctly, to a familiar business problem, then to a modern text system.
+
+We will not build all projects at once. Finish each stage, explain the visuals, and be able to defend the design choices before moving on.
+
+The project list is a learning plan, not a job guarantee. One deeply understood, tested project with honest results and a useful open-source contribution is worth more than many copied demos.
