@@ -10,6 +10,7 @@ Personal learning notes and technical references, maintained part by part with p
 - [GitHub & Git: First Open-Source Contribution](github.md)
 
 ## Machine Learning
+- [Machine Learning — Complete Learning & Engineering Roadmap](ML%20notes%20doc/README.md)
 - [Logistic Regression](ML%20notes%20doc/logistic_reg.md)
 - [CampusX Laptop Price Predictor — Project Notes](ML%20notes%20doc/campusx-laptop-price-predictor.md)
 
