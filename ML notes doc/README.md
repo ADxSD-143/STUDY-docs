@@ -235,3 +235,54 @@ For each experiment, record:
 ## Build useful things, not tutorial clones
 
 Use the [project ladder](projects.md) to connect each topic to a real problem. Start with a simple baseline, measure errors, document limitations, and make the project reproducible before adding complexity. For math, use [resources.md](resources.md) to select one explanation and then work through derivations and code. The two YouTube links are included as supplied; verify their titles and topic coverage before assigning them to a specific lesson.
+
+
+## Teaching style: visual-first, simple, and practical
+
+**Main rule: show the idea before explaining it in paragraphs.** These notes are for learning, not for sounding academic. Keep explanations friendly, short, and jargon-light.
+
+### Preferred order for each topic
+
+1. **One picture or real-life analogy** to show what the idea means.
+2. **A flowchart or step-by-step visual** to show how it works.
+3. **A tiny example** with real numbers or a small dataset.
+4. **A graph or animation** when it helps reveal what changes and why.
+5. **A short explanation** in plain language.
+6. **The formula**, with every symbol explained beside it.
+7. **A small code example** and its output.
+8. **One real-world use** and a quick checkpoint.
+
+### Visuals to use
+
+- Flowcharts for pipelines, model training, prediction, and decision-making.
+- Graphs for loss curves, decision boundaries, residuals, class imbalance, and model comparisons.
+- Tables only when comparing a few things is genuinely clearer than a diagram.
+- Small animations or interactive sliders when they help explain moving parts such as gradient descent, sigmoid, decision boundaries, or neural-network updates.
+- Before/after examples for preprocessing and feature engineering.
+- Mermaid diagrams or simple text diagrams when a visual asset is unnecessary. Keep diagrams readable on mobile.
+
+### Keep the writing light
+
+- Explain new technical words the first time they appear.
+- Prefer short paragraphs and concrete examples over long textbook-style sections.
+- Do not add advanced maths or jargon just to make a topic look difficult. Introduce depth gradually when it becomes useful.
+- Keep optional advanced details in a clearly labelled **“Want to go deeper?”** section.
+- Use free resources and tools wherever possible; do not require paid APIs or paid software for the core learning path.
+
+### Example: the ML learning loop
+
+```mermaid
+flowchart TD
+    A[Real problem] --> B[Collect and understand data]
+    B --> C[Build a simple baseline]
+    C --> D[Train an ML model]
+    D --> E[Test on unseen data]
+    E --> F{Useful and reliable?}
+    F -- Not yet --> G[Inspect mistakes and improve]
+    G --> C
+    F -- Yes --> H[Document and share]
+```
+
+### Definition of done for a lesson
+
+A learner should be able to **explain the idea simply, read the visual, run the code, interpret the result, and solve one small problem**. Finishing a video or reading a long page alone does not count as understanding.
