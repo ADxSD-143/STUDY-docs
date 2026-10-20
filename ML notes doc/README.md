@@ -225,3 +225,13 @@ For each experiment, record:
 - Prefer tested code, cited sources, explicit assumptions and transparent limitations over inflated claims.
 - Re-check links, package versions, model availability, dataset licenses and best practices periodically.
 - Track progress honestly: **read** is not the same as **understood**, **implemented**, **evaluated**, or **productionized**.
+
+
+## Curated learning resources
+
+- [Videos, courses, and math references](resources.md) — includes the two recommended YouTube videos, StatQuest, Krish Naik, CampusX, 3Blue1Brown, MIT OCW, Stanford, and official docs.
+- [Real-world ML projects and open-source workflow](projects.md) — problem-first projects, skills mapped to each, data/privacy cautions, and a repeatable implementation process.
+
+## Build useful things, not tutorial clones
+
+Use the [project ladder](projects.md) to connect each topic to a real problem. Start with a simple baseline, measure errors, document limitations, and make the project reproducible before adding complexity. For math, use [resources.md](resources.md) to select one explanation and then work through derivations and code. The two YouTube links are included as supplied; verify their titles and topic coverage before assigning them to a specific lesson.
