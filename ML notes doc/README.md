@@ -286,3 +286,13 @@ flowchart TD
 ### Definition of done for a lesson
 
 A learner should be able to **explain the idea simply, read the visual, run the code, interpret the result, and solve one small problem**. Finishing a video or reading a long page alone does not count as understanding.
+
+
+## Start the course in order
+
+1. [Start Here — how to use this course](00-START-HERE.md)
+2. [Complete Course Map](00-course-map.md)
+3. [Module 01 — Foundations](01-foundations/README.md)
+4. [Lesson 01 — What Is Machine Learning?](01-foundations/01-what-is-machine-learning.md)
+
+Lessons are being split into small, numbered files so topics stay easy to find and the course can be followed in sequence. The course itself is written in English and uses simple explanations, visuals, small examples, code, and checkpoints.
