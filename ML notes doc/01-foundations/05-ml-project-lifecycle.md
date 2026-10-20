@@ -4,49 +4,40 @@
 **Prerequisites:** Lessons 01–04  
 **Goal:** understand that building an ML model is only one part of an ML project.
 
-## The full picture
+## One ML model workflow
+
+Example: predict a student's final marks using study habits.
 
 ```mermaid
 flowchart TD
-    A[Define the problem] --> B[Collect and clean data]
-    B --> C[Split the data]
-    C --> D[Train a model]
-    D --> E[Test on unseen data]
-    E --> F{Good enough?}
-    F -- No --> G[Improve data or model]
-    G --> D
-    F -- Yes --> H[Use the model]
-    H --> I[Monitor performance]
+    A[1. Define the problem] --> B[2. Collect data]
+    B --> C[3. Clean and preprocess]
+    C --> D[4. Explore the data: EDA]
+    D --> E[5. Engineer features]
+    E --> F[6. Split train and test data]
+    F --> G[7. Train a model]
+    G --> H[8. Evaluate results]
+    H --> I{Good enough?}
+    I -- No --> J[9. Improve and try again]
+    J --> E
+    I -- Yes --> K[10. Save and use the model]
+    K --> L[Monitor performance]
 ```
 
-The process is a loop, not a straight line. If the model fails, we may need better data, a clearer target, a simpler approach, or even a different problem definition.
+### The 10 steps
 
-## What each step means
+1. **Problem definition:** decide what to predict. Example: predict final marks; aim for an average error of about 5 marks.
+2. **Data collection:** gather study hours, attendance, and marks from a survey or dataset.
+3. **Cleaning and preprocessing:** handle missing values, duplicates, incorrect values, and data formats.
+4. **EDA:** use summaries and plots to understand distributions and relationships.
+5. **Feature engineering:** choose useful inputs or create new ones from existing data.
+6. **Train/test split:** keep some data aside for a fair final evaluation. Split before fitting preprocessing steps.
+7. **Model selection and training:** start with a simple baseline such as linear regression.
+8. **Evaluation:** use MAE, RMSE, and R² for regression; compare training and test performance.
+9. **Improvement:** inspect errors, improve features or data, or try another model. Repeat the relevant steps.
+10. **Save and use:** save the model, connect it to an app or API if needed, and monitor predictions over time.
 
-1. **Define the problem:** decide what prediction is needed and how success will be measured.
-2. **Inspect the data:** understand what each row means, check missing values, and look for mistakes.
-3. **Build a baseline:** start with a simple rule or model so we have something to compare against.
-4. **Train:** let the chosen algorithm learn patterns from the training examples.
-5. **Evaluate:** test predictions on examples not used to fit the model.
-6. **Inspect errors:** find where and why the model fails.
-7. **Package and test:** make the code reliable and easy for someone else to run.
-8. **Deploy and monitor:** if people will use it, watch for failures and changes in the data.
-
-## A concrete example: canteen demand
-
-Suppose a canteen wants to estimate how many lunches to prepare.
-
-- **Problem:** predict the number of lunches needed tomorrow.
-- **Data:** past daily sales, weekday, and known events.
-- **Baseline:** predict the average for that weekday.
-- **Model:** try a regression model.
-- **Evaluation:** test on later dates the model did not train on.
-- **Errors:** check whether it misses special-event days.
-- **Use:** show a forecast with uncertainty to the staff.
-- **Monitor:** compare predictions with actual sales over time.
-
-We should not claim that the model reduces waste until a real evaluation supports that claim.
-
+**Remember:** this workflow is a loop, not a straight line. Use only information that would be available when making a real prediction, and never use the test set to repeatedly tune the model.
 
 ## Quick checkpoint
 
