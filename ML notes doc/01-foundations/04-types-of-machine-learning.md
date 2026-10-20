@@ -80,3 +80,22 @@ The goal is to learn a strategy that earns good rewards over time. It is used in
 ## Next lesson
 
 [05 — The ML Project Lifecycle](05-ml-project-lifecycle.md)
+
+
+## Common algorithms and a quick example
+
+You do not need to memorise these names yet. These are common examples of algorithms used for each learning type.
+
+| Learning type | Common algorithms | Short example |
+|---|---|---|
+| **Supervised learning** | Linear Regression, Logistic Regression, Decision Tree, Random Forest, Support Vector Machine (SVM) | Use past house sales to predict a price (regression) or labelled emails to predict spam/not spam (classification). |
+| **Unsupervised learning** | K-Means, Hierarchical Clustering, DBSCAN, Principal Component Analysis (PCA) | Group customers with similar shopping behaviour when no customer-group labels are provided. PCA can help simplify data for visualisation. |
+| **Reinforcement learning** | Q-Learning, Deep Q-Network (DQN), Policy Gradient methods | Train an agent to play a simple game by giving rewards for useful actions and penalties for poor ones. |
+
+### Remember the difference
+
+- **Supervised:** learn from examples with correct answers.
+- **Unsupervised:** look for patterns without supplied answers.
+- **Reinforcement:** learn through actions and rewards.
+
+**Note:** These are examples, not an exhaustive list. Different algorithms suit different problems; we will learn when and why to use them later.
