@@ -216,7 +216,7 @@ For each experiment, record:
 ## Existing notes
 
 - [Logistic Regression](logistic_reg.md) — current detailed notes; extend them using the standard concept-note format without rewriting useful material.
-- [CampusX Laptop Price Predictor](campusx-laptop-price-predictor.md) — project notes; evolve it into a reproducible end-to-end case study.
+
 
 ## Maintenance rules
 
