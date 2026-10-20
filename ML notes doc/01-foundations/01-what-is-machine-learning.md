@@ -39,7 +39,6 @@ Think of the **algorithm** as the learning method and the **model** as the resul
 
 ## 4. An everyday example
 
-<box></box>
 
 Suppose we give a model these examples:
 
