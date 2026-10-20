@@ -7,7 +7,7 @@ Use resources as supporting material, not as a playlist to finish passively. For
 - [Video 1 — user-recommended](https://youtu.be/trsyTEA22Gw)
 - [Video 2 — user-recommended](https://youtu.be/Xi2qcKt25bY)
 - [StatQuest](https://www.youtube.com/@statquest): especially useful for intuition around ML algorithms, statistics, and evaluation.
-- [Krish Naik](https://www.youtube.com/@ krishnaik06): practical ML, deep learning, NLP, and end-to-end project walkthroughs. If the channel URL changes, search YouTube for “Krish Naik”.
+- [Krish Naik](https://www.youtube.com/@krishnaik06): practical ML, deep learning, NLP, and end-to-end project walkthroughs. If the channel URL changes, search YouTube for “Krish Naik”.
 - [CampusX](https://www.youtube.com/@campusx-official): structured Hindi/Hinglish explanations and project-oriented learning.
 
 The two user-supplied YouTube links are included as provided. Before assigning them to a specific math topic, verify their titles and coverage; do not infer their contents from the URLs alone.
