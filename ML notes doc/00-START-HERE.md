@@ -39,7 +39,7 @@ Not every lesson needs an animation. We will use a graph, flowchart, or interact
 ## Start the course
 
 1. [Course map](00-course-map.md)
-2. [Module 1 — Foundations](01-foundations/README.md)
+2. [Module 1 — Introduction to Machine Learning](01-foundations/README.md)
 3. [Lesson 1 — What is Machine Learning?](01-foundations/01-what-is-machine-learning.md)
 
 ## Tools
