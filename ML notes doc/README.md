@@ -8,9 +8,15 @@ Build the knowledge and practical judgment needed to independently understand, i
 
 No document can guarantee that a beginner will outperform a senior ML engineer. Senior-level work also depends on experience with ambiguous requirements, data failures, production incidents, collaboration, and business constraints. This roadmap is designed to help develop those capabilities systematically through real practice and feedback.
 
+## Start the course in order
+
+1. [Course start guide](00-START-HERE.md)
+2. [Course map](00-course-map.md)
+3. [Module 01 — Introduction to Machine Learning](01-foundations/README.md)
+
 ## How to use this folder
 
-- Learn in order when a topic depends on earlier foundations; use the index to revisit topics later.
+- Learn in order when a topic depends on earlier lessons; use the index to revisit topics later.
 - For each concept, first explain it in plain language, then derive the mathematics, implement a small version, compare it with a trusted library, and test it on a realistic dataset.
 - Keep experiments reproducible: record dataset source/version, split strategy, random seeds, baseline, metrics, environment, observations, and limitations.
 - Never treat training score alone as proof of a good model. Check leakage, generalization, subgroup behavior, calibration where appropriate, and the cost of errors.
