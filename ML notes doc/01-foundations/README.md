@@ -1,6 +1,10 @@
-# Module 01 — Machine Learning Foundations
+# Module 01 — Introduction to Machine Learning
+
+Welcome to the first learning module. Before writing ML algorithms, you'll build a clear picture of what machine learning is, how it differs from ordinary programming, the main types of learning, and how an ML project moves from a problem to a working model.
 
 **Goal:** understand the big picture before learning algorithms.
+
+By the end, you should be able to explain ML in simple words, recognise common learning setups, outline a basic ML workflow, and identify situations where ML may not be the right tool.
 
 ## Lessons — follow in order
 
