@@ -7,6 +7,7 @@ You already know Python fundamentals, NumPy, and pandas, so this module will avo
 ## Lessons
 
 1. [Set Up a Reproducible ML Project](01-reproducible-ml-project.md)
+2. [Run and Organise an ML Experiment](02-run-and-organise-experiments.md)
 
 ## What you should be able to do
 
