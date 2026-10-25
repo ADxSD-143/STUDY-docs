@@ -35,9 +35,12 @@ flowchart TD
 **Project:** Exploratory Data Analysis (EDA) report on a public, appropriately licensed dataset.
 
 **Resources**
-- [Python Tutorial](https://docs.python.org/3/tutorial/)
-- [NumPy Learn](https://numpy.org/learn/)
-- [pandas Getting Started](https://pandas.pydata.org/docs/getting_started/index.html)
+- [Python - CampusX playlist (31 videos)](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X) — Python fundamentals and revision; Sessions 1–12 cover core Python topics.
+- [NumPy - CampusX playlist sessions](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X) — Sessions 13–15 cover NumPy fundamentals, advanced NumPy, and tricks.
+- [pandas - CampusX playlist sessions](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X) — Session 16 onward covers Series, DataFrames, and data manipulation topics.
+- [Official Python Tutorial](https://docs.python.org/3/tutorial/)
+- [Official NumPy Learn](https://numpy.org/learn/)
+- [Official pandas Getting Started](https://pandas.pydata.org/docs/getting_started/index.html)
 - [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/)
 - [GitHub Skills](https://skills.github.com/)
 
