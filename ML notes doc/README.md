@@ -1,57 +1,41 @@
 # Machine Learning — Learn, Build, Evaluate
+A structured learning system with the required **Maths → Python → Data → ML → Projects** sequence, 24-week schedule, assigned video chapters, coding deliverables, checkpoints, progress tracking and a real-world capstone.
 
-A practical, visual-first ML course that takes you from fundamentals to real projects, deep learning, and ML engineering.
+**Time:** 24 weeks × 10 hours/week = 240 hours. **Cost:** free-first; no paid APIs required.
 
-**The approach:** intuition → maths → code → experiment → evaluation → project.
+## Start here — follow this order
+1. [Start guide](00-START-HERE.md)
+2. [24-week master roadmap: exact weekly sequence](roadmap.md)
+3. [Course map](00-course-map.md)
+4. [Progress tracker](progress.md)
+5. [Topic-wise resource library](resources.md)
+6. [CampusFix real-world capstone](projects/campusfix/README.md)
 
-No paid APIs are required. The roadmap prioritises free learning resources, honest evaluation, reproducible experiments and useful projects over collecting libraries or certificates.
-
-## Start here
-
-- **[Full Roadmap: Basics to Advanced](roadmap.md)** — maths, theory, code, projects and curated resources in sequence.
-- [Course Start Guide](00-START-HERE.md) — how to study this course.
-- [Course Map](00-course-map.md) — module sequence.
-- [Current Module: Introduction to Machine Learning](01-foundations/README.md)
-- [Project Tracks](projects.md) — skill drills, industry projects and capstones.
-- [Resources Library](resources.md) — books, courses, videos and official documentation.
-
-## Learning path
-
+## Learning flow
 ```mermaid
 flowchart TD
-    A[Foundations] --> B[Python and project workflow]
-    B --> C[Maths for ML]
-    C --> D[Data handling and EDA]
-    D --> E[Regression and classification]
-    E --> F[Evaluation and model selection]
-    F --> G[Trees and unsupervised learning]
-    G --> H[Deep learning]
-    H --> I[Choose a specialisation]
-    I --> J[ML engineering and open source]
-    J --> K[Capstone]
+    A[Maths: Weeks 1–2] --> B[Python: Week 3]
+    B --> C[Data: Weeks 4–5]
+    C --> D[ML: Weeks 6–17]
+    D --> E[Project definition: Week 18]
+    E --> F[Build and evaluate: Weeks 19–21]
+    F --> G[Tests and API: Weeks 22–23]
+    G --> H[Final release: Week 24]
 ```
 
-## Course principles
+## Detailed phase guides
+- [Phase 1 — Maths](phases/01-maths.md)
+- [Phase 2 — Python](phases/02-python.md)
+- [Phase 3 — Data](phases/03-data.md)
+- [Phase 4 — Machine Learning](phases/04-machine-learning.md)
+- [Phase 5 — Projects and Engineering](phases/05-projects-engineering.md)
 
-- Understand the idea before memorising formulas or APIs.
-- Compare every useful model against a simple baseline.
-- Keep the final test set separate from model tuning.
-- Record dataset source, licence, split, metrics, environment and limitations.
-- Build projects that solve a clear problem and explain their failure cases.
-- Move from basics to advanced topics in order; the roadmap is comprehensive, not a checklist to rush through.
+## Existing notes
+- [Introduction to ML](01-foundations/README.md)
+- [Python environment](02-python-environment/README.md)
+- [Project ladder](projects.md)
+- [Logistic Regression notes](logistic_reg.md)
+- [CampusX Laptop Price Predictor notes](campusx-laptop-price-predictor.md)
 
-## Folder guide
-
-| File/folder | Purpose |
-|---|---|
-| [roadmap.md](roadmap.md) | Full curriculum with resources, maths, code and projects |
-| [00-START-HERE.md](00-START-HERE.md) | How to use the course |
-| [00-course-map.md](00-course-map.md) | Compact module index |
-| [01-foundations/](01-foundations/README.md) | Introduction to ML |
-| [02-python-environment/](02-python-environment/README.md) | Python environment and experiment workflow |
-| [projects.md](projects.md) | Project briefs and project ladder |
-| [resources.md](resources.md) | Resource directory |
-
-## Progress rule
-
-A topic is complete when you can explain it simply, run or work through the example, interpret the result, and answer the checkpoint. Build understanding one step at a time.
+## Rules
+Use assigned videos in order and skip known material only after a diagnostic. Every week includes coding. Compare against baselines, inspect errors, prevent leakage, keep the final test set untouched until final evaluation, and document sources/licences/limitations. CampusFix is a proposed prototype; never claim deployment or impact without permission, stakeholder involvement and measurements.
