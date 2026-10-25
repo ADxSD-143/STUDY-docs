@@ -1,0 +1,36 @@
+name: ML Docs Quality Check
+
+on:
+  push:
+    paths:
+      - "ML notes doc/**/*.md"
+      - ".github/workflows/ml-docs-quality.yml"
+  pull_request:
+    paths:
+      - "ML notes doc/**/*.md"
+      - ".github/workflows/ml-docs-quality.yml"
+  schedule:
+    # Daily at 07:00 UTC (12:30 PM IST).
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ml-docs-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdown-links:
+    name: Check ML notes Markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check links in ML documentation
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress "./ML notes doc/**/*.md"
+          fail: true
