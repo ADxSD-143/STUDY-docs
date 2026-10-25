@@ -2,6 +2,15 @@
 
 Use resources as supporting material, not as a playlist to finish passively. For each topic, pick **one primary explanation**, then implement and test the concept before adding another course.
 
+## Python fundamentals and data libraries — user-recommended playlist
+
+- [Python - CampusX (31 videos)](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X): Python fundamentals, control flow, strings, collections, functions, OOP, file handling, exceptions, modules, decorators, NumPy, and pandas. Use the relevant videos as a reference; you do not need to rewatch topics you already understand.
+- **Python fundamentals:** start with Sessions 1–12 and the relevant supplementary sessions if you need revision.
+- **NumPy:** use Sessions 13–15 for fundamentals, advanced NumPy, and practice/tricks.
+- **pandas:** use Sessions 16 onward for Series, DataFrames, common methods, groupby, merging, and joins. The playlist contains 31 videos; check the remaining titles on YouTube to choose the exact lessons you need.
+
+This playlist is a supplementary video resource. Use the official Python, NumPy, and pandas documentation below as the reference for current APIs and behaviour.
+
 ## Videos and courses already selected
 
 - [Video 1 — user-recommended](https://youtu.be/trsyTEA22Gw)
