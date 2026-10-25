@@ -3,7 +3,7 @@
 **Budget:** 24 weeks × 10 hours = 240 hours. Free resources/tools only.
 
 ## Weekly rhythm
-3 h focused videos/reading, 5 h coding/experiments, 2 h review/notes. Each week has a deliverable included in those 10 hours. Diagnose existing Python, NumPy, pandas and regression knowledge; revise weak areas rather than restarting everything. Video watching alone does not count as completion.
+3 h focused videos/reading, 5 h coding/experiments, 2 h review/notes. Each week has a deliverable included in those 10 hours. This roadmap is designed for a complete beginner. Use diagnostics only to skip topics you can already explain and practise independently. Video watching alone does not count as completion.
 
 ## Phase map
 | Phase | Weeks | Detailed guide |
@@ -17,9 +17,9 @@
 ## Weekly calendar: what to watch, then what to build
 | Week | Study and video order | Coding deliverable |
 |---|---|---|
-| 1 | Maths diagnostic; watch only weak sections of [Math for ML](https://youtu.be/cO9xmfsJJu4); master ML gradient descent at 09:50 if needed | NumPy examples: statistics, dot product, matrices, derivative |
-| 2 | Targeted linear algebra, probability/Bayes and derivatives from Math for ML; connect to master ML regression chapter at 27:13 | Gradient descent experiment and loss plot |
-| 3 | Python diagnostic; CampusX Python playlist only for weak topics; Bro Code NumPy/pandas/Matplotlib as supplements | CSV-to-cleaned-data notebook, clean environment and Git commit |
+| 1 | Start with arithmetic, graphs, averages and vectors. Use relevant beginner sections of [Math for ML](https://youtu.be/cO9xmfsJJu4); do not skip based on familiarity alone | Small calculations and NumPy examples: mean, variance, dot product |
+| 2 | Continue [Math for ML](https://youtu.be/cO9xmfsJJu4) for probability, distributions, Bayes intuition and derivatives; preview gradient descent at 09:50 in the [main ML course](https://youtu.be/trsyTEA22Gw) | Gradient-descent experiment and loss plot with a written explanation |
+| 3 | Follow the beginner sequence in [Python phase guide](phases/02-python.md); use CampusX lessons for fundamentals and supplements only when needed | Small Python scripts, NumPy exercises, and a pandas notebook that loads a CSV |
 | 4 | [CampusX data cleaning](https://www.youtube.com/live/-HnN8GBINnc?si=OvOHi67BLx1uJWe2), then [Krish Naik EDA/feature engineering](https://youtu.be/fHFOANOHwh8) | Data audit, missing values, duplicates and safe split |
 | 5 | [Sheryians visualization](https://youtu.be/-jTD74eEy2I), then continue Krish Naik EDA/feature engineering; Matplotlib supplement if needed | EDA report, justified features and leakage checklist |
 | 6 | Master ML: Linear Regression 27:13, R² 44:55, Multiple Regression 52:47; [StatQuest Linear Models](https://youtube.com/playlist?list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU); [regression metrics](https://youtu.be/Ti7c-Hz7GSM) | Linear Regression from scratch vs scikit-learn |
@@ -50,3 +50,7 @@ Fit preprocessing only on training data, preferably using a pipeline. Use valida
 
 ## Capstone
 The default is [CampusFix](projects/campusfix/README.md), a proposed campus infrastructure complaint triage prototype. Only call it campus evidence if permissioned campus data is actually used. If unavailable, use a public service-request dataset and label it as a proxy. Never present synthetic records as genuine complaints.
+
+
+## Beginner rule
+Do not move to the next topic just because a week has ended. First complete the coding deliverable and explain the checkpoint in your own words. The two fixed primary video resources are the [main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4); other videos are supplements, not competing main courses.
