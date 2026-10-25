@@ -1,51 +1,23 @@
 # Machine Learning Course — Start Here
+Follow **Maths → Python → Data → ML → Projects**. The course is 24 weeks at 10 hours/week, with exact video order, code deliverables and checkpoints.
 
-Welcome! This course starts from the basics and gradually moves toward practical ML engineering and open-source work.
+## Start in this order
+1. [24-week roadmap](roadmap.md): what to study each week, video timestamps and what to code.
+2. [Course map](00-course-map.md): phase index.
+3. [Progress tracker](progress.md): mark complete only after coding.
+4. [Resources](resources.md): topic-wise videos and official docs.
+5. [CampusFix capstone](projects/campusfix/README.md): real-world problem brief.
 
-**Course language:** English  
-**Teaching style:** visual-first, simple explanations, small examples, and hands-on practice.  
-**Core rule:** understand the idea before memorising the formula or using a library.
+## Weekly loop
+Read notes → watch assigned section → run code → change a parameter → explain output → pass checkpoint → update progress.
 
-## How each lesson works
+## Time budget
+3 h learning, 5 h implementation, 2 h review. All work must fit within 10 hours/week. Reduce optional videos if behind instead of silently extending the schedule.
 
-```mermaid
-flowchart TD
-    A[Real-life question] --> B[Simple intuition]
-    B --> C[Diagram or graph]
-    C --> D[Small example]
-    D --> E[Math, explained gently]
-    E --> F[Python experiment]
-    F --> G[Checkpoint]
-    G --> H[Apply it in a project]
-```
-
-Not every lesson needs an animation. We will use a graph, flowchart, or interactive demo when it makes an idea easier to understand.
-
-## How to study
-
-1. Read one lesson at a time, in order.
-2. Run the code yourself instead of only reading it.
-3. Change one value and predict what will happen before running it.
-4. Answer the checkpoint without looking at the explanation.
-5. Keep a short learning log: **What I understood / What confused me / What I tried**.
-6. Do not mark a topic complete just because you watched a video.
-
-## Course tracks
-
-- **Learn:** intuition, maths, code, and experiments.
-- **Build:** small exercises first, then useful projects.
-- **Share:** tests, clear documentation, GitHub workflow, and beginner-friendly open-source contributions.
-
-## Start the course
-
-1. [Course map](00-course-map.md)
-2. [Module 1 — Introduction to Machine Learning](01-foundations/README.md)
-3. [Lesson 1 — What is Machine Learning?](01-foundations/01-what-is-machine-learning.md)
-
-## Tools
-
-We will prefer free tools: Python, Jupyter, NumPy, pandas, Matplotlib, scikit-learn, Git, and GitHub. Paid APIs are not required for the core course.
-
-## A note on pace
-
-We will build foundations properly, but we will not repeat topics you already understand in unnecessary detail. If a prerequisite is weak, we will revisit it with a short lesson and an example.
+## Rules
+- Diagnose Python/NumPy/pandas and regression first; revise weak areas rather than repeating everything.
+- Video watching alone does not count.
+- Keep a simple baseline and inspect errors.
+- Fit preprocessing only on training data; final test set is used once.
+- Free tools/resources are sufficient; no paid API required.
+- Maintain a short log: what I understood, what confused me, next action.
