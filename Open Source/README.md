@@ -22,7 +22,7 @@ A practical, continuously maintained record of my open-source learning journey: 
 
 Each project/issue gets its own subfolder with issue analysis, repository map, setup, concepts, tests, PR workflow, and progress log.
 
-- [CUGA Agent #940 — Open Library `search_books` MCP tool](projects/cuga-search-books-940/README.md)
+- [CUGA Agent #940 — Open Library `search_books` MCP tool](projects/cuga-search-books-940/README.md) — includes Python patterns, test/error model, libraries, MCP architecture, and PR-review notes.
 
 **Important current note:** CUGA issue #940 was open and unassigned when checked on 2026-10-17, but another contributor had commented “I'd like to take this” on 2026-10-12. Treat it as a study case until availability is confirmed. Do not begin duplicate implementation.
 
