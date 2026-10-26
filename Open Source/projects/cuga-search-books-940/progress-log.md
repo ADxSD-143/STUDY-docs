@@ -14,6 +14,16 @@ Issue status can change. Refresh the issue, comments, and linked PRs before taki
 
 ## Log
 
+### 2026-10-26 — Code-reading lesson captured
+
+- **Goal:** Save the Python/API/MCP/testing concepts discussed while reading the existing implementation in PR #36.
+- **Files added:** `06-python-code-patterns.md`, `07-tests-libraries-and-error-model.md`, and `08-mcp-tool-and-review-notes.md`.
+- **Concepts documented:** type annotations/default arguments, whitespace validation, clamping, `get_json`, defensive dictionary access, f-strings and conditional expressions, structured error categories, the MCP decorator, test helpers/assertions, happy path/error path/edge cases, external API test flakiness, dependency roles, and review/duplication checks.
+- **Outcome:** Learning notes committed to STUDY-docs. CUGA remains a study case only; no code contribution or PR was made.
+- **Validation status:** No CUGA source clone, test run, lint, or local smoke test was performed. The docs explain expected behavior; they do not claim executed results.
+- **Next action:** Select a different issue where contribution availability is clearer and prioritize a small real change with tests.
+
+
 ### 2026-10-17 — Documentation and initial issue analysis
 
 - Recorded the issue's proposed function signature, target files, behavior, error categories, and suggested commands.
