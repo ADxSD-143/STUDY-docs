@@ -22,7 +22,10 @@ This is a case study and plan, not evidence that a PR has been submitted or merg
 3. [03 — Python, HTTP JSON, and MCP tool concepts](03-python-api-and-mcp-concepts.md)
 4. [04 — Test plan and validation](04-test-plan-and-validation.md)
 5. [05 — Contribution and PR workflow](05-contribution-workflow.md)
-6. [Progress log and decision record](progress-log.md)
+6. [06 — Python code patterns](06-python-code-patterns.md)
+7. [07 — Tests, libraries, and error model](07-tests-libraries-and-error-model.md)
+8. [08 — MCP tool structure and PR review notes](08-mcp-tool-and-review-notes.md)
+9. [Progress log and decision record](progress-log.md)
 
 ## System flow
 
