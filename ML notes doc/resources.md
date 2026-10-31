@@ -1,3 +1,9 @@
+## Complete ML playlists (supplementary)
+- [CampusX — Machine Learning complete playlist](https://youtube.com/playlist?list=PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH&si=vLWpBfFztXIrFY5A)
+- [StatQuest — Machine Learning complete playlist](https://youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=Uck5deAI2vq0Jhjg)
+
+Use these as full topic-wise reference libraries when you need another explanation or deeper practice. They are not extra mandatory playlists for the 8-week schedule.
+
 # ML Resource Library
 Resources are grouped by topic and assigned in the [8-week roadmap](roadmap.md). The two fixed primary videos are the [main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4). All other videos are supplementary; follow only the sections assigned in the roadmap rather than watching every playlist end-to-end.
 
