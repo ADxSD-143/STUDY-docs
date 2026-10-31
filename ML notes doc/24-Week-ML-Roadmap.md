@@ -74,6 +74,12 @@ Use these only when extra explanation or practice is needed.
 - [CampusX data cleaning, Session 28](https://www.youtube.com/live/-HnN8GBINnc?si=OvOHi67BLx1uJWe2)
 - [Krish Naik EDA and Feature Engineering](https://youtu.be/fHFOANOHwh8)
 
+### Complete supplementary ML playlists
+- [CampusX — Machine Learning complete playlist](https://youtube.com/playlist?list=PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH&si=vLWpBfFztXIrFY5A)
+- [StatQuest — Machine Learning complete playlist](https://youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=Uck5deAI2vq0Jhjg)
+
+These are complete reference playlists. They are supplementary—not mandatory to finish within the 8-week schedule. Use topic-wise when you need another explanation or deeper practice.
+
 ### Regression and regularization
 - [StatQuest Linear Regression and Linear Models playlist](https://youtube.com/playlist?list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU)
 - [Regression metrics: MSE, MAE, RMSE, R², adjusted R²](https://youtu.be/Ti7c-Hz7GSM)
