@@ -1,29 +1,22 @@
-# Machine Learning Course — Start Here
+# Start Here — Machine Learning
 
-Follow the **8-week accelerated beginner path**: Python → Maths alongside practice → Data → End-to-end ML workflow → Mini-capstone.
+Welcome! This folder is organized as a numbered learning path. Follow the modules in order; you do not need to open every file at once.
 
-## Start in this order
-1. [8-week roadmap](roadmap.md): weekly learning sequence, coding deliverables and checkpoints.
-2. [Full ML project workflow](ml-project-workflow.md): reusable Stage 0–13 checklist.
-3. [Course map](00-course-map.md): phase index.
-4. [Progress tracker](progress.md): mark complete only after coding.
-5. [Resources](resources.md): primary videos, complete supplementary playlists and official docs.
-6. [CampusFix capstone](projects/campusfix/README.md): project brief.
+## Recommended order
+1. [01 — Foundations](01-foundations/README.md): what ML is, learning types and the project lifecycle.
+2. [02 — Python and environment](02-python-environment/README.md): reproducible project setup and experiment organization.
+3. [03 — Learning path](03-learning-path/README.md): 8-week schedule, topic guides and progress tracker.
+4. [04 — Projects](04-projects/README.md): project ladder and CampusFix capstone.
+5. [05 — Resources](05-resources/README.md): primary videos, supplementary playlists and official documentation.
+6. [06 — Reference](06-reference/ml-project-workflow.md): reusable Stage 0–13 project checklist.
 
 ## Fixed primary videos
-- [Main ML course](https://youtu.be/trsyTEA22Gw)
-- [Math for ML](https://youtu.be/cO9xmfsJJu4)
+- [Main Machine Learning course](https://youtu.be/trsyTEA22Gw)
+- [Mathematics for ML](https://youtu.be/cO9xmfsJJu4)
 
-## Weekly loop
-Read the assigned topic → watch the specified section → write short notes → code → change a parameter → explain the output → pass checkpoint → update progress.
+CampusX and StatQuest complete ML playlists are supplementary reference libraries. Follow only the topics assigned in the roadmap.
 
-## Expectations
-Target 10 hours per week. This is an accelerated foundation, not mastery. A complete beginner may need more time. Do not move forward just because the week ended; pass the checkpoint first.
+## Learning rule
+Read → watch the assigned section → code → experiment → evaluate → explain in your own words → update the progress tracker.
 
-## Rules
-- Start with Python if you have never programmed.
-- Study maths just in time; do not wait to finish the entire maths video.
-- Follow the ML project workflow: frame the problem, understand data, split safely, preprocess without leakage, establish a baseline, model, evaluate and analyze errors.
-- Fit preprocessing only on training data; use Pipelines for leakage-safe validation.
-- Video watching alone does not count as completion.
-- Free resources and local tools are sufficient; no paid API is required.
+The 8-week schedule is an accelerated foundation, not a mastery guarantee. Extend a week whenever its checkpoint is not yet passed.
