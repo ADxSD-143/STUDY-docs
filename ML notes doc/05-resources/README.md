@@ -1,6 +1,14 @@
 # ML Resource Library
 Resources are grouped by topic and assigned in the [8-week roadmap](../03-learning-path/roadmap.md). The two fixed primary videos are the [main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4). All other videos are supplementary; follow only the sections assigned in the roadmap rather than watching every playlist end-to-end.
 
+## SQL — optional awareness resource
+
+SQL is **not a compulsory video course** for the 8-week ML journey. However, you should know what SQL is used for and understand basic SELECT, WHERE, JOIN and GROUP BY queries. Learn enough to inspect and extract data from a relational database; deeper SQL (including window functions) can be studied separately.
+
+- [CampusX — Complete SQL playlist](https://youtube.com/playlist?list=PLKnIA16_RmvYun1_5r9Fb4eQigioPB7yn&si=lhglqWFDCFB8CbTU)
+
+**Suggested minimum awareness:** database/table/row/column, SELECT, WHERE, ORDER BY, GROUP BY, aggregate functions, INNER/LEFT JOIN and basic NULL handling. You do not need to complete the entire playlist before beginning ML.
+
 ## Resources mapped to the Stage 0–13 project workflow
 
 The complete [ML project workflow checklist](../06-reference/ml-project-workflow.md) defines what to do at each stage. Use these official/free references as needed; they are a library, not a requirement to study every tool in the 8-week sprint.
