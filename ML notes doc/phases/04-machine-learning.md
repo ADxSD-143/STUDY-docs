@@ -2,6 +2,15 @@
 
 Use the two fixed primary videos: [Main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4). Follow the timestamps below. Other videos are supplements. For each topic: understand intuition, watch the assigned section, write notes, code with scikit-learn, run one experiment and pass the checkpoint. From-scratch implementations are optional in this accelerated beginner track.
 
+## Complete supplementary playlists
+
+These are complete topic-wise reference playlists, not mandatory to finish during the 8-week schedule:
+
+- [CampusX — Machine Learning complete playlist](https://youtube.com/playlist?list=PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH&si=vLWpBfFztXIrFY5A)
+- [StatQuest — Machine Learning complete playlist](https://youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=Uck5deAI2vq0Jhjg)
+
+Use them when you need an alternate explanation or want to deepen a topic after completing the week's required work.
+
 ## Week 4 — Regression and Logistic Regression
 - Main course: Linear Regression 27:13, R² 44:55, multiple regression 52:47; Logistic Regression 2:15:32.
 - Learn features/target, coefficients, residuals, MAE/MSE/RMSE, R², classification vs regression, sigmoid and predicted probabilities.
