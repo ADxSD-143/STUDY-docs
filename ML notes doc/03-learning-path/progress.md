@@ -17,7 +17,7 @@ Mark a week complete only after finishing its deliverable and passing the checkp
 For each week, record: what I understood, what confused me, what I coded, what failed, and what I will revise next.
 
 ## Full project workflow
-Use [ml-project-workflow.md](ml-project-workflow.md) as the reusable Stage 0–13 checklist. Mark individual project-stage checklist items as you complete them; the weekly table tracks the learning plan.
+Use [ml-project-workflow.md](../06-reference/ml-project-workflow.md) as the reusable Stage 0–13 checklist. Mark individual project-stage checklist items as you complete them; the weekly table tracks the learning plan.
 
 ## Completion rule
 Watching a video is not completion. A week is complete only when the code runs, the result is interpreted in your own words, and the checkpoint can be answered without copying notes. Do not mark deployment or monitoring complete unless they were actually implemented and tested.
