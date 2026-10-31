@@ -1,5 +1,5 @@
 # ML Resource Library
-Resources are grouped by topic and assigned in the [8-week roadmap](roadmap.md). The two fixed primary videos are the [main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4). All other videos are supplementary; follow only the sections assigned in the roadmap rather than watching every playlist end-to-end.
+Resources are grouped by topic and assigned in the [8-week roadmap](../03-learning-path/roadmap.md). The two fixed primary videos are the [main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4). All other videos are supplementary; follow only the sections assigned in the roadmap rather than watching every playlist end-to-end.
 
 ## Resources mapped to the Stage 0–13 project workflow
 
