@@ -32,8 +32,8 @@ Target 10 hours: 2–3 hours learning, 5–6 hours coding/experiments, 1–2 hou
 | 3 | Stage 3–5 | Choose a valid split; learn leakage; clean and preprocess; use basic encoders/scalers and Pipeline/ColumnTransformer; create justified features. | Leakage-safe preprocessing pipeline and feature notes |
 | 4 | Stage 6–7 | Build a baseline; learn Linear Regression and Logistic Regression; compare baseline vs first learned model. | Baseline/model notebook and results table |
 | 5 | Stage 7–8 | Learn Naive Bayes, KNN and classification metrics; choose metrics based on error costs; inspect threshold effects. | Model comparison and evaluation report |
-| 6 | Stage 7–8 + 10 | Learn Decision Trees and Random Forest; understand bias/variance; perform basic error analysis and segment checks. | Tree/forest comparison and error analysis |
-| 7 | Stage 8–11 | Learn cross-validation, model selection, leakage-safe tuning basics, final test evaluation, model persistence and reproducibility. | CV comparison, final evaluation and saved pipeline |
+| 6 | Stage 7–8 + 10 | Learn Decision Trees, Random Forest, feature importance and error analysis; understand bias/variance. | Tree/forest comparison, feature-importance notes and error analysis |
+| 7 | Stage 8–11 + unsupervised ML | Learn cross-validation and tuning basics; study unsupervised learning, K-Means and Hierarchical clustering; complete final evaluation and save the pipeline. | CV/model comparison, clustering exercise, final evaluation and saved pipeline |
 | 8 | Stage 0–13 applied | Complete CampusFix mini-capstone: problem brief, data audit, EDA, split, preprocessing, baseline, text model, evaluation, error analysis, packaging and README. Local API/UI is optional. | Reproducible project with report, saved pipeline and clear limitations |
 
 ## Weekly resources and sequence
@@ -43,7 +43,7 @@ Target 10 hours: 2–3 hours learning, 5–6 hours coding/experiments, 1–2 hou
 - **Week 4:** Main course Linear Regression 27:13, R² 44:55, multiple regression 52:47; Logistic Regression 2:15:32.
 - **Week 5:** [Confusion matrix](https://youtu.be/c09drtuCS3c) → [precision/recall/F1](https://youtu.be/iK-kdhJ-7yI) → [ROC-AUC](https://youtu.be/gdW6hj9IXaA) → [Naive Bayes](https://youtu.be/O2L2Uv9pdDA) → [KNN](https://youtu.be/abnL_GUGub4).
 - **Week 6:** Main course Decision Trees 3:39:55 and 3:58:05; [Random Forest](https://youtu.be/J4Wdy0Wc_xQ), [AdaBoost](https://youtu.be/LsK-xG1cLYA), [bias–variance](https://youtu.be/EuBBz3bI-aA).
-- **Week 7:** [Cross-validation](https://youtu.be/fSytzGwwBVw), [scikit-learn CV](https://scikit-learn.org/stable/modules/cross_validation.html), [Pipeline](https://scikit-learn.org/stable/modules/compose.html), [model persistence](https://scikit-learn.org/stable/model_persistence.html).
+- **Week 7:** [Cross-validation](https://youtu.be/fSytzGwwBVw), [scikit-learn CV](https://scikit-learn.org/stable/modules/cross_validation.html), [Pipeline](https://scikit-learn.org/stable/modules/compose.html), [model persistence](https://scikit-learn.org/stable/model_persistence.html). Also cover unsupervised overview (main course 6:35:30), K-Means (6:48:13) and Hierarchical clustering (7:10:23).
 - **Week 8:** Revisit only resources needed for the capstone. See [CampusFix project brief](../04-projects/campusfix/README.md).
 
 ## Checkpoints
@@ -53,7 +53,7 @@ Target 10 hours: 2–3 hours learning, 5–6 hours coding/experiments, 1–2 hou
 - Week 4: compare a baseline with Linear/Logistic Regression.
 - Week 5: interpret confusion matrix and precision vs recall; compare NB and KNN.
 - Week 6: explain overfitting and inspect model errors.
-- Week 7: explain cross-validation, keep test data untouched and reload a saved pipeline.
+- Week 7: explain cross-validation, keep test data untouched, reload a saved pipeline, and explain/implement basic K-Means and Hierarchical clustering.
 - Week 8: another person can reproduce the project from the README and understand its limitations.
 
 ## Continuation track
