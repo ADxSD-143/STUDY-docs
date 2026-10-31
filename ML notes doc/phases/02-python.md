@@ -1,12 +1,23 @@
-# Phase 2 — Python (Week 3)
-Python, NumPy and pandas are already familiar, so use a diagnostic rather than restarting from zero.
+# Python Foundations — Week 1
+**Audience:** complete programming beginner. Do not assume prior Python, NumPy or pandas knowledge.
 
-## Exact order
-1. Check imports, paths, functions, loops, dictionaries, exceptions and plotting.
-2. Check NumPy shapes, boolean indexing, broadcasting and vectorization.
-3. Check pandas filtering, groupby, merge, missing values, types and vectorized operations.
-4. If weak, use [CampusX Python playlist](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X): sessions 1–12 Python, 13–15 NumPy, 16 onward pandas.
-5. Supplements only for gaps: [Bro Code NumPy](https://youtu.be/VXU4LSAQDSc), [pandas](https://youtu.be/VXtjG_GzO7Q), [Matplotlib](https://youtu.be/c9vhHUGdav0).
-6. Set up a clean environment, requirements file, gitignore and one Git commit.
+## Main resource
+[CampusX Python playlist](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X), sessions 1–12 for Python fundamentals. Work through the topics in order; do not binge-watch the playlist.
 
-Deliverable: notebook that loads a CSV, cleans columns, aggregates, plots and saves data. Gate: rerun from a clean kernel and explain every transformation.
+## Learning order
+1. Run Python in a script or Google Colab.
+2. Variables, data types, input/output and operators.
+3. Conditions, loops and functions.
+4. Strings, lists, tuples, sets and dictionaries.
+5. Read a simple text/CSV file; basic exceptions and debugging.
+6. Import libraries and use notebook cells.
+7. Preview NumPy arrays, shape, indexing and simple arithmetic.
+
+## Coding tasks
+Temperature converter; number statistics; even/odd and prime checker; dictionary frequency counter; function that summarizes a list; read a small file.
+
+## Deliverable
+GitHub folder with exercises, one notebook and a README explaining how to run them.
+
+## Checkpoint
+Without copying a tutorial, write a function, use a loop, manipulate a list and dictionary, and explain what an import does. If not, repeat the relevant lessons before Week 2.
