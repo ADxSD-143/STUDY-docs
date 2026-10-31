@@ -1,136 +1,138 @@
-# 24-Week Machine Learning Roadmap
-**Flow:** Maths → Python → Data → ML → Real-world Project  
-**Duration:** 24 weeks × 10 hours/week = 240 hours.  
-**Weekly split:** 3 h focused learning, 5 h coding/experiments/project, 2 h revision and notes. One notebook/script each week (2–4 h, included in the weekly total). Diagnose existing Python/NumPy/pandas knowledge and skip material already mastered.
+# 8-Week Beginner Machine Learning Roadmap
 
-## 24-week schedule
+**Flow:** Python → Maths alongside practice → Data → Machine Learning → Mini-capstone  
+**Duration:** 8 weeks × 10 hours/week = 80 hours (accelerated foundation, not mastery).  
+**Weekly split:** Aim for 3 hours of focused learning, 5 hours of coding/experiments, and 2 hours of revision and notes. Adjust the pace when a topic needs more time; do not rush past the readiness checks.
+
+This roadmap is designed to be approachable for a beginner. If you already know a topic, use the checkpoint to verify your understanding and move ahead rather than repeating it.
+
+## Primary learning resources
+
+Use these two videos as the fixed primary resources throughout the roadmap:
+
+- [Data Dissection — Complete ML course in Hindi](https://youtu.be/trsyTEA22Gw) — main ML course. Follow only the topics assigned each week.
+- [Data Dissection — Complete Math for ML and AI](https://youtu.be/cO9xmfsJJu4) — maths companion. Study the relevant sections alongside coding; do not try to finish all maths before starting ML.
+
+Other resources listed below are supplementary. Use them when a topic in the main videos is unclear; they are not additional mandatory courses.
+
+## 8-week schedule
 
 | Week | Focus | Deliverable |
 |---|---|---|
-| 1 | Maths/Python diagnostic: vectors, matrices, probability/statistics, derivatives; Python, NumPy, pandas; Git/GitHub | Diagnostic notebook and gap list |
-| 2 | Data cleaning, missing values, duplicates, outliers, categorical encoding, splitting and leakage basics | Clean real dataset notebook |
-| 3 | EDA, visualization, feature engineering, preprocessing | EDA report; milestone review |
-| 4 | Linear Regression, loss, gradient descent, assumptions, MAE/MSE/RMSE/R² | Linear Regression from scratch vs scikit-learn |
-| 5 | Bias–variance, Ridge/Lasso, scaling, polynomial features | Regularization comparison |
-| 6 | Logistic Regression, sigmoid, log loss, probabilities, threshold | Logistic Regression from scratch; CampusFix baseline starts |
-| 7 | Confusion matrix, precision/recall/F1, specificity, FPR/FNR, ROC-AUC, PR-AUC, imbalance | Classifier evaluation and error review |
-| 8 | Naive Bayes immediately after Logistic Regression; KNN, distances, scaling | Naive Bayes and KNN practice; milestone review |
-| 9 | Decision Trees: splits, Gini/entropy, depth and overfitting | Small Decision Tree implementation |
-| 10 | Random Forest, bagging/boosting/AdaBoost, GridSearchCV/RandomizedSearchCV | Tuned model comparison |
-| 11 | SVM: margins, support vectors, polynomial/RBF kernels | Compare SVM against earlier models |
-| 12 | Cross-validation, leakage review, model selection, calibration, cost-sensitive thresholds, error analysis | Reproducible comparison report; milestone review |
-| 13 | K-Means from scratch, elbow method, DBSCAN | Clustering notebook; StuCore project starts |
-| 14 | PCA, silhouette score, clustering interpretation | Finish clustering project; milestone review |
-| 15 | Neural networks, perceptrons, layers, activations and loss | Small neural-network experiment |
-| 16 | Forward/backpropagation, gradient descent and optimizers | Training experiment with learning curves |
-| 17 | PyTorch tensors, Dataset/DataLoader, model and training loop | Small reproducible PyTorch model |
-| 18 | Overfitting, regularization, early stopping, diagnostics | Training comparison; milestone review |
-| 19 | Pipelines, reusable modules, reproducibility and pytest | Refactor earlier model into tested code |
-| 20 | Model persistence, FastAPI, input validation, Docker | Local prediction API and run instructions |
-| 21 | Capstone problem, data access/licensing, target, baseline and metrics | Problem brief and evaluation plan |
-| 22 | Capstone implementation: data pipeline, baseline, feature work | Reproducible training pipeline |
-| 23 | Model comparison, error analysis, API/UI integration and tests | Working MVP |
-| 24 | Final held-out evaluation, docs, demo and portfolio polish | Final report/demo; milestone review |
+| 1 | Python fundamentals: variables, data types, conditions, loops, functions, strings, collections, files, exceptions and basic debugging | Python practice notebook/scripts; pass the Python checkpoint |
+| 2 | NumPy, pandas and essential maths: arrays, indexing, vector operations, DataFrames, descriptive statistics, probability and basic derivatives | NumPy/pandas practice notebook and maths summary |
+| 3 | Data cleaning, missing values, duplicates, outliers, basic encoding, EDA, visualization, feature basics and train/test split | Clean dataset notebook and short EDA report |
+| 4 | Linear Regression and Logistic Regression: prediction vs classification, loss, gradient descent intuition, sigmoid and decision threshold | Regression and classification notebooks using scikit-learn |
+| 5 | Evaluation: confusion matrix, accuracy, precision, recall, F1, specificity, FPR/FNR and ROC-AUC; Naive Bayes and KNN | Model evaluation notebook and Naive Bayes/KNN practice |
+| 6 | Decision Trees, tree splitting, overfitting, Random Forest and an introduction to boosting/AdaBoost | Tree and ensemble comparison notebook |
+| 7 | Train/validation/test workflow, cross-validation, data leakage, preprocessing pipelines and basic model selection; optional introduction to K-Means/PCA only after core checkpoints | Reproducible model comparison report |
+| 8 | CampusFix mini-capstone: define the problem, prepare permitted data, build a baseline, train/evaluate a text classifier and document limitations | Working, documented mini-project with evaluation report |
 
-**Milestone reviews:** Weeks 3, 8, 12, 14, 18, 24. Explain an algorithm without notes, rerun old work cleanly, verify baseline/metrics/leakage/errors, and update progress. Preprocessing must be fit only on training data; keep the final test set untouched until final evaluation. Compare from-scratch implementations with scikit-learn where applicable. If behind, use review/light weeks; do not silently exceed 10 hours/week. Deep learning is intentionally limited if capstone work needs the time.
+## How to study each topic
 
-## Real-world project: CampusFix — campus infrastructure complaint triage
+Use the same learning loop for every major concept:
 
-**Problem:** Student reports about Wi-Fi outages, water supply, broken lifts, AC failures, and classroom/electrical faults can be difficult to sort, route and prioritize consistently.
+1. Understand the problem the algorithm solves.
+2. Build an intuition using a small example or visual.
+3. Learn only the maths needed to understand that idea.
+4. Follow the relevant section of the primary ML video.
+5. Implement and experiment in Python using scikit-learn.
+6. Evaluate the result and inspect mistakes.
+7. Write a short explanation in your own words and complete the checkpoint.
 
-**Prototype:** A small ML-assisted tool predicts complaint category and responsible department, suggests a review priority, and shows trends only when the data supports them. A human confirms routing and priority; the system never auto-closes or suppresses safety-critical reports.
+Do not copy code without understanding what the inputs, outputs and important steps mean. From-scratch implementations are optional in this accelerated beginner track; prioritize understanding, correct experiments and evaluation.
 
-**Data rules:** First seek permission to use anonymized campus complaints. Remove names, phone numbers, roll numbers, and identifying details. If campus data is unavailable, use a documented public complaint/service-request dataset as a proxy and clearly say it is not campus evidence. Do not fabricate synthetic data and present it as real. Document labels, label definitions, class counts, license, limitations, and consent/permissions.
+## Maths — learn alongside ML
 
-**Schema (only permitted fields):** complaint text, category, department, priority, optional coarse location, and date if allowed. Avoid personal identifiers.
+Use the maths video as a companion, not as a gate that delays practical ML.
 
-**ML plan:** Start with a keyword/rule baseline and majority-class baseline; then TF-IDF + Logistic Regression and/or Naive Bayes. Compare per-class precision/recall/F1 and confusion matrix. Inspect false negatives, especially for urgent categories. Route low-confidence predictions to manual review. Prevent duplicate/near-duplicate complaints from crossing train/test. Use chronological split only if suitable timestamps and enough data exist; otherwise use an appropriate stratified split. Do not claim faster campus response without a real pilot and measured evidence.
+- **Week 1:** Basic arithmetic, reading graphs, mean/median, variance and standard deviation; understand what vectors and matrices represent.
+- **Week 2:** Vectors, matrices, dot product, basic probability, conditional probability, Bayes' theorem, derivatives and the intuition behind gradient descent.
+- **Weeks 3–8:** Revisit maths only when it is needed for the current ML topic—for example, error/loss for regression, probability for classification, and distance for KNN.
 
-**Project schedule:** Data exploration Weeks 2–3; text classification baseline Weeks 6–8; evaluation/tuning Weeks 10–12; API/testing Weeks 19–20; capstone build/evaluation Weeks 21–24. This is a prototype unless a real campus stakeholder agrees to pilot it.
+Advanced calculus, matrix calculus and detailed eigenvalue derivations are outside this 8-week foundation.
 
-## Resources — use topic-wise, preserve all learner-provided links
+## Project: CampusFix — campus infrastructure complaint triage
 
-### Maths
-- [Data Dissection — Complete Math for ML and AI (~8h20)](https://youtu.be/cO9xmfsJJu4) — probability/statistics, Bayes, distributions, linear algebra, derivatives. Watch only gaps.
-- [Data Dissection — Complete ML course in Hindi (~10h48)](https://youtu.be/trsyTEA22Gw) — master course used across topics.
+**Problem:** Student reports about Wi-Fi outages, water supply, broken lifts, AC failures and classroom/electrical faults can be difficult to sort consistently.
+
+**Week 8 prototype:** Build a small ML-assisted tool that predicts a complaint category from text and can suggest a department for human review. A human must confirm routing and priority. The system must never auto-close or suppress safety-critical reports.
+
+**Data rules:** First seek permission to use anonymized campus complaints. Remove names, phone numbers, roll numbers and identifying details. If campus data is unavailable, use a documented public complaint/service-request dataset as a proxy and clearly state that it is not campus evidence. Do not fabricate data and present it as real. Document labels, label definitions, class counts, license, limitations and permissions.
+
+**Baseline and model:** Start with a simple keyword/rule or majority-class baseline. Then try TF-IDF + Logistic Regression; Multinomial Naive Bayes is an optional comparison if time permits. Report per-class precision, recall and F1, along with a confusion matrix. Inspect false negatives, especially for urgent categories. Send low-confidence predictions to manual review. Do not claim faster campus response or operational impact without a real pilot and measured evidence.
+
+## Supplementary resources
+
+Use these only when extra explanation or practice is needed.
 
 ### Python, data and visualization
-- [CampusX Python playlist](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X)
+- [CampusX Python playlist](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X) — sessions 1–12: Python; 13–15: NumPy; 16 onward: pandas.
 - [Bro Code NumPy](https://youtu.be/VXU4LSAQDSc)
 - [Bro Code pandas](https://youtu.be/VXtjG_GzO7Q)
 - [Bro Code Matplotlib](https://youtu.be/c9vhHUGdav0)
-- [Sheryians AI School visualization](https://youtu.be/-jTD74eEy2I) — Matplotlib, Seaborn, Plotly, IPL project
-- [CampusX data assessing/cleaning, Session 28](https://www.youtube.com/live/-HnN8GBINnc?si=OvOHi67BLx1uJWe2)
+- [CampusX data cleaning, Session 28](https://www.youtube.com/live/-HnN8GBINnc?si=OvOHi67BLx1uJWe2)
 - [Krish Naik EDA and Feature Engineering](https://youtu.be/fHFOANOHwh8)
 
 ### Regression and regularization
 - [StatQuest Linear Regression and Linear Models playlist](https://youtube.com/playlist?list=PLblh5JKOoLUIzaEkCLIUxQFjPIlapw8nU)
 - [Regression metrics: MSE, MAE, RMSE, R², adjusted R²](https://youtu.be/Ti7c-Hz7GSM)
-- [CampusX Regularization playlist](https://youtube.com/playlist?list=PLKnIA16_RmvZuSEZ24Wlm13QpsfLlJBM4)
-- Master course chapters: Linear Regression 27:13; R² 44:55; multiple regression 52:47; assumptions 1:13:19; polynomial regression 1:26:15; bias–variance 1:41:46; regularization/hyperparameter discussion 1:56:52.
+- Main ML course sections: Gradient Descent 09:50; Linear Regression 27:13; R² 44:55; Multiple Regression 52:47.
+
+Ridge and Lasso are useful follow-up topics after the 8-week foundation; they are not required for the Week 4 checkpoint.
 
 ### Logistic Regression, metrics and Naive Bayes
 - [StatQuest Logistic Regression playlist](https://youtube.com/playlist?list=PLblh5JKOoLUKxzEP5HA2d-Li7IJkHfXSe)
 - [Performance metrics: accuracy, precision, recall, F-beta](https://youtu.be/5vqk6HnITko)
-- [Accuracy, confusion matrix, Type I/II errors — Part 1](https://youtu.be/c09drtuCS3c)
-- [Precision, recall and F1 — Part 2](https://youtu.be/iK-kdhJ-7yI)
+- [Confusion matrix and Type I/II errors](https://youtu.be/c09drtuCS3c)
+- [Precision, recall and F1](https://youtu.be/iK-kdhJ-7yI)
 - [CampusX ROC curve and ROC-AUC](https://youtu.be/gdW6hj9IXaA)
 - [StatQuest Confusion Matrix](https://youtu.be/Kdsp6soqA7o)
 - [StatQuest Naive Bayes](https://youtu.be/O2L2Uv9pdDA)
-- [StatQuest encoding: One-Hot, Label, Target and K-Fold Target Encoding](https://youtu.be/589nCGeWG1w)
-- Master course: Logistic Regression 2:15:32; precision/recall 2:54:17; ROC-AUC 5:07:18; Naive Bayes 5:52:16 and tuning 6:02:45. Teach Naive Bayes directly after Logistic Regression even though it appears later in the video.
+
+Main ML course sections: Logistic Regression 2:15:32; precision/recall 2:54:17; ROC-AUC 5:07:18; Naive Bayes 5:52:16. Learn the core Naive Bayes intuition from the supplementary explanation if the course's later placement interrupts the weekly sequence.
 
 ### KNN, Decision Trees and Ensembles
 - [CampusX KNN overview](https://youtu.be/abnL_GUGub4)
-- Master course KNN 3:06:38; distance/cosine similarity 3:25:06; decision trees 3:39:55 and 3:58:05; tree hyperparameters 4:09:25; Random Forest 4:18:01; boosting 4:34:20.
+- Main ML course: KNN 3:06:38; Decision Trees 3:39:55 and 3:58:05; Random Forest 4:18:01; boosting 4:34:20.
 - [StatQuest Ensemble Learning playlist](https://youtube.com/playlist?list=PLBUVsOl8j6mIHPlbWm_o2Sx_NQLdkC8xd)
-- [CampusX Ensemble Learning playlist](https://youtube.com/playlist?list=PLnD9uS5lPM6l3oB5aPLTA8uUTayvLDF5T)
 - [StatQuest Random Forests Part 1](https://youtu.be/J4Wdy0Wc_xQ)
-- [StatQuest Random Forests Part 2: missing data and clustering](https://youtu.be/mIlw5j3WyVk)
 - [StatQuest AdaBoost](https://youtu.be/LsK-xG1cLYA)
 
-### Validation, evaluation and tuning
+### Validation and model selection
 - [StatQuest Bias and Variance](https://youtu.be/EuBBz3bI-aA)
-- [StatQuest Cross Validation](https://youtu.be/fSytzGwwBVw) — this URL was supplied twice; listed once.
-- [Krish Naik types of cross-validation](https://youtu.be/bq4LytNAjjM)
-- [Optuna: hyperparameter tuning and Bayesian optimization](https://youtu.be/E2b3SKMw934)
-- [scikit-learn cross-validation docs](https://scikit-learn.org/stable/modules/cross_validation.html)
-- [GridSearchCV docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
-- [RandomizedSearchCV docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)
-- [Calibration docs](https://scikit-learn.org/stable/modules/calibration.html)
+- [StatQuest Cross Validation](https://youtu.be/fSytzGwwBVw)
+- [scikit-learn cross-validation documentation](https://scikit-learn.org/stable/modules/cross_validation.html)
+- [scikit-learn Pipeline documentation](https://scikit-learn.org/stable/modules/compose.html)
 
-### SVM
-- [StatQuest SVM Part 1: Main Ideas](https://youtu.be/efR1C6CvhmE)
-- [StatQuest SVM Part 2: Polynomial Kernel](https://youtu.be/Toet3EiSFcM)
-- [StatQuest SVM Part 3: RBF Kernel](https://youtu.be/Qc5IyLW_hns)
-- [CampusX SVM playlist](https://youtube.com/playlist?list=PLKnIA16_RmvbOIFee-ra7U6jR2oIbCZBL)
-- Master course: SVM 5:20:59; primal/dual 5:34:49; RBF kernel 5:46:25.
+### Optional preview: unsupervised learning
+Only explore these after completing the required Week 1–8 checkpoints.
+- [Unsupervised ML tutorial: K-Means, DBSCAN and Hierarchical Clustering](https://youtu.be/Aa4MACKaDC0)
+- Main ML course: PCA 6:12:25; K-Means 6:48:13.
 
-### Unsupervised learning
-- [Complete Unsupervised ML tutorial in Hindi: K-Means, DBSCAN, Hierarchical Clustering](https://youtu.be/Aa4MACKaDC0)
-- Master course: PCA 6:12:25; unsupervised overview 6:35:30; K-Means 6:48:13; hierarchical clustering 7:10:23; DBSCAN 7:22:01.
+## Topics deliberately deferred to the continuation track
 
-### Deep learning
-- Master course: neural-network intro 7:46:14; perceptron 7:53:09; backpropagation 8:12:26; neural networks from scratch 8:30:19 onward; TensorFlow/Keras 9:25:45 onward.
-- Prefer a small reproducible PyTorch exercise; deep learning must not consume the capstone block.
+These are valuable, but they should not be squeezed into the beginner 8-week foundation:
 
-### Engineering
-- [scikit-learn Pipelines and composite estimators](https://scikit-learn.org/stable/modules/compose.html)
-- [pytest documentation](https://docs.pytest.org/)
-- [FastAPI tutorial](https://fastapi.tiangolo.com/tutorial/)
-- [Docker getting started](https://docs.docker.com/get-started/)
-- [scikit-learn model persistence](https://scikit-learn.org/stable/model_persistence.html)
+- Ridge/Lasso in depth, polynomial regression and advanced feature selection.
+- SVM, detailed boosting/XGBoost and advanced hyperparameter optimization.
+- K-Means, DBSCAN and PCA in depth.
+- Neural networks, backpropagation derivations and PyTorch.
+- Transformers, NLP in depth, LLMs, RAG and agents.
+- Production engineering: advanced testing, FastAPI deployment, Docker, CI/CD, monitoring and model lifecycle management.
 
-### Supplied links awaiting title verification
-Keep these in the resource inventory and verify their content before assigning them; they are not discarded:
-- https://youtu.be/_L39rN6gz7Y
-- https://youtu.be/wpNl-JwwplA
-- https://youtu.be/g9c66TUylZ4
-- https://youtu.be/D0efHEJsfHo
+Complete the foundation first, then choose a continuation track based on the projects or internship role you are targeting.
 
-## Final completion criteria
-- Implement from scratch: Linear Regression, Logistic Regression, KNN, Naive Bayes, Decision Tree and K-Means.
-- Complete EDA, regression/classification evaluation, tuning and clustering notebooks.
-- Deliver CampusFix or a comparable stakeholder-backed real-world capstone with a baseline, held-out evaluation, error analysis and clear limitations.
-- Use reproducible project structure, tests and (if feasible) a containerized API.
-- Document sources, licensing, assumptions, class imbalance, privacy safeguards and what the evaluation does not prove.
+## Completion criteria
+
+By the end of Week 8, you should be able to:
+
+- Explain the basic ML workflow: problem definition, data preparation, train/test split, model training, evaluation and iteration.
+- Work with Python, NumPy and pandas for a small dataset.
+- Perform basic data cleaning and EDA.
+- Explain the purpose of Linear Regression, Logistic Regression, Naive Bayes, KNN, Decision Trees and Random Forest.
+- Choose and interpret basic regression and classification metrics.
+- Recognize data leakage and use a basic validation workflow correctly.
+- Complete and document a small baseline-first ML project with a clear evaluation and limitations.
+
+**Important:** 80 hours is an accelerated foundation, not a promise of ML mastery or job readiness. Beginners may need more than 8 calendar weeks. Understanding and being able to reproduce the work matters more than finishing on schedule.
