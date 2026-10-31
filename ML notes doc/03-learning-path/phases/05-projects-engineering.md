@@ -2,7 +2,7 @@
 
 This phase contains the hands-on projects for the classical ML algorithms in Phase 4. Complete the matching lesson first, then build the project using the full [Stage 0–13 ML project workflow](../../06-reference/ml-project-workflow.md).
 
-These are **five separate practice projects**. They are not one combined capstone, and CampusFix is not part of this project list.
+These are **five separate practice projects**. They are not one combined capstone.
 
 ## Project roadmap
 
