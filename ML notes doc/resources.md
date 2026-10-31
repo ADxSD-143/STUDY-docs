@@ -1,6 +1,27 @@
 # ML Resource Library
 Resources are grouped by topic and assigned in the [8-week roadmap](roadmap.md). The two fixed primary videos are the [main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4). All other videos are supplementary; follow only the sections assigned in the roadmap rather than watching every playlist end-to-end.
 
+## Resources mapped to the Stage 0–13 project workflow
+
+The complete [ML project workflow checklist](ml-project-workflow.md) defines what to do at each stage. Use these official/free references as needed; they are a library, not a requirement to study every tool in the 8-week sprint.
+
+| Workflow stage | Resource |
+|---|---|
+| Stage 0 — Problem framing and metrics | [scikit-learn model evaluation](https://scikit-learn.org/stable/modules/model_evaluation.html) |
+| Stage 1 — Data collection and SQL | [Kaggle Learn: Intro to SQL](https://www.kaggle.com/learn/intro-to-sql), [Hugging Face Datasets](https://huggingface.co/docs/datasets/index) |
+| Stage 2 — EDA | [Pandas user guide](https://pandas.pydata.org/docs/user_guide/index.html), [Seaborn tutorial](https://seaborn.pydata.org/tutorial.html) |
+| Stage 3–4 — Split, preprocessing and leakage-safe pipelines | [scikit-learn preprocessing](https://scikit-learn.org/stable/modules/preprocessing.html), [Pipeline and ColumnTransformer](https://scikit-learn.org/stable/modules/compose.html), [data leakage pitfalls](https://scikit-learn.org/stable/common_pitfalls.html#data-leakage) |
+| Stage 5 — Feature engineering | [scikit-learn feature selection](https://scikit-learn.org/stable/modules/feature_selection.html), [mutual information](https://scikit-learn.org/stable/modules/feature_selection.html#univariate-feature-selection) |
+| Stage 6–7 — Baselines and models | [Dummy estimators](https://scikit-learn.org/stable/api/sklearn.dummy.html), [scikit-learn supervised learning](https://scikit-learn.org/stable/supervised_learning.html) |
+| Stage 8 — Evaluation and validation | [Model evaluation](https://scikit-learn.org/stable/modules/model_evaluation.html), [cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html), [calibration](https://scikit-learn.org/stable/modules/calibration.html) |
+| Stage 9 — Hyperparameter tuning | [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html), [RandomizedSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html), [Optuna](https://optuna.org/) |
+| Stage 10 — Interpretation and error analysis | [Permutation importance](https://scikit-learn.org/stable/modules/permutation_importance.html), [SHAP documentation](https://shap.readthedocs.io/en/latest/) |
+| Stage 11 — Packaging and reproducibility | [Model persistence](https://scikit-learn.org/stable/model_persistence.html), [joblib](https://joblib.readthedocs.io/en/latest/) |
+| Stage 12 — Deployment | [FastAPI tutorial](https://fastapi.tiangolo.com/tutorial/), [Docker getting started](https://docs.docker.com/get-started/), [Streamlit](https://docs.streamlit.io/) |
+| Stage 13 — Monitoring and experiment tracking | [Evidently documentation](https://docs.evidentlyai.com/), [MLflow tracking](https://mlflow.org/docs/latest/ml/tracking/) |
+
+**Learning order:** first understand the stage and complete the core scikit-learn implementation. Add advanced tools such as DVC, Optuna, SHAP, MLflow, Docker and monitoring only when a project genuinely needs them. Check current hosting free-tier limits before planning a deployment.
+
 ## Complete ML playlists (supplementary)
 - [CampusX — Machine Learning complete playlist](https://youtube.com/playlist?list=PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH&si=vLWpBfFztXIrFY5A)
 - [StatQuest — Machine Learning complete playlist](https://youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=Uck5deAI2vq0Jhjg)
