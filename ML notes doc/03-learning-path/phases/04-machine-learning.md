@@ -37,7 +37,7 @@ Use these as complete topic-wise reference libraries when you need another expla
 - Train Logistic Regression for a suitable binary classification problem.
 - Inspect residuals and predicted probabilities.
 
-**Checkpoint:** explain why a baseline matters, distinguish regression from classification, and explain why Logistic Regression produces probabilities.
+**Practice projects:** [House Price Prediction — Linear Regression](../../04-projects/README.md#1-house-price-prediction--linear-regression) and [Breast Cancer Classification — Logistic Regression](../../04-projects/README.md#2-breast-cancer-classification--logistic-regression).\n\n**Checkpoint:** explain why a baseline matters, distinguish regression from classification, and explain why Logistic Regression produces probabilities.
 
 ## Week 5 — Classification metrics, Naive Bayes and KNN
 
@@ -86,7 +86,7 @@ Use these as complete topic-wise reference libraries when you need another expla
 - Inspect a few model errors and describe a possible cause.
 - Extract and compare feature-importance rankings; check whether they make domain sense.
 
-**Checkpoint:** explain overfitting, bagging vs boosting, and identify one concrete model failure.
+**Practice projects:** [Titanic Survival — Decision Tree](../../04-projects/README.md#3-titanic-survival--decision-tree) and [Heart Disease — Random Forest](../../04-projects/README.md#4-heart-disease--random-forest).\n\n**Checkpoint:** explain overfitting, bagging vs boosting, and identify one concrete model failure.
 
 ## Week 7 — Validation, tuning, interpretation and unsupervised learning
 
@@ -140,7 +140,7 @@ This is part of the ML foundation, not a topic to silently skip. Learn the purpo
 - Fit AgglomerativeClustering and visualize a dendrogram on a small sample.
 - Write a short comparison: when K-Means is suitable vs when hierarchical clustering may be useful.
 
-**Checkpoint:** explain supervised vs unsupervised learning, the K-Means loop, elbow/silhouette, and how a dendrogram represents hierarchical merges.
+**Practice project:** [Mall Customer Segmentation — K-Means](../../04-projects/README.md#5-mall-customers--k-means).\n\n**Checkpoint:** explain supervised vs unsupervised learning, the K-Means loop, elbow/silhouette, and how a dendrogram represents hierarchical merges.
 
 ## Topic coverage audit
 
