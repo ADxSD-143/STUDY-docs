@@ -1,20 +1,26 @@
-# Phase 1 — Maths for ML (Weeks 1–2)
-Goal: refresh only maths needed to understand models. Do not passively watch the entire eight-hour course.
+# Maths for ML — 8-Week Companion
+Maths is studied alongside Python and ML, not as a long prerequisite. Main resource: [Complete Math for ML and AI](https://youtu.be/cO9xmfsJJu4). Watch only relevant sections; you do not need to finish the full video before starting ML.
 
-## Week 1 — Diagnose and fill gaps
-1. Take a 30–45 minute diagnostic on mean/variance, conditional probability, Bayes theorem, vectors/matrices and derivatives.
-2. Open [Data Dissection — Complete Math for ML and AI](https://youtu.be/cO9xmfsJJu4) and watch only sections related to missed questions.
-3. If gradient descent intuition is weak, use the master ML video at 09:50.
-4. Code NumPy examples for mean/variance, dot product, matrix multiplication and numerical derivative.
-5. Write a one-page glossary in your own words.
+## Week 1 — Numerical foundations
+Review arithmetic, fractions, percentages, negative numbers, simple equations and graphs. Understand mean, median, range and variance. Learn what vectors and matrices represent.
+Deliverable: notebook computing mean, median, variance and plotting a simple line.
 
-Deliverable: diagnostic notebook plus four NumPy examples. Gate: explain the ideas without memorized definitions.
+## Week 2 — Maths used by early ML
+Study vectors, dimensions, dot product, matrix shape, probability, conditional probability, Bayes intuition, derivatives and gradient descent intuition. Use the matching sections in the maths video; main ML course gradient descent at 09:50 is a companion.
+Deliverable: NumPy dot-product examples and a simple loss/gradient-descent plot.
 
-## Week 2 — Model-related maths
-1. Review vectors/matrices and dot product.
-2. Review probability and Bayes only as needed for classification.
-3. Review derivatives, gradients and gradient descent.
-4. Connect loss and slope to master ML Linear Regression at 27:13.
-5. Plot loss during a tiny gradient-descent experiment.
+## Weeks 3–7 — Just-in-time maths
+- Week 3: mean, variance and distributions during EDA.
+- Week 4: line equation, residuals, sigmoid/probability and loss intuition.
+- Week 5: conditional probability for Naive Bayes; distance for KNN.
+- Week 6: impurity intuition for decision trees.
+- Week 7: averages and variability for cross-validation scores.
 
-Deliverable: gradient descent notebook and learning-rate explanation. The math course covers more than this roadmap needs; keep advanced chapters as reference.
+Advanced calculus, eigenvalue derivations and matrix calculus are deferred to the extended maths track.
+
+## Readiness check
+- [ ] Explain mean and variance with a small example.
+- [ ] Read a simple graph.
+- [ ] Explain vector and dot product.
+- [ ] Explain probability and conditional probability.
+- [ ] Explain derivative as rate of change and gradient descent as repeated steps to reduce loss.
