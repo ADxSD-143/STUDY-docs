@@ -1,5 +1,5 @@
 # ML Resource Library
-Resources are grouped by topic and assigned in the [24-week roadmap](roadmap.md). Use the specified chapters and sequence; do not watch everything passively.
+Resources are grouped by topic and assigned in the [8-week roadmap](roadmap.md). The two fixed primary videos are the [main ML course](https://youtu.be/trsyTEA22Gw) and [Math for ML](https://youtu.be/cO9xmfsJJu4). All other videos are supplementary; follow only the sections assigned in the roadmap rather than watching every playlist end-to-end.
 
 ## Maths
 - [Data Dissection — Complete Math for ML and AI (~8h20)](https://youtu.be/cO9xmfsJJu4): probability/statistics, Bayes, distributions, linear algebra and calculus. Use targeted sections after diagnostic.
