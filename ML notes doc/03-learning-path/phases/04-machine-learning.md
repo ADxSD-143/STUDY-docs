@@ -62,7 +62,7 @@ Use these as complete topic-wise reference libraries when you need another expla
 
 **Checkpoint:** interpret a confusion matrix, explain precision vs recall, and explain why KNN is sensitive to feature scale.
 
-## Week 6 — Decision Trees, ensembles and error analysis
+## Week 6 — Decision Trees, ensembles, feature importance and error analysis
 
 **Main course sections**
 - Decision Trees: 3:39:55 and 3:58:05
@@ -76,17 +76,18 @@ Use these as complete topic-wise reference libraries when you need another expla
 - Tree splits, Gini impurity and entropy intuition.
 - Maximum depth, leaf size and overfitting.
 - Bagging vs boosting; Random Forest and AdaBoost at an introductory level.
-- Feature importance caveats.
+- Feature importance: impurity-based importance, permutation importance intuition and why importance is not causation.
 - Error analysis: false positives/negatives, weak classes and examples the model gets wrong.
 
 **Code**
 - Compare a baseline, Decision Tree and Random Forest.
 - Inspect training and validation scores across tree depths.
 - Inspect a few model errors and describe a possible cause.
+- Extract and compare feature-importance rankings; check whether they make domain sense.
 
 **Checkpoint:** explain overfitting, bagging vs boosting, and identify one concrete model failure.
 
-## Week 7 — Validation, tuning basics, interpretation and packaging
+## Week 7 — Validation, tuning, interpretation and unsupervised learning
 
 **Videos and documentation**
 - [StatQuest — Cross-validation](https://youtu.be/fSytzGwwBVw)
@@ -112,6 +113,33 @@ Use these as complete topic-wise reference libraries when you need another expla
 
 **Checkpoint:** explain leakage, cross-validation, why test-set tuning is unreliable, and demonstrate a saved model pipeline that reloads successfully.
 
+
+### Unsupervised learning — clustering module (required introduction)
+
+This is part of the ML foundation, not a topic to silently skip. Learn the purpose and basic implementation of clustering after supervised learning.
+
+**Video sequence from the main course**
+- Unsupervised learning overview: 6:35:30
+- K-Means: 6:48:13
+- Hierarchical clustering: 7:10:23
+- DBSCAN overview: 7:22:01 (intro/continuation; detailed tuning is not required in this sprint)
+- [CampusX — Complete ML playlist](https://youtube.com/playlist?list=PLKnIA16_Rmvbr7zKYQuBfsVkjoLcJgxHH&si=vLWpBfFztXIrFY5A): use the clustering lessons corresponding to playlist videos 103, 104 and 105 for K-Means, and the Hierarchical Clustering lesson around Day 20 in your supplied sequence.
+
+**Concepts**
+- Supervised vs unsupervised learning; features without target labels.
+- Clustering use cases and why clusters are not automatically meaningful categories.
+- K-Means: centroids, assignment/update loop, inertia, choosing k with elbow method and silhouette score; sensitivity to scaling, initialization and outliers.
+- Hierarchical clustering: agglomerative approach, dendrogram, linkage choices and selecting a cut level.
+- Compare cluster assignments and describe limitations; do not evaluate clustering with classification accuracy when no ground-truth labels exist.
+
+**Code**
+- Scale suitable numeric features, fit KMeans for several k values and plot inertia.
+- Use silhouette score as one diagnostic, not as proof that clusters are useful.
+- Fit AgglomerativeClustering and visualize a dendrogram on a small sample.
+- Write a short comparison: when K-Means is suitable vs when hierarchical clustering may be useful.
+
+**Checkpoint:** explain supervised vs unsupervised learning, the K-Means loop, elbow/silhouette, and how a dendrogram represents hierarchical merges.
+
 ## Topic coverage audit
 
 | Topic | Coverage |
@@ -127,12 +155,12 @@ Use these as complete topic-wise reference libraries when you need another expla
 | Cross-validation and leakage prevention | Core |
 | GridSearchCV/RandomizedSearchCV | Basic introduction |
 | Error analysis | Core |
-| Basic feature importance | Introduction |
+| Feature importance and permutation importance intuition | Core introduction |
 | Ridge/Lasso/ElasticNet | Continuation |
 | SVM and kernel methods | Continuation |
 | XGBoost, LightGBM, CatBoost, stacking | Continuation |
-| K-Means and PCA | Optional introduction after core |
-| DBSCAN, t-SNE/UMAP, anomaly detection | Continuation |
+| K-Means and Hierarchical clustering | Core introduction and small implementation |\n| PCA | Optional introduction after core |
+| DBSCAN | Intro only; deeper use is continuation |\n| t-SNE/UMAP, anomaly detection | Continuation |
 | Probability calibration, SHAP, Optuna, MLflow | Continuation |
 | Neural networks, PyTorch and deep learning | Separate follow-on track |
 
@@ -140,7 +168,7 @@ Use these as complete topic-wise reference libraries when you need another expla
 
 ## Optional after the core
 
-- Main course K-Means: 6:48:13; PCA: 6:12:25.
+- Main course PCA: 6:12:25. K-Means and Hierarchical clustering are now part of the required beginner introduction.
 - SVM intuition and deeper ensemble methods are continuation topics.
 - Do not start neural networks or deep learning until the core modeling, validation and error-analysis checkpoints are comfortable.
 
