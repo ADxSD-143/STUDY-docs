@@ -34,7 +34,7 @@ Target 10 hours: 2–3 hours learning, 5–6 hours coding/experiments, 1–2 hou
 | 5 | Stage 7–8 | Learn Naive Bayes, KNN and classification metrics; choose metrics based on error costs; inspect threshold effects. | Model comparison and evaluation report |
 | 6 | Stage 7–8 + 10 | Learn Decision Trees, Random Forest, feature importance and error analysis; understand bias/variance. | Tree/forest comparison, feature-importance notes and error analysis |
 | 7 | Stage 8–11 + unsupervised ML | Learn cross-validation and tuning basics; study unsupervised learning, K-Means and Hierarchical clustering; complete final evaluation and save the pipeline. | CV/model comparison, clustering exercise, final evaluation and saved pipeline |
-| 8 | Stage 0–13 applied | Complete CampusFix mini-capstone: problem brief, data audit, EDA, split, preprocessing, baseline, text model, evaluation, error analysis, packaging and README. Local API/UI is optional. | Reproducible project with report, saved pipeline and clear limitations |
+| 8 | Stage 0–13 applied | Complete the five algorithm practice projects listed in the [projects phase](phases/05-projects-engineering.md), alongside the workflow checklist. Treat them as separate exercises; no single CampusFix capstone is required. | Reproducible project with report, saved pipeline and clear limitations |
 
 ## Weekly resources and sequence
 - **Week 1:** [CampusX Python playlist](https://youtube.com/playlist?list=PLxvLUL96MOO4saKDW4nHTCe1cDbDMTR5X), sessions 1–12. Maths companion: arithmetic, graphs, vectors and averages.
@@ -44,7 +44,7 @@ Target 10 hours: 2–3 hours learning, 5–6 hours coding/experiments, 1–2 hou
 - **Week 5:** [Confusion matrix](https://youtu.be/c09drtuCS3c) → [precision/recall/F1](https://youtu.be/iK-kdhJ-7yI) → [ROC-AUC](https://youtu.be/gdW6hj9IXaA) → [Naive Bayes](https://youtu.be/O2L2Uv9pdDA) → [KNN](https://youtu.be/abnL_GUGub4).
 - **Week 6:** Main course Decision Trees 3:39:55 and 3:58:05; [Random Forest](https://youtu.be/J4Wdy0Wc_xQ), [AdaBoost](https://youtu.be/LsK-xG1cLYA), [bias–variance](https://youtu.be/EuBBz3bI-aA).
 - **Week 7:** [Cross-validation](https://youtu.be/fSytzGwwBVw), [scikit-learn CV](https://scikit-learn.org/stable/modules/cross_validation.html), [Pipeline](https://scikit-learn.org/stable/modules/compose.html), [model persistence](https://scikit-learn.org/stable/model_persistence.html). Also cover unsupervised overview (main course 6:35:30), K-Means (6:48:13) and Hierarchical clustering (7:10:23).
-- **Week 8:** Revisit only resources needed for the capstone. See [CampusFix project brief](../04-projects/campusfix/README.md).
+- **Week 8:** Complete the five algorithm-wise practice projects: [project index](../04-projects/README.md).
 
 ## Checkpoints
 - Week 1: explain problem, target, task type and metric; write basic Python functions.
