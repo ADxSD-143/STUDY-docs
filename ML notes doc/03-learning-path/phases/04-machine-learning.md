@@ -68,6 +68,7 @@ Use these as complete topic-wise reference libraries when you need another expla
 - Decision Trees: 3:39:55 and 3:58:05
 
 **Supplementary videos**
+- CampusX playlist study sequence: Day 16–17 — Classification Metrics and Feature Importance (playlist video numbers 75, 76, 134 and 97, as supplied in the study plan).
 - [Random Forest — StatQuest](https://youtu.be/J4Wdy0Wc_xQ)
 - [AdaBoost — StatQuest](https://youtu.be/LsK-xG1cLYA)
 - [Bias–variance — StatQuest](https://youtu.be/EuBBz3bI-aA)
@@ -118,8 +119,9 @@ Use these as complete topic-wise reference libraries when you need another expla
 
 This is part of the ML foundation, not a topic to silently skip. Learn the purpose and basic implementation of clustering after supervised learning.
 
-**Video sequence from the main course**
-- Unsupervised learning overview: 6:35:30
+**Video sequence**
+- CampusX playlist study sequence: Day 18 — Basics of Unsupervised Learning; Day 18–19 — K-Means (playlist video numbers 103, 104 and 105); Day 20 — Hierarchical Clustering. The supplied Day 18 basics link was not included in the message, so use the main-course overview below until that link is added.
+- Main course unsupervised learning overview: 6:35:30
 - K-Means: 6:48:13
 - Hierarchical clustering: 7:10:23
 - DBSCAN overview: 7:22:01 (intro/continuation; detailed tuning is not required in this sprint)
