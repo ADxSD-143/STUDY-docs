@@ -1,23 +1,28 @@
 # Machine Learning Course — Start Here
-Follow **Maths → Python → Data → ML → Projects**. The course is 24 weeks at 10 hours/week, with exact video order, code deliverables and checkpoints.
+
+Follow the **8-week accelerated beginner path**: Python → Maths alongside practice → Data → ML → Mini-capstone.
 
 ## Start in this order
-1. [24-week roadmap](roadmap.md): what to study each week, video timestamps and what to code.
+1. [8-week roadmap](roadmap.md): weekly video sections, coding deliverables and checkpoints.
 2. [Course map](00-course-map.md): phase index.
 3. [Progress tracker](progress.md): mark complete only after coding.
-4. [Resources](resources.md): topic-wise videos and official docs.
-5. [CampusFix capstone](projects/campusfix/README.md): real-world problem brief.
+4. [Resources](resources.md): supplementary videos and official docs.
+5. [CampusFix capstone](projects/campusfix/README.md): project brief.
+
+## Fixed primary videos
+- [Main ML course](https://youtu.be/trsyTEA22Gw)
+- [Math for ML](https://youtu.be/cO9xmfsJJu4)
 
 ## Weekly loop
-Read notes → watch assigned section → run code → change a parameter → explain output → pass checkpoint → update progress.
+Read the assigned topic → watch the specified section → write short notes → code → change a parameter → explain the output → pass checkpoint → update progress.
 
-## Time budget
-3 h learning, 5 h implementation, 2 h review. All work must fit within 10 hours/week. Reduce optional videos if behind instead of silently extending the schedule.
+## Time and expectations
+Target 10 hours per week. This is an accelerated foundation, not mastery. A complete beginner may need more time. Do not move forward just because the week ended; pass the checkpoint first.
 
 ## Rules
-- Diagnose Python/NumPy/pandas and regression first; revise weak areas rather than repeating everything.
-- Video watching alone does not count.
-- Keep a simple baseline and inspect errors.
-- Fit preprocessing only on training data; final test set is used once.
-- Free tools/resources are sufficient; no paid API required.
-- Maintain a short log: what I understood, what confused me, next action.
+- Start with Python if you have never programmed.
+- Study maths just in time; do not wait to finish the entire maths video.
+- Video watching alone does not count as completion.
+- Compare against a simple baseline and inspect errors.
+- Fit preprocessing only on training data; use the test set for final evaluation.
+- Free resources and local tools are sufficient; no paid API is required.
